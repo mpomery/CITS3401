@@ -1,0 +1,4 @@
+*.py[c|co]
+*.log
+*.aux
+*.synctex.gz
