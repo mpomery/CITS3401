@@ -5,7 +5,7 @@ The tender contains the following information:
 * Warehouse scheme
 * How it will assist
   * expenditure analysis
-  * planning new infastructure
+  * planning new infrastructure
   * detecting fraud
   * policy changes
 * Prototype data in Palo
@@ -14,10 +14,10 @@ The tender contains the following information:
 Analysis Examples
 
 * physicians supposed to spend 30 minutes with each patient
-  * detect exessive number of patients
+  * detect excessive number of patients
 * detect prescription drugs being allocated too often
-* detect GP refering excessivly to a specialist
+* detect GP referring excessively to a specialist
 * Analyse trends in diseases and cures
-* Analyse infrastucture or lack thereof
+* Analyse infrastructure or lack thereof
 * Analyse for entire country or state by state
 * Analyse trends over different years and quarters
