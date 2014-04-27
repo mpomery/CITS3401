@@ -1,24 +1,85 @@
 \documentclass[a4paper,12pt,openany]{article}
-\usepackage[margin=0.75in,headsep=0.25in,footskip=0.25in]{geometry}
-%\documentclass{article}
+
+\usepackage{titling}
+\usepackage[margin=0.5in,headsep=0.25in,footskip=0.25in]{geometry}
+\usepackage{multirow}
+
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}
+}
 
 \begin{document}
 
 % title page
 % TODO: Spruce it up
-\title{CITS3401 Project 1\\
-Medicare Data Warehouse}
+\title{CITS3401 Data Exploration and Mining\\
+Project 1}
+\subtitle{Medicare Australia Data Warehouse}
 \author{Mitchell Pomery\\
 21130887}
-\date{}
 \maketitle
+\abstract{
+This document outlines the design of a data cude for Medicare to assist in giving the best service possible.
+Assumptions where made where the system requirements were incomplete or ambiguous.
+}
 %\newpage
 
 % document
 
-\section{Warehouse Schema}
-	[INSERT SCHEMA]
-\section{Features}
+\section*{Introduction}
+\paragraph{}
+Medicare Australia wishes to use data from it's previous years to assist in making decisions to improve their services, analyse expenditure and detect individuals who are abusing their system.
+Each centre stores information about visits in an Online Transaction Prorocessing (OLTP) database, these are then collated at a state and country wide level.
+The patient, doctor, treatment and prescriptions for each visit are stored.
+This document outlines the data cube designed facilitate in the decision making processes of Medicare.
+
+\section*{Requirements}
+\paragraph{}
+% TODO: List Requirements
+The authors' interpretation of the requirements are listed below.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+	\hline
+		\textbf{Object} & \textbf{Properties} & \textbf{Restrictions} \\
+	\hline
+		Location && State or Territory in Australia \\
+	\hline
+		Centre && 3 Centres in each State/Territory \\
+	\hline
+		Tests && Only one test will occur per visit. \\
+	\hline
+		Diseases && Only one disease will be diagnosed per visit maximum. \\
+	\hline
+		Store & Interior Design & 3 restaurants in each country \\
+		& Facility Type & 3 different interior designs \\
+		&& Facilities are `dine in', `drive through' and `both' \\
+	\hline
+\end{tabular}
+\caption{Requirements}
+\label{tab:requirements}
+\end{table}
+
+\subsection*{Assumptions}
+\paragraph{}
+Assumptions were made where the requirements were incomplete or insufficient, to simplify the schema and keep it managable, and to make the scenario as realistic as possible.
+% TODO: Assumptions
+\begin{enumerate}
+	\item Only a small number of patients, diseases, physicians, hospitals, specialists and pathology clinics exist.
+	\item Doctors only work at one location.
+	\item Patients will always visit a General Physician before seeing a specialist.
+	\item The cost of treatment, as well as the person or company who pays for the treatment is irrelevant.
+	\item People only visit medical centres in their own state.
+\end{enumerate}
+
+\section*{Warehouse Schema}
+A star schema was designed to make the data cube simpler, and the queries faster than a snowflake schema or fact constellation.
+
+\section*{Features}
 	Adds the ability to do...
 	\begin{enumerate}
 		\item expenditure analysis
@@ -27,10 +88,10 @@ Medicare Data Warehouse}
 		\item policy changes
 	\end{enumerate}
 
-\subsection{Expenditure Analysis}
+\subsection*{Expenditure Analysis}
 	aa
-\section{Prototype Warehouse}
-\subsection{Data Cube}
+\section*{Prototype Warehouse}
+\subsection*{Data Cube}
 	aa
 
 \end{document}
