@@ -1,8 +1,8 @@
-\documentclass[a4paper,12pt,openany]{article}
+\documentclass[a4paper,12pt,openbib]{article}
 
 \usepackage{titling}
 \usepackage[margin=0.5in,headsep=0.25in,footskip=0.25in]{geometry}
-\usepackage{multirow}
+\usepackage{graphicx}
 
 \newcommand{\subtitle}[1]{
   \posttitle{
@@ -22,8 +22,8 @@ Project 1}
 21130887}
 \maketitle
 \abstract{
-This document outlines the design of a data cude for Medicare to assist in giving the best service possible.
-Assumptions where made where the system requirements were incomplete or ambiguous.
+This document outlines the design choicies for a data cude created to assist Medicare in giving the best service possible.
+The original requirements were incomplete and so assumptions were made where necessary.
 }
 %\newpage
 
@@ -70,28 +70,43 @@ Assumptions were made where the requirements were incomplete or insufficient, to
 % TODO: Assumptions
 \begin{enumerate}
 	\item Only a small number of patients, diseases, physicians, hospitals, specialists and pathology clinics exist.
-	\item Doctors only work at one location.
+	\item Doctors are irellevant, only the name of the clinic matters.
 	\item Patients will always visit a General Physician before seeing a specialist.
 	\item The cost of treatment, as well as the person or company who pays for the treatment is irrelevant.
 	\item People only visit medical centres in their own state.
 \end{enumerate}
 
 \section*{Warehouse Schema}
+\paragraph{}
 A star schema was designed to make the data cube simpler, and the queries faster than a snowflake schema or fact constellation.
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=15cm]{schema}
+	\caption{Fact Table in Snowflake Schema}
+	\label{fig:schema}
+\end{figure}
+
+\section*{Prototype Warehouse}
+\subsection*{Data Generation}
+\paragraph{}
+	Prototyape data was generated using the Python script \texttt{gendata.py}.
+	It takes sets of words for diseases, clinics, names, medical tests and states, creates random people and outputs information about their visits from 2006 to 2011.
+	An attempt has been made to make it reflect reality, by restricting the average persons visits to a couple of times a year, charging based on the location visited and making a small percentage of users abuse the system each year.
+
+\subsection*{Data Cube}
+	aa
 
 \section*{Features}
-	Adds the ability to do...
-	\begin{enumerate}
-		\item expenditure analysis
-		\item planning new infrastructure
-		\item detecting fraud
-		\item policy changes
-	\end{enumerate}
+\paragraph{}
+Adds the ability to do...
+\begin{enumerate}
+	\item expenditure analysis
+	\item planning new infrastructure
+	\item detecting fraud
+	\item policy changes
+\end{enumerate}
 
 \subsection*{Expenditure Analysis}
-	aa
-\section*{Prototype Warehouse}
-\subsection*{Data Cube}
 	aa
 
 \end{document}
