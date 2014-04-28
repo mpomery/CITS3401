@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,openbib]{article}
+\documentclass[a4paper,12pt,openany]{report}
 
 \usepackage{titling}
 \usepackage[margin=0.5in,headsep=0.25in,footskip=0.25in]{geometry}
@@ -39,7 +39,6 @@
 }
 
 \begin{document}
-
 % title page
 % TODO: Spruce it up
 \title{CITS3401 Data Exploration and Mining\\
@@ -48,10 +47,7 @@ Project 1}
 \author{Mitchell Pomery\\
 21130887}
 \maketitle
-\abstract{
-This document outlines the design choices for a data cube created to assist Medicare, an Australian Health-care Supporter, in providing the best service possible.
-The original requirements were incomplete and so assumptions were made where necessary.
-}
+
 \clearpage
 
 % document
@@ -142,7 +138,23 @@ The discovery of trends in diseases and referrals, and the discovery of outliers
 	This is useful as it will allow Medicare to determine what areas are in need of upgraded infrastructure.
 
 \section*{Scenarios}
-\subsection*{Data Generation}
+\subsection*{Abuse of Services}
+\paragraph{}
+	By analyzing how many times patients visits medical centers, and clustering them, it is possible to identify outliers.
+	These people visit the medical centers in a pattern that is dissimilar to the general population, and so looks suspicious.
+	By then investigating these people, Medicare will be able to determine if they are abusing the services provided and take action.
+\subsection*{Insufficient Infrastructure}
+\paragraph{}
+	Analyzing the number of visits to each clinic, it is possible for Medicare to see what clinics are under heavy throughput.
+	By further analyzing the amount of time spent with patients, and comparing it to other clinics, it is possible to determine if the clinic needs more staff and better training, or if a new clinic should be opened nearby to reduce the throughput.
+\subsection*{Virus Epidemics}
+\paragraph{}
+	Looking at the number of outbreaks of diseases over time and analyzing the trends will allow Medicare to see what areas of Australia the disease travels through.
+	This will allow Medicare to implement plans to stop the spread of the disease and to help eradicate it.
+\subsection*{Patient Care}
+\paragraph{}
+	The time spent with patients is important to Medicare, and by analyzing it, clinics that do not spend enough time with their patients can be determined.
+	Further analysis on these clinics can help determine if it is due to them understaffed or the doctors being unwilling to provide the best service possible.
 
 \clearpage
 \section*{Data Cube}
