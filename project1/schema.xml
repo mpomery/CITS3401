@@ -1,26 +1,38 @@
-<mxGraphModel dx="43.64" dy="25.14" grid="1" guides="1" tooltips="1" connect="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" style="default-style2" math="0">
+<mxGraphModel grid="1" guides="1" tooltips="1" connect="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" style="default-style2" math="0">
 <root>
 <mxCell id="0"/>
 <mxCell id="1" parent="0"/>
-<mxCell id="2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Fact Table&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;patient_key&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&lt;span style=&quot;line-height: 1.26; background-color: rgb(255, 255, 255);&quot;&gt;centre_key&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;treatment_key&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" parent="1" vertex="1">
-<mxGeometry x="330" y="220" width="160" height="80" as="geometry"/>
+<mxCell id="2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Fact Table&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;centre_key&lt;br&gt;&lt;/span&gt;patient_key&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;test_key&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;disease_key&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;referral_key&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" parent="1" vertex="1">
+<mxGeometry x="330" y="220" width="160" height="120" as="geometry"/>
 </mxCell>
-<mxCell id="3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Patient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;patient_key&lt;br&gt;medicare_number&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" parent="1" vertex="1">
-<mxGeometry x="620" y="225" width="160" height="70" as="geometry"/>
+<mxCell id="3" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Patient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;patient_key&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" parent="1" vertex="1">
+<mxGeometry x="560" y="110" width="160" height="55" as="geometry"/>
 </mxCell>
-<mxCell id="10" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Centre&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;centre_key&lt;br&gt;centre_name&lt;br&gt;centre_location&lt;br&gt;centre_type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" parent="1" vertex="1">
-<mxGeometry x="330" y="410" width="160" height="100" as="geometry"/>
+<mxCell id="10" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Centre&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;centre_key&lt;br&gt;state&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" parent="1" vertex="1">
+<mxGeometry x="540" y="245" width="160" height="70" as="geometry"/>
 </mxCell>
-<mxCell id="16" value="" style="endArrow=none;exitX=0.5;exitY=0;entryX=0.5;entryY=1" parent="1" source="10" target="2" edge="1">
+<mxCell id="25" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Disease&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;disease_key&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" vertex="1" parent="1">
+<mxGeometry x="110" y="130" width="160" height="60" as="geometry"/>
+</mxCell>
+<mxCell id="27" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Referral&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;referral_key&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" vertex="1" parent="1">
+<mxGeometry x="110" y="250" width="160" height="60" as="geometry"/>
+</mxCell>
+<mxCell id="28" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&lt;b&gt;Test&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;test_key&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" vertex="1" parent="1">
+<mxGeometry x="330" y="130" width="160" height="60" as="geometry"/>
+</mxCell>
+<mxCell id="30" value="" style="endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5" edge="1" parent="1" source="27" target="2">
 <mxGeometry relative="1" as="geometry"/>
 </mxCell>
-<mxCell id="17" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Treatment&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;treatment_key&lt;br&gt;date&lt;br&gt;treatment_provided&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;referred_to&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1" parent="1" vertex="1">
-<mxGeometry x="120.00000000000006" y="210" width="160" height="100" as="geometry"/>
-</mxCell>
-<mxCell id="24" value="" style="endArrow=none;exitX=0;exitY=0.5;entryX=1;entryY=0.5" edge="1" parent="1" source="3" target="2">
+<mxCell id="31" value="" style="endArrow=none;exitX=0;exitY=0.5;entryX=1;entryY=0.5" edge="1" parent="1" source="10" target="2">
 <mxGeometry relative="1" as="geometry"/>
 </mxCell>
-<mxCell id="25" value="" style="endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5" edge="1" parent="1" source="17" target="2">
+<mxCell id="32" value="" style="endArrow=none;exitX=0;exitY=0.75" edge="1" parent="1" source="3" target="2">
+<mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="33" value="" style="endArrow=none;exitX=1;exitY=0.75" edge="1" parent="1" source="25" target="2">
+<mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="34" value="" style="endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0" edge="1" parent="1" source="28" target="2">
 <mxGeometry relative="1" as="geometry"/>
 </mxCell>
 </root>
