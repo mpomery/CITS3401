@@ -1,0 +1,142 @@
+/*
+  Running MySource Matrix
+  Developed by Squiz - http://www.squiz.net
+  MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
+  Page generated: 13 April 2010 10:29:45
+*/
+
+
+.bodycontents .maincopy .newsarticle img {
+    margin: 0 0 0.4em;
+    padding: 0;
+}
+
+
+/*** [From Biz] ***/
+
+.topbannerunderlay {
+    position: relative;
+}
+
+#new_biz_caption {
+    display: block !important;
+    position: absolute;
+    right: 0pt;
+    top: 217px;
+}
+
+
+.maincopy { border-bottom:0px;  }
+
+.bodycontents h2 { font-size: 120%; margin: 0 !important; padding: 0 !important; }
+
+
+.bodycontents {
+    background-position: 51% 0 !important;
+}
+
+.bodycontents .rightcol { background-color: transparent !important; }
+
+.bodycontents ul.bizarrow,
+.bodycontents ul.bizblocks {
+    list-style-type: none !important;
+    margin: 0 0 30px !important;
+    padding: 0 !important;
+}
+
+.bodycontents ul.bizarrow li,
+.bodycontents ul li.bizarrow,
+.bodycontents ul.bizblocks li,
+.bodycontents ul li.bizblocks {
+    padding: 4px 0 0 22px !important;
+}
+
+
+.bodycontents ul.bizblocks li,
+.bodycontents ul li.bizblocks {
+    background-image: url(http://www.ecm.uwa.edu.au/__data/assets/image/0006/57417/Block_Bullet.gif) !important;
+}
+.bodycontents ul.bizarrow li,
+.bodycontents ul li.bizarrow {
+    background-image: url(http://www.ecm.uwa.edu.au/__data/assets/image/0005/57416/Arrow-Bullet.gif) !important;
+}
+
+/* Edit 2008.11.24
+   Guan Ming Teo
+
+   Home page changes */
+
+div.bodycontents div.maincopy { padding-right: 0 !important;
+    padding-left: 0 !important;
+    font-size: 0.989011em; /* shifting 12.133333px to 12px */ }
+
+div.maincopy div.landing-shell { zoom: 1.0; /* triggering hasLayout */
+    margin-right: 270px;
+    * margin-right: 0; }
+
+div.maincopy div.landing-shell:after { display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    content: ' '; }
+
+div.bodycontents div.mainrhs { float: none;
+    width: auto;
+    padding: 0 !important; }
+
+div.bodycontents div.maincopy div.floathalf, 
+div.bodycontents div.maincopy div.floatthird { display: inline;
+    width: 45%;
+    margin-right: 2%;
+    margin-left: 2%; }
+div.bodycontents div.maincopy div.float-right { float: right; }
+
+div.bodycontents div.maincopy div.floatthird { width: 29%; }
+
+/* accordian menu */
+div.mainrhs div.menu-accordian { float: right;
+    display: inline;
+    width: 260px; }
+
+div.mainrhs div.menu-accordian ul { margin: 0;
+    background: #f6f2e4 url('http://www.ecm.uwa.edu.au/__data/assets/image/0018/124227/accordian-level-01-flow.gif') repeat-y 0 0;
+    list-style-type: none; }
+div.mainrhs div.menu-accordian ul li { display: inline;
+    height: auto;
+    margin-bottom: 0;
+    padding-left: 0;
+    background-image: none; }
+
+div.mainrhs div.menu-accordian ul li a.heading { display: block;
+    margin: 0;
+    padding: 12px 10px 14px 21px;
+    background: url('http://www.ecm.uwa.edu.au/__data/assets/image/0014/74210/accordian-level-01-bullet.gif') no-repeat 4px 50%;
+    border-bottom: 1px solid #fff;
+    color: #444;
+    font-size: 1.166667em; /* 14px */
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer; }
+
+/*div.mainrhs div.menu-accordian ul li p.selected { background-image: url('http://www.ecm.uwa.edu.au/__data/assets/image/0015/74211/accordian-level-01-bullet-a.gif');
+    background-position: 3px 50%; }*/
+
+/* Child level */
+div.mainrhs div.menu-accordian ul li div { background-color: #fbfaf4;
+    background-image: url('http://www.ecm.uwa.edu.au/__data/assets/image/0006/83544/accordian-level-02-flow.gif');
+    background-repeat: repeat-y;
+    border-bottom: 1px solid #fff; }
+
+div.mainrhs div.menu-accordian ul li ul { zoom: 1.0; /* triggering hasLayout */
+    padding: 10px 0;
+    background-color: transparent;
+    background-image: none; }
+
+div.mainrhs div.menu-accordian ul li ul li a, 
+div.mainrhs div.menu-accordian ul li ul li a:link, 
+div.mainrhs div.menu-accordian ul li ul li a:visited { zoom: 1.0; /* triggering hasLayout for IE 6 */
+    display: block;
+    padding: 9px 10px 11px 21px;
+    background: url('http://www.ecm.uwa.edu.au/__data/assets/image/0016/74212/accordian-level-02-bullet.gif') no-repeat 4px 14px; }
+
+div.mainrhs div.menu-accordian ul li div#sub-accordian-schools { display: block; }

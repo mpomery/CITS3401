@@ -1,0 +1,233 @@
+/*
+  Running MySource Matrix
+  Developed by Squiz - http://www.squiz.net
+  MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
+  Page generated: 13 April 2010 10:29:44
+*/
+
+
+/*********fix**********/
+
+
+/*** Landing page styles ***/
+
+/* Page infrastructure */
+
+.maincopy {
+    margin: 0 !important;
+    padding: 0 30px !important;
+    border-bottom: 1px solid white;
+}
+.bodycontents {
+    background: url(http://www.ecm.uwa.edu.au/__data/assets/image/0014/23531/landing-dots-bground-rpt.gif) repeat-y top right !important;
+}
+.leftcol {
+    margin: 0 258px 0 0 !important;
+    padding: 0 30px 0 0 !important;
+    background-image: none !important;
+}
+* html .leftcol {
+    margin-right: -29px !important;
+}
+*+html .leftcol {
+    margin-right: -29px !important;
+}
+
+.mainrhs {
+    margin: 0 !important;
+    padding: 0 30px 0 23px !important;
+
+    width: 231px;
+    float: right;
+    overflow: visible;
+}
+
+
+
+/* Landing banner */
+.topbanner {
+    background-color: #F2EDD9;
+    background-image: url(http://www.ecm.uwa.edu.au/__data/assets/image/0013/23530/landing-photo-pixeloverlay.gif);
+    background-position: top right;
+    background-repeat: repeat-y;
+    padding: 0;
+    height: 1%;
+}
+
+.topbannerunderlay {
+    background-position: top right;
+    background-repeat: no-repeat;
+    float: right;
+}
+
+.topbanneroverlay {
+    background-image: url(http://www.ecm.uwa.edu.au/__data/assets/image/0013/23530/landing-photo-pixeloverlay.gif);
+    background-position: top right;
+    background-repeat: no-repeat;
+    width: 288px;
+    height: 231px;
+}
+
+.topbannercopy {
+    margin-right: 325px;
+    padding-left: 15px;
+}
+
+.topbannercopy .topbannerspacer {
+    width: 15px;
+    background-color: #F2EDD9;
+    position: relative;
+    right: 30px;
+    height: 26px;
+}
+
+
+/* Landing styles */
+h1 {
+    display: none;
+}
+
+h2 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    line-height: 0.85;
+    letter-spacing: -1px;
+}
+
+.topbannercopy p {
+    color: #564c23;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 125%;
+    line-height: 1.7;
+
+    padding-top: 1em;
+    margin: 0 0 0 -30px;
+    padding: 1em 0 0 15px;
+    border-left: 15px solid #F2EDD9;
+}
+
+
+
+
+.facultyschools .listedschools a { text-decoration: none; }
+.facultyschools .listedschools a:hover { text-decoration: underline; }
+
+
+/* Promotion Area */
+.bodycontents .maincopylanding .promotions {  margin-top: 20px; border-top: 1px solid #d7d7d7; padding-top: 20px; }
+.bodycontents .maincopylanding .promotions .promoitem { color: #6f6f6f; font-size: 100%; margin-bottom: 30px; padding: 0 0 30px 0; border-bottom: 1px solid #d7d7d7; }
+
+.bodycontents .maincopylanding .promoitem .rightimg { float: right; padding: 3px 0 17px 17px; margin: 0; }
+.bodycontents .maincopylanding .promoitem .rightimg img { float: left; border: 1px solid #dbdada; padding: 3px; }
+
+.bodycontents .maincopylanding .promoitem .leftimg { float: left; padding: 3px 17px 17px 0; margin: 0; }
+.bodycontents .maincopylanding .promoitem .leftimg img { float: left; border: 1px solid #dbdada; padding: 3px; }
+
+.bodycontents .maincopylanding .promoitem a { color: #117ec3; font-weight: bold; text-transform: uppercase; text-decoration: none; }
+.bodycontents .maincopylanding .promoitem a:hover { text-decoration: underline; }
+.bodycontents .maincopylanding .promoitem .promodate { font-style: italic; color: #746114; line-height: 200%; }
+
+
+
+
+.topbanner a { color: #000000; text-decoration: underline; }
+.topbanner a:hover { color: #000000; text-decoration: none; }
+
+.bodycontents .mainrhs h2.ictitle { font-family: Georgia, "Times New Roman", Times, serif; text-transform: uppercase; margin: 0 0 5px 0; padding: 0 0 5px 0; font-size: 120%; font-weight: normal; color: #757575; letter-spacing: .1em; }
+
+
+
+.mainrhs h4.ic { margin: 20px 0 5px 0; font-size: 100%; color: #000; font-weight: bold; text-transform: uppercase; font-family: Arial; }
+
+
+
+/* More things we should abstract away */
+
+.bodycontents .mainrhs h2 { font-size: 140%; color: #0864a5; margin: 0 0 15px 0; font-weight: normal; font-family: Georgia, "Times New Roman", Times, serif; }
+
+.bodycontents .mainrhs .upcomingevents { width: 250px; padding: 15px 0 0 0; }
+.bodycontents .mainrhs .righthandbox { width: 250px; padding: 15px 0; display: block; background: url(http://www.ecm.uwa.edu.au/__data/assets/image/0003/23529/dottedline-lightgrey.gif) repeat-x top left; }
+
+.mainrhs .facultyschools { display: block; width: 250px; width/**/:/**/ 236px; padding: 7px; margin-bottom: 25px; border-top: 3px solid #e5e5e5; border-bottom: 3px solid #e5e5e5; border-left: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5; }
+
+
+
+
+
+/*
+.bodycontents .mainrhs h1 {font-family: Georgia, "Times New Roman", Times, serif; text-transform: uppercase; margin: 0 0 10px 0; padding: 0 0 10px 0; border-bottom: 1px solid #d9d9d9; font-size: 140%; font-weight: normal; letter-spacing: .2em; color: #757575; }
+.bodycontents .mainrhs h2 { font-size: 140%; color: #0864a5; margin: 0 0 15px 0; font-weight: normal; font-family: Georgia, "Times New Roman", Times, serif; }
+.bodycontents .mainrhs h3 { font-weight: bold; margin: 0 0 5px 0; font-size: 100%; }
+.bodycontents .mainrhs hr { margin: 0 0 5px 0; }
+.bodycontents .mainrhs p { margin: 0 0 10px 0; }
+*/
+.bodycontents .mainrhs .righthandbox { margin-top: 10px; background: url(http://www.ecm.uwa.edu.au/__data/assets/image/0003/23529/dottedline-lightgrey.gif) repeat-x 0 100%; height: 1%; }
+   
+/*
+.mainrhs .rightcol h2 { font-family: Georgia, "Times New Roman", Times, serif; text-transform: uppercase; margin: 0 0 20px 0; padding: 0 0 10px 0; border-bottom: 1px solid #d9d9d9; font-size: 140%; font-weight: normal; letter-spacing: .2em; color: #757575; }
+.mainrhs .rightcol h3 { margin: 0 0 10px 0; padding: 0; font-size: 100%; color: #343434; font-weight: bold; border: none; line-height: 14px; text-transform: uppercase; }
+.mainrhs .rightcol h4 { margin: 0 0 5px 0; font-size: 110%; color: #585858; font-weight: bold;  }
+*/
+
+
+
+
+
+.mainrhs .facultyschools {
+    display: block;
+    width: 250px;
+    width/**/:/**/ 236px;
+    padding: 7px;
+    margin-bottom: 25px;
+    border-top: 3px solid #e5e5e5;
+    border-bottom: 3px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+}
+.mainrhs .facultyschools .facultyschoolstitle, .mainrhs .facultyschools .facultycentrestitle {
+    border-top: 6px solid white;    /* Override for individual business */
+
+    font-family:"Trajan Pro","Times New Roman",serif !important;
+    height:0px !important;
+    margin:0px 0pt 0pt !important;
+    overflow:hidden !important;
+    padding/**/:/**/45px 0pt 0pt !important;
+    padding:53px 0pt 0pt !important;
+    width:236px !important;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.mainrhs .facultyschools .facultyschoolstitle {
+    background-image: url(http://www.ecm.uwa.edu.au/__data/assets/image/0019/23527/faculty-schools-title.gif) !important;
+}
+.mainrhs .facultyschools .facultycentrestitle {
+    background-image: url(http://www.ecm.uwa.edu.au/__data/assets/image/0020/23528/faculty-centres-title.gif) !important;
+}
+
+.mainrhs .facultyschools .listedschools { width: 222px; width/**/:/**/ 196px; padding: 5px 15px 5px 11px; background-color: #fbf9f3; border-right: 14px solid #f5f3ea; }
+.mainrhs .facultyschools .listedschools ul { padding: 0 0 0 4px; margin: 0; list-style: none; }
+.mainrhs .facultyschools .listedschools ul li { width: 196px; width/**/:/**/ 186px; padding: 5px 0 5px 10px; background: url(http://www.ecm.uwa.edu.au/__data/assets/image/0018/23526/faculty-schoolslist-arrow.gif) no-repeat top left; }
+
+
+
+.bodycontents .maincopy h3.landing-title-events {
+    height:0 !important;
+    overflow:hidden !important;
+    padding:13px 0 0 !important;
+    margin: 0.6em 0;
+    background: url(http://www.ecm.uwa.edu.au/__data/assets/image/0019/120466/landing-title-events.gif) no-repeat;
+}
+
+.landing-icon-left {
+    float: left;
+    clear: left;
+    margin: 0 0 1.2em 0;
+}
+.landing-icon49-copy {
+    margin: 0 0 1em 49px;
+    padding-left: 1em;
+}
