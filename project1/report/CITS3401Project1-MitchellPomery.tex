@@ -49,7 +49,7 @@ Project 1}
 21130887}
 \maketitle
 \abstract{
-This document outlines the design choicies for a data cude created to assist Medicare, an Australian Healthcare Supporter, in providing the best service possible.
+This document outlines the design choices for a data cube created to assist Medicare, an Australian Health-care Supporter, in providing the best service possible.
 The original requirements were incomplete and so assumptions were made where necessary.
 }
 %\newpage
@@ -58,8 +58,8 @@ The original requirements were incomplete and so assumptions were made where nec
 
 \section*{Introduction}
 \paragraph{}
-Medicare Australia wishes to use data from it's previous years to assist in making decisions to improve their services, analyse expenditure and detect individuals who are abusing their system.
-Each centre stores information about visits in an Online Transaction Prorocessing (OLTP) database, these are then collated at a state and country wide level.
+Medicare Australia wishes to use data from it's previous years to assist in making decisions to improve their services, analyze expenditure and detect individuals who are abusing their system.
+Each center stores information about visits in an Online Transaction Processing (OLTP) database, these are then collated at a state and country wide level.
 The patient, doctor, treatment and prescriptions for each visit are stored.
 This document outlines the data cube designed facilitate in the decision making processes of Medicare.
 
@@ -76,7 +76,7 @@ The authors' interpretation of the requirements are listed below.
 	\hline
 		Location & State or Territory in Australia \\
 	\hline
-		Centre & 3 Centres in each State/Territory \\
+		Center & 3 Centers in each State/Territory \\
 	\hline
 		Patient &  \\
 	\hline
@@ -95,14 +95,14 @@ The authors' interpretation of the requirements are listed below.
 
 \subsection*{Assumptions}
 \paragraph{}
-Assumptions were made where the requirements were incomplete or insufficient, to simplify the schema and keep it managable, and to make the scenario as realistic as possible.
+Assumptions were made where the requirements were incomplete or insufficient, to simplify the schema and keep it manageable, and to make the scenario as realistic as possible.
 % TODO: Assumptions
 \begin{enumerate}
 	\item Only a small number of patients, diseases, physicians, hospitals, specialists and pathology clinics exist.
-	\item Doctors are irellevant, only the name of the clinic matters.
+	\item Doctors are irrelevant, only the name of the clinic matters.
 	\item Patients will always visit a General Physician before seeing a specialist.
 	\item The cost of treatment, as well as the person or company who pays for the treatment is irrelevant.
-	\item People only visit medical centres in their own state.
+	\item People only visit medical centers in their own state.
 	\item All data is complete and easily available in the desired format.
 \end{enumerate}
 
@@ -112,9 +112,9 @@ A star schema was designed to make the data cube simpler, and the queries faster
 The date of the visit was broken into two dimensions, Year and Quarter, to allow for comparison between different years.
 This allows us to see which diseases reoccur at high rates each year, and when they occur.
 \paragraph{}
-The requirements also state that Medicare is interested in using this data for analyzing several areas of their bussiness.
-They would like to be able to determine which patients frequently return for diagnosis and perscriptions and which doctors frequently refer patients to the same specialists.
-The discovery of trends in diseases and referrals, and the discovery of outliers in patients, medical centres and treatment times would be benificial for Medicare.
+The requirements also state that Medicare is interested in using this data for analyzing several areas of their business.
+They would like to be able to determine which patients frequently return for diagnosis and prescriptions and which doctors frequently refer patients to the same specialists.
+The discovery of trends in diseases and referrals, and the discovery of outliers in patients, medical centers and treatment times would be beneficial for Medicare.
 
 \begin{figure}[ht!]
 	\centering
