@@ -90,9 +90,9 @@ for line in input:
 	table[quarters.index(data[1])][years.index(data[0])] += 1
 print string.replace(str(table), "], ", "]\n ")
 input.close()
-
-
 print ""
+
+
 print "Breakdown By State"
 print string.join(years,"|")
 print string.join(quarters,"\n")
@@ -112,7 +112,6 @@ for state in states:
 	input.close()
 print ""
 
-print ""
 print "Diseases Per Year"
 print string.join(years,"|")
 print string.join(diseases,"\n")
@@ -125,6 +124,38 @@ for line in input:
 		if data[i] == "":
 			data[i] = "none"
 	table[diseases.index(data[6])][years.index(data[0])] += 1
+print string.replace(str(table), "], ", "]\n ")
+input.close()
+print ""
+
+print "Visits per Clinic Per Year"
+print string.join(years,"|")
+print string.join(clinics,"\n")
+table = [[0 for i in range(len(years))] for i in range(len(clinics))]
+input = open("generateddata.csv", "r")
+for line in input:
+	data = string.split(line, ",")
+	for i in range(len(data)):
+		data[i] = string.strip(data[i])
+		if data[i] == "":
+			data[i] = "none"
+	table[clinics.index(data[4])][years.index(data[0])] += 1
+print string.replace(str(table), "], ", "]\n ")
+input.close()
+print ""
+
+print "Visits per Patient Per Year"
+print string.join(years,"|")
+print string.join(people,"\n")
+table = [[0 for i in range(len(years))] for i in range(len(people))]
+input = open("generateddata.csv", "r")
+for line in input:
+	data = string.split(line, ",")
+	for i in range(len(data)):
+		data[i] = string.strip(data[i])
+		if data[i] == "":
+			data[i] = "none"
+	table[people.index(data[2])][years.index(data[0])] += 1
 print string.replace(str(table), "], ", "]\n ")
 input.close()
 print ""

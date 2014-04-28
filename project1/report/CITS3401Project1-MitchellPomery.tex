@@ -49,7 +49,7 @@ Project 1}
 21130887}
 \maketitle
 \abstract{
-This document outlines the design choicies for a data cude created to assist Medicare in giving the best service possible.
+This document outlines the design choicies for a data cude created to assist Medicare, an Australian Healthcare Supporter, in providing the best service possible.
 The original requirements were incomplete and so assumptions were made where necessary.
 }
 %\newpage
@@ -72,19 +72,21 @@ The authors' interpretation of the requirements are listed below.
 \centering
 \begin{tabular}{|l|l|l|}
 	\hline
-		\textbf{Object} & \textbf{Properties} & \textbf{Restrictions} \\
+		\textbf{Object} & \textbf{Restrictions} \\
 	\hline
-		Location && State or Territory in Australia \\
+		Location & State or Territory in Australia \\
 	\hline
-		Centre && 3 Centres in each State/Territory \\
+		Centre & 3 Centres in each State/Territory \\
 	\hline
-		Tests && Only one test will occur per visit. \\
+		Patient &  \\
 	\hline
-		Diseases && Only one disease will be diagnosed per visit maximum. \\
+		Tests & Only one test will occur per visit. \\
 	\hline
-		Store & Interior Design & 3 restaurants in each country \\
-		& Facility Type & 3 different interior designs \\
-		&& Facilities are `dine in', `drive through' and `both' \\
+		Diseases & Only one disease will be diagnosed per visit maximum. \\
+	\hline
+		Referrals & Occur when a disease has been diagnosed. \\
+	\hline
+		Date & 2006 to 2011, broken down into quarters. \\
 	\hline
 \end{tabular}
 \caption{Requirements}
@@ -101,11 +103,19 @@ Assumptions were made where the requirements were incomplete or insufficient, to
 	\item Patients will always visit a General Physician before seeing a specialist.
 	\item The cost of treatment, as well as the person or company who pays for the treatment is irrelevant.
 	\item People only visit medical centres in their own state.
+	\item All data is complete and easily available in the desired format.
 \end{enumerate}
 
 \section*{Warehouse Schema}
 \paragraph{}
 A star schema was designed to make the data cube simpler, and the queries faster than a snowflake schema or fact constellation.
+The date of the visit was broken into two dimensions, Year and Quarter, to allow for comparison between different years.
+This allows us to see which diseases reoccur at high rates each year, and when they occur.
+\paragraph{}
+The requirements also state that Medicare is interested in using this data for analyzing several areas of their bussiness.
+They would like to be able to determine which patients frequently return for diagnosis and perscriptions and which doctors frequently refer patients to the same specialists.
+The discovery of trends in diseases and referrals, and the discovery of outliers in patients, medical centres and treatment times would be benificial for Medicare.
+
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=15cm]{schema}
@@ -116,7 +126,7 @@ A star schema was designed to make the data cube simpler, and the queries faster
 \section*{Prototype Warehouse}
 \subsection*{Data Generation}
 \paragraph{}
-	Prototyape data was generated using the Python script \texttt{gendata.py}.
+	Prototype data was generated using the Python script \texttt{gendata.py}.
 	It takes sets of words for diseases, clinics, names, medical tests and states, creates random people and outputs information about their visits from 2006 to 2011.
 	An attempt has been made to make it reflect reality, by restricting the average persons visits to a couple of times a year, charging based on the location visited and making a small percentage of users abuse the system each year.
 
