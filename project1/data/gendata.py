@@ -101,14 +101,17 @@ def generateVisit(state):
 
 def generateData(number):
 	output = open('generateddata.csv', 'w')
+	peopledata = open('peopledata.csv', 'w')
+	medicaldata = open('medicaldata.csv', 'w')
 	#print str(medicalcentres)
 	
-	people = []
-	for i in range(number):
-		people.append(generatePerson())
-	#print str(people)
+	for state in medicalcentres:
+		for mc in state:
+			medicaldata.write(mc + "\n")
 	
-	for person in people:
+	for i in range(number):
+		person = generatePerson()
+		peopledata.write(str(person[0]) + "\n")
 		for year in range(2006, 2012):
 			for quarter in ["Q1", "Q2", "Q3", "Q4"]:
 				if random.random() > 0.99:
@@ -118,9 +121,11 @@ def generateData(number):
 				while visitcount > 0:
 					visit = generateVisit(str(person[2]))
 					#print str(person) + " " + str(visit)
-					output.write(str(year) + ", " + str(quarter) + ", " + str(person[0]) + ", " + str(person[1]) + ", " + str(person[2]) + ", " + str(visit[0]) + ", " + str(visit[1]) + ", " + str(visit[2]) + ", " + str(visit[3]) + ", " + str(visit[4]) + ", " + str(visit[5]) + "\n")
+					output.write(str(year) + ", " + str(quarter) + ", " + str(person[0]) + ", " + str(person[2]) + ", " + str(visit[0]) + ", " + str(visit[1]) + ", " + str(visit[2]) + ", " + str(visit[3]) + ", " + str(visit[4]) + ", " + str(visit[5]) + "\n")
 					visitcount -= 1
 	output.close()
+	peopledata.close()
+	medicaldata.close()
 
 if __name__ == "__main__":
 	number = 250
