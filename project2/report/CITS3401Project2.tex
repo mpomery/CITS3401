@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{url}
+\usepackage{verbatim}
+\usepackage[framemethod=tikz]{mdframed}
 
 \setlength{\parindent}{12pt}
 
@@ -23,6 +25,16 @@
 			\includegraphics[width=15cm]{#1}
 		\end{center}
 	}
+}
+
+\newenvironment{wekaconsole}[1][]{
+	\paragraph \noindent
+	\texttt{#1}
+	\begin{mdframed}
+	\small
+	\ttfamily
+}{
+	\end{mdframed}
 }
 
 \begin{document}
@@ -44,7 +56,7 @@ Project 2}
 The project specified that we are to develop several classifiers for wines using different classification methods to compare how machine learning performs compared to experts when rating different wines.
 The initial data is split into two groups, red wine and white wine, available from the UCI Machine Learning Repository\cite{datasetlocation}.
 Data analysis was done using Weka\cite{weka}, data mining software created by Machine Learning Group at the University of Waikato, New Zealand.
-Specifically, we are using the classification tools in Weka Explorer for analysis.
+Specifically, we are using the classification and clustering tools in Weka Explorer for analysis.
 
 \section*{Data Preprocessing}
 \paragraph \indent
@@ -53,12 +65,29 @@ This tool was used to output two datasets, dataset 1 (\texttt{ds1-red.arff} and 
 Dataset 1 contains all the information that was in the original data, and is used to create the classifier.
 The fields in this dataset are numeric, apart from the quality which is nominal, making it is possible to group wines that receive the same rankings in Weka.
 Dataset 2 is contains all the numerical information from the original data and does not contain any information about the rankings from the wine tasters.
-The aim is to cluster these so that the wines fall into groups similar to the quality attribute of dataset 1, and then create classifiers for this dataset to rate the wine.
+The aim is to cluster these so that the wines fall into groups similar to the quality attribute of dataset 1, and compare .
 
 \section*{Clustering}
 \paragraph \indent
 Dataset 2 requires clustering before it can be classified as the quality attribute of each data point has been removed.
+Simple K means clustering was used and after experimenting, fixed acidity, volatile acidity, citric acid, and density were ignored for the red wine data.
+This gave a roughly similar distrubution to the qualities found in the red wine dataset prior to .
 
+\begin{wekaconsole}[Red Wine]
+\begin{verbatim}
+Scheme:weka.clusterers.SimpleKMeans -N 6 -A
+"weka.core.EuclideanDistance -R first-last" -I 500 -S 10
+
+Clustered Instances
+
+0       632 ( 40%)
+1       128 (  8%)
+2       196 ( 12%)
+3        32 (  2%)
+4       339 ( 21%)
+5       272 ( 17%)
+\end{verbatim}
+\end{wekaconsole}
 
 \section*{Classification}
 
