@@ -1,9 +1,10 @@
 \documentclass[a4paper,12pt,openany]{report}
 
 \usepackage{titling}
-\usepackage[margin=0.75in,headsep=0.5in,footskip=0.5in]{geometry}
+\usepackage[margin=1in,headsep=0.5in,footskip=0.5in]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{url}
 
 \setlength{\parindent}{12pt}
 
@@ -47,23 +48,38 @@ Specifically, we are using the classification tools in Weka Explorer for analysi
 
 \section*{Data Preprocessing}
 \paragraph \indent
-The initial data provided was in two files, \texttt{winequality-red.csv} and \texttt{winequality-white.csv}, that where converted to Weka's ARFF file format using an online conversion tool\cite{csv2arff}.
+The initial data provided was in two files, \texttt{winequality-red.csv} and \texttt{winequality\-white.csv}, that where converted to Weka's ARFF file format using an online conversion tool\cite{csv2arff}.
 This tool was used to output two datasets, dataset 1 (\texttt{ds1-red.arff} and \texttt{ds1-white.arff}) and dataset 2 (\texttt{ds2-red.arff} and \texttt{ds2-white.arff}).
 Dataset 1 contains all the information that was in the original data, and is used to create the calssifier.
 The feilds in this dataset are numeric, apart from the quality which is nominal, making it is possible to group wines that recieve the same rankings in Weka.
 Dataset 2 is contains all the numerical information from the original data and does not contain any information about the rankings from the wine tasters.
-The aim is to create classifiers for this dataset to rate the wine.
+The aim is to cluster these so that the wines fall into groups similar to the quality attribute of dataset 1, and then create classifiers for this dataset to rate the wine.
+
+\section*{Clustering}
+\paragraph \indent
+Dataset 2 requires clustering before it can be classified as the quality attribute of each data point has been removed.
+
 
 \section*{Classification}
 
+\subsection*{Naive Bayesian}
+\paragraph \indent
+Naive Bayes classifiers are simple to impliment, fast, and are used in real world situations such as spam filters.
+They work by looking at the traits of an object, and using each individual trait to determine how likely it is that the object falls into a specific classification.
+Their downside is that they assume the presence or absense of particular traits has no affect on the classification.
+
+\paragraph \indent
+In Weka, we used 
+
+\subsubsection*{Dataset 1}
+
+\subsubsection*{Dataset 2}
+
 \subsection*{Support Vector Machine}
 \paragraph \indent
-\cite{priorpaper}
+Support Vector Machine's
 
 \subsection*{Neural Network}
-\paragraph \indent
-
-\subsection*{Naive Bayesian}
 \paragraph \indent
 
 
@@ -78,6 +94,8 @@ The aim is to create classifiers for this dataset to rate the wine.
 	\bibitem{csv2arff}Online CSV to ARFF conversion tool. 2014. Online CSV to ARFF conversion tool. [ONLINE] Available at: http://slavnik.fe.uni-lj.si/markot/csv2arff/csv2arff.php. [Accessed 01 June 2014].
 
 	\bibitem{priorpaper}P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.
+
+	\bibitem{naivebayes}Rennie, J.; Shih, L.; Teevan, J.; Karger, D. (2003). "Tackling the poor assumptions of Naive Bayes classifiers". ICML.
 
 \end{thebibliography}
 
