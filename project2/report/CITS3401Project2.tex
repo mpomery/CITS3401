@@ -40,22 +40,19 @@ Project 2}
 
 \section*{Introduction}
 \paragraph \indent
-The project specified that we are to compare how machine learning performs compared to experts when rating different wines.
-The initial data is split into two groups, red wine and white wine.
-The dataset is available from the UCI Machine Learning Repository\cite{datasetlocation}.
-
-\paragraph \indent
-Data analysis is done using Weka\cite{weka}, data mining software created by Machine Learning Group at the University of Waikato.
+The project specified that we are to develop several classifiers for wines using different classification methods to compare how machine learning performs compared to experts when rating different wines.
+The initial data is split into two groups, red wine and white wine, available from the UCI Machine Learning Repository\cite{datasetlocation}.
+Data analysis was done using Weka\cite{weka}, data mining software created by Machine Learning Group at the University of Waikato, New Zealand.
+Specifically, we are using the classification tools in Weka Explorer for analysis.
 
 \section*{Data Preprocessing}
 \paragraph \indent
-The initial data provided was in two files, \texttt{winequality-red.csv} and \texttt{winequality-white.csv}, that where converted to Weka's ARFF file format using an online conversion tool.
+The initial data provided was in two files, \texttt{winequality-red.csv} and \texttt{winequality-white.csv}, that where converted to Weka's ARFF file format using an online conversion tool\cite{csv2arff}.
 This tool was used to output two datasets, dataset 1 (\texttt{ds1-red.arff} and \texttt{ds1-white.arff}) and dataset 2 (\texttt{ds2-red.arff} and \texttt{ds2-white.arff}).
 Dataset 1 contains all the information that was in the original data, and is used to create the calssifier.
 The feilds in this dataset are numeric, apart from the quality which is nominal, making it is possible to group wines that recieve the same rankings in Weka.
-
-\paragraph \indent
 Dataset 2 is contains all the numerical information from the original data and does not contain any information about the rankings from the wine tasters.
+The aim is to create classifiers for this dataset to rate the wine.
 
 \section*{Classification}
 
