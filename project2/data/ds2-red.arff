@@ -1,4 +1,4 @@
-@relation whatever
+@relation ds2red
 
 @attribute "fixed acidity" numeric
 @attribute "volatile acidity" numeric
