@@ -149,7 +149,7 @@ Instances:    4898
 Attributes:   12
 Test mode:10-fold cross-validation
 
-orrectly Classified Instances        2168               44.263  %
+Correctly Classified Instances        2168               44.263  %
 Incorrectly Classified Instances      2730               55.737  %
 Kappa statistic                          0.2169
 Mean absolute error                      0.1721
@@ -199,6 +199,32 @@ Total Number of Instances             4898
 \end{verbatim}
 \end{wekaconsole}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection*{Support Vector Machine}
 \paragraph \indent
 Support Vector Machine's are learning models and algorithms that analyze data and find patterns, then use the patterns for classification of data.
@@ -206,10 +232,106 @@ Unlike the Naive Bayesian classifier, the support vector machine is a non-probab
 This means that each different category is separated by as large a gap as possible.
 
 \subsubsection*{Dataset 1}
-\paragraph \indent
+\begin{wekaconsole}[Red Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1
+-W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007
+-E 1.0"
+Relation:     ds1red
+Instances:    1599
+Attributes:   12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances         933               58.349  %
+Incorrectly Classified Instances       666               41.651  %
+Kappa statistic                          0.2905
+Mean absolute error                      0.2349
+Root mean squared error                  0.3301
+Relative absolute error                109.5032 %
+Root relative squared error            100.851  %
+Total Number of Instances             1599
+\end{verbatim}
+\end{wekaconsole}
+
+\begin{wekaconsole}[White Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1
+-W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007
+-E 1.0"
+Relation:     ds1white
+Instances:    4898
+Attributes:   12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances        2550               52.0621 %
+Incorrectly Classified Instances      2348               47.9379 %
+Kappa statistic                          0.1905
+Mean absolute error                      0.2137
+Root mean squared error                  0.3168
+Relative absolute error                110.7083 %
+Root relative squared error            101.9859 %
+Total Number of Instances             4898     
+\end{verbatim}
+\end{wekaconsole}
 
 \subsubsection*{Dataset 2}
-\paragraph \indent
+\begin{wekaconsole}[Red Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1
+-W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007
+-E 1.0"
+Relation:     ds2red_clustered-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1599
+Attributes:   12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances        1506               94.1839 %
+Incorrectly Classified Instances        93                5.8161 %
+Kappa statistic                          0.9215
+Mean absolute error                      0.2238
+Root mean squared error                  0.3128
+Relative absolute error                 89.7115 %
+Root relative squared error             88.5878 %
+Total Number of Instances             1599     
+\end{verbatim}
+\end{wekaconsole}
+
+\begin{wekaconsole}[White Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1
+-W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007
+-E 1.0"
+Relation:   ds2white_clustered-weka.filters.unsupervised.attribute.Remove-R1
+Instances:  4898
+Attributes: 12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances        4711               96.1821 %
+Incorrectly Classified Instances       187                3.8179 %
+Kappa statistic                          0.9545
+Mean absolute error                      0.2047
+Root mean squared error                  0.3021
+Relative absolute error                 85.1906 %
+Root relative squared error             87.1569 %
+Total Number of Instances             4898
+\end{verbatim}
+\end{wekaconsole}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection*{Neural Network}
 \paragraph \indent
@@ -218,10 +340,82 @@ The neurons are connected together in a network and work simultaneously , rather
 Real world applications for neural networks include speech and handwriting recognition.
 
 \subsubsection*{Dataset 1}
-\paragraph \indent
+\begin{wekaconsole}[Red Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Relation:     ds1red
+Instances:    1599
+Attributes:   12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances         933               58.349  %
+Incorrectly Classified Instances       666               41.651  %
+Kappa statistic                          0.2905
+Mean absolute error                      0.2349
+Root mean squared error                  0.3301
+Relative absolute error                109.5032 %
+Root relative squared error            100.851  %
+Total Number of Instances             1599
+\end{verbatim}
+\end{wekaconsole}
+
+\begin{wekaconsole}[White Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Relation:     ds1white
+Instances:    4898
+Attributes:   12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances        2550               52.0621 %
+Incorrectly Classified Instances      2348               47.9379 %
+Kappa statistic                          0.1905
+Mean absolute error                      0.2137
+Root mean squared error                  0.3168
+Relative absolute error                110.7083 %
+Root relative squared error            101.9859 %
+Total Number of Instances             4898     
+\end{verbatim}
+\end{wekaconsole}
 
 \subsubsection*{Dataset 2}
-\paragraph \indent
+\begin{wekaconsole}[Red Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Relation:     ds2red_clustered-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1599
+Attributes:   12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances        1506               94.1839 %
+Incorrectly Classified Instances        93                5.8161 %
+Kappa statistic                          0.9215
+Mean absolute error                      0.2238
+Root mean squared error                  0.3128
+Relative absolute error                 89.7115 %
+Root relative squared error             88.5878 %
+Total Number of Instances             1599     
+\end{verbatim}
+\end{wekaconsole}
+
+\begin{wekaconsole}[White Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Relation:     ds2white_clustered-weka.filters.unsupervised.attribute.Remove-R1
+Instances:  4898
+Attributes: 12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances        4711               96.1821 %
+Incorrectly Classified Instances       187                3.8179 %
+Kappa statistic                          0.9545
+Mean absolute error                      0.2047
+Root mean squared error                  0.3021
+Relative absolute error                 85.1906 %
+Root relative squared error             87.1569 %
+Total Number of Instances             4898
+\end{verbatim}
+\end{wekaconsole}
 
 \section*{Results}
 \paragraph \indent
