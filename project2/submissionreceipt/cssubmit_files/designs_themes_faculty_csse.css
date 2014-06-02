@@ -1,0 +1,66 @@
+/*
+  Running MySource Matrix
+  Developed by Squiz - http://www.squiz.net
+  MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
+  Page generated: 13 April 2010 10:29:44
+*/
+
+
+/*** UWA Faculty - Engineering, Computing and Mathematics ***/
+
+#pagecontainer .topbannerunderlay { background-image: url(http://www.ecm.uwa.edu.au/__data/assets/image/0015/43143/ecm-uwa.jpg); }
+
+#pagecontainer .topbannercopy { border-left: 15px solid #ce7019; }
+
+#headercontainer { border-top: 3px solid #ce7019; }
+
+#headercontainer .pagetitle { padding: 32px 0 0 0 !important; margin: 24px 0 0 0 !important;  background-image: url(/newcss/graphics/school-csse.gif) !important; width:560px !important; }
+
+/*** Faculties & centres list */
+
+.facultylist {
+    width: 231px;
+    background-color: #fbfaf4;
+}
+.facultylist .facultylisthead {
+    background-color: #f6f2e4;
+    padding: 0.65em 0 0.65em 14px;
+    border-top: 6px solid #ce7019;
+    border-bottom: 1px solid white;
+    color: #414141;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.facultylist .facultylisting {
+    border-right: 12px solid #f6f2e4;
+    margin: 1px 2px 1px 0;
+    padding: 0.5em 12px 2em 8px;
+    font-size: 93%;
+    height: 1%;
+}
+.facultylist ul { padding: 0; margin: 0; list-style: none; }
+.facultylist ul li { display: block; list-style: none; margin: 0; padding: 0; color: #595541; }
+.bodycontents .facultylist ul li a { display: block; padding: 0 16px 0 10px; font-weight: normal; color: #0864a5; text-decoration: none; }
+.facultylist ul li a:hover { text-decoration: underline; }
+.facultylist ul li a.pageon { color: #746114; }
+
+.facultylist ul { padding: 0; margin: 0; list-style: none; }
+.facultylist ul li { display: block; list-style: none; margin: 0; padding: 0; color: #595541; }
+.bodycontents .facultylist ul li a { display: block; padding: 0 16px 0 10px; font-weight: normal; color: #0864a5; text-decoration: none; }
+.facultylist ul li a:hover { text-decoration: underline; }
+.facultylist ul li a.pageon { color: #746114; }
+
+.facultylist ul {
+    padding: 0 0 0 4px;
+    margin: 0;
+    list-style: none;
+}
+.facultylist ul li {
+    padding: 5px 0 5px 5px;
+    background: url(http://www.ecm.uwa.edu.au/__data/assets/image/0014/43160/faculty-schoolslist-arrow.gif) no-repeat 3px 0;
+}
+
+#bodycontainer #pagecontent dl.list-prize-winners dt { font-weight: 800;
+    font-size: 1.25em; /* 15/12 */
+    color: #00497b; }

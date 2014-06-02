@@ -1,0 +1,4580 @@
+/*
+ * The University of Western Australia
+ * Common CSS
+ */
+
+
+/*** HTML elements & pseudo-elements ***/
+html, table {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 76%;
+    color: #464646;
+}
+
+/* edit 2008.09.15
+   Guan Ming Teo
+
+   Fixing Page count Matrix report
+   Overriding /__lib/web/css/edit.css by specificity */
+html body { font-size: 76%; }
+table.sq-backend-section-table td { font-size: 100.01%; }
+/* end edit 2008.09.15 */
+
+a {
+    color: #0864a5;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+hr {
+    color:#c0c0c0;
+    background-color:#bfbfbf;
+    margin: 0 0 15px 0;
+    height: 1px;
+    border: none;
+}
+hr.dotted {
+    background: transparent url(/newcss/mysource_files/horiz-dots-bground-rpt.gif) repeat-x 0 0;
+    color: #bfbfbf;
+}
+
+.separator { height: 1px;
+    overflow: hidden;
+    background: transparent url(/newcss/mysource_files/horiz-dots-bground-rpt.gif) repeat-x 0 0;
+    font-size: 1px; }
+
+/* semi-generic */
+.center, 
+.text-center { text-align: center; }
+.left, 
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.faux-strong { font-weight: 800; }
+.faux-em { font-style: italic; }
+/* end semi-generic */
+
+hr.even {
+    margin: 8px 0px;
+}  
+
+img {
+    border: none;
+}
+p {
+    margin: 0 0 20px 0;
+}
+
+/* Fix for scrolling WYSIWYG in simple edit mode */
+div[contentEditable="true"]{
+overflow: scroll;
+}
+
+/*** Main layout directives ***/
+/* Derived in parts from:
+ * - In Search of the Holy Grail by Matthew Levine
+ *      (http://www.alistapart.com/articles/holygrail)
+ * - The Jello Mold wrapper concept of Mike Purvis
+ *      (http://www.positioniseverything.net/articles/jello.html)
+ */
+
+/* Grail containers */
+.grailcolumn {
+    position: relative;
+    float: left;
+}
+#bodycontainer {
+    margin: 0;
+    padding-left: 182px;
+    min-width: 182px;
+}
+#headercontainer, #footercontainer {
+    margin-left: -182px;
+    min-width: 780px;
+}
+#footercontainer {
+    clear: both;
+}
+#pagecontainer {
+    width: 100%;
+}
+#navcontainer {
+    width: 182px;
+    margin-left: -100%;
+    left: 0;
+}
+#bodycontainer > #navcontainer, 
+#ie8up #navcontainer, 
+#ie7 #navcontainer {
+    left: -182px;
+}
+#pagecontainer, #navcontainer {
+    padding: 0 0 20px 0;
+}
+
+/* Jello mold containers */
+.outerwrapper {
+    padding: 0 390px 0 390px;
+    margin: 0;
+}
+.expander {
+    margin: 0 -390px 0 -390px;
+    min-width: 780px;
+    position: relative;
+}
+* html .expander {
+    height: 0;
+}
+.wrapper {
+    width: 100%;
+}
+.centreouterwrapper {
+    padding: 0 299px 0 299px;
+    margin: 0;
+}
+.centreexpander {
+    margin: 0 -299px 0 -299px;
+    min-width: 598px;
+    position: relative;
+}
+* html .centreexpander {
+    height: 0;
+}
+.centrewrapper {
+    overflow: hidden;
+}
+.sizer {
+    width: 100%;
+    max-width: 420px;}
+
+
+/*** The main, authored content area, .bodycontents ***/
+.bodycontents a:link {
+    color: #0864a5;
+    text-decoration: underline;
+}
+.bodycontents a:visited {
+    color: #746114;
+    text-decoration: underline;
+}
+.bodycontents a:hover {
+    color: #0864a5;
+    text-decoration: none;
+}
+.bodycontents a:active {
+    color: #0864a5;
+    text-decoration: underline;
+}
+
+
+/*** Within the header block, #headercontainer ***/
+#headercontainer {
+    text-align: left;
+    border-top: 3px solid #7ac4d9;
+    border-bottom: 1px solid #c4c4c4;
+    background: #000000 url(/newcss/mysource_files/uwa-searchbar-bg.gif) repeat-x bottom left;
+}
+#headercontainer .mainheaderouter {
+    border-top: 1px solid #000000;
+    width: 100%;
+}
+.mainheaderouter .mainheader {
+    min-height: 76px;
+    height: auto !important;
+    height: 76px;
+}
+.mainheader .logo {
+    width: 210px;
+    width/**/:/**/ 200px;
+    height: 76px;
+    height/**/:/**/ 65px;
+    float: left;
+    padding: 11px 0 0 10px;
+}
+.mainheader .rightinformation {
+    float: right;
+    text-align: right;
+    width: 565px;
+    width/**/:/**/ 555px;
+    padding-right: 10px;
+}
+.rightinformation .quicklinks {
+    text-align: left;
+    background: #363636 url(/newcss/mysource_files/uwa-quicklinks-leftcorner.gif) no-repeat bottom left;
+    float: right;
+    position: relative;
+}
+.rightinformation .quicklinks a {
+    display: block;
+    width: 76px;
+    width/**/:/**/ 69px;
+    height: 16px;
+    height/**/:/**/ 15px;
+    padding: 1px 0 0 7px;
+    background: url(/newcss/mysource_files/uwa-quicklinks-rightcorner.gif) no-repeat bottom right;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e2e2e2;
+    font-size: 10px;
+    text-decoration: none;
+}
+.rightinformation .quicklinks a:hover {
+    text-decoration: underline;
+}
+.qlopenouter {
+    display: none;
+    position: absolute;
+    top: 1px;
+    right: 80px;
+    background: #363636;
+    padding-right: 8px;
+}
+.qlopenouter .qlopeninner {
+    height: 16px;
+    /*width: 495px;*/
+    background: #363636 url(/newcss/mysource_files/uwa-quicklinks-leftcorner.gif) no-repeat bottom left;
+    padding-left: 10px;
+}
+.qlopenouter .qlopeninner a {
+    /*display: block;
+    height: 12px;*/
+    width: auto;
+    /*float: left;*/
+    background: url(/newcss/mysource_files/uwa-quicklinks-linkarrow.gif) no-repeat top left;
+    padding: 1px 16px 0 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e2e2e2;
+    font-size: 10px;
+    text-decoration: none;
+}
+.qlopenouter .qlopeninner a:hover {
+    text-decoration: underline;
+}
+#headercontainer .pagetitle {
+    display: block;
+    text-align: right;
+    padding-top: 19px;
+    font-family: "Trajan Pro", "Times New Roman", serif !important;
+    height: 0px !important;
+    padding: 17px 0 0 0 !important;
+    margin: 36px 0 0 0 !important;
+    overflow: hidden !important;
+    float: right;
+    background: url(/newcss/mysource_files/excellence.gif) no-repeat top right !important;
+    width: 553px !important;
+}
+.topbannercopy {
+    border-left: 15px solid #7AC4D9;
+}
+#headercontainer {
+    border-top: 3px solid #7AC4D9;
+}
+#headercontainer .searchbar {
+    height: 35px;
+    height/**/:/**/ 29px;
+    padding: 6px 0 0 16px;
+}
+.searchbar .formblock {
+    float: right;
+    padding-right: 10px;
+}
+.searchbar .formblock form {
+    margin: 0;
+    padding: 0;
+}
+.searchbar .formblock input.searchbox { width: 145px; font-size: 11px; color: #3a3a3a; margin-right: 9px; }
+.searchbar .formblock input.words {
+    width: 145px;
+    font-size: 11px;
+    color: #3a3a3a;
+    margin-right: 9px;
+}
+.searchbar .formblock input.gosearch {
+    width: 33px;
+    height: 21px;
+}
+.searchbar .formblock select {
+    font-size: 11px;
+    color: #3a3a3a;
+    margin-right: 6px;
+}
+.searchbar .formblock label {
+    display: none;
+}
+.searchbar .searchlinks {
+    padding-top: 4px;
+    margin-left: -8px;
+}
+.searchbar a.nav {
+    padding-top: 2px;
+    padding-left: 15px;
+    padding-right: 10px;
+    width: 170px;
+    width/**/:/**/ 135px;
+    font-weight: bold;
+    color: #7c7c7c;
+    background: url(/newcss/mysource_files/arrow-linknav-grey.gif) no-repeat 0px 3px;
+    text-decoration: none;
+    display: inline }
+.searchbar a.nav:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+#footercontainer {
+    font-size: 90%;
+    border-top: 1px solid #c4c4c4;
+    background: url(/newcss/mysource_files/footer-bgrepeat.jpg) repeat-x top left;
+}
+#footercontainer .footercontent {
+    padding: 27px 0 0 2px;
+    min-height: 215px;
+    height: auto !important;
+    height: 215px;
+}
+#footercontainer .footercontent#homepage {
+    padding: 15px 0 0 15px;
+}
+.footercontent a {
+    color: #5c5c5c;
+    text-decoration: none;
+}
+.footercontent a:hover {
+    color: #5c5c5c;
+    text-decoration: underline;
+}
+.footercontent .hpleftinfo {
+    float: left;
+    margin-right: 65px;
+}
+.footercontent .hprightinfo {
+    float: left;
+}
+.footercontent .footercol1 {
+    float: left;
+    width: 180px;
+    width/**/:/**/ 138px;
+    padding: 0 24px 0 18px;
+}
+.footercontent .footercol1title {
+    padding: 0 0 8px 0;
+    color: #5c5c5c;
+    font-size: 140%;
+    font-weight: normal;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.footercontent .footercol {
+    float: left;
+    width: 176px;
+    width/**/:/**/ 137px;
+    padding: 0 16px 0 23px;
+    border-left: 1px solid #babbba;
+    min-height: 168px;
+    height: auto !important;
+    height: 168px;
+}
+.footercontent ul {
+    margin: 0;
+    padding: 0;
+
+
+
+
+
+
+
+
+
+
+
+
+    list-style: none;
+}
+.footercontent ul li {
+    display: block;
+    list-style: none;
+    background: url(/newcss/mysource_files/arrow-footerlink.gif) no-repeat top left;
+    padding: 0 0 5px 8px;
+    line-height: 120%;
+}
+.footercontent .footercol ul {
+    margin-top: 4px;
+}
+.footercontent .footercol .footerpageinfo {
+    display: none;
+    margin-top: 15px;
+}
+.footercol.lastcol {
+    background: url(/newcss/mysource_files/footer-lastcol-toparrow.gif) no-repeat top left;
+    width: 198px;
+}
+
+/* UWA Core */
+
+/* Main Container */
+
+/*.contentcontainer {
+    background-color: #FFFFFF;
+    display: block;
+}
+.contentcontainer .contentcopy {
+    width: 100%;
+    padding-bottom: 20px;
+}*/
+.leftnav {
+    display: block;
+    float: left;
+    text-align: left;
+    width: 182px;
+    background-color: #FFFFFF;
+    float: left;
+    padding: 32px 0 0 0;
+    height: 1%;
+}
+
+/*#pagecontainer {
+    display: block;
+    margin-left: 182px;
+    position:relative;
+
+}*/
+
+/** html #pagecontainer {
+    display: block;
+    margin-left: 185px;
+    position: relative;
+    height: 1%;
+}*/
+
+/* Navigation Styles */ 
+
+/* First Level */
+.leftnav ul {
+    padding: 0;
+    margin: 0 0 0 8px;
+    width: 194px;
+    width/**/:/**/ 170px;
+    list-style-type: none;
+}
+.leftnav ul li {
+    display: block;
+    width: 170px;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #d7d7d7;
+    color: #0864a5;
+}
+.leftnav ul li a {
+    display: block;
+    padding: 4px 0 4px 18px;
+    margin: 0;
+    font-weight: bold;
+    color: #0864a5;
+    background: url(/newcss/mysource_files/subnav-lvl1-linkarrow.gif) no-repeat 0 6px;
+    text-decoration: none;
+}
+.leftnav ul li a:hover {
+    text-decoration: underline;
+}
+.leftnav ul li a.pageon {
+    color: #746114;
+    background: url(/newcss/mysource_files/subnav-lvl1-linkarrow-ac.gif) no-repeat 0 6px;
+}
+
+/* .leftnav ul li.lastnavitem {
+    background-image: none;
+} */
+
+/* Second Level */
+.leftnav ul ul {
+    padding: 0 0 9px 0;
+    margin: 0 0 15px 17px;
+    width: 172px;
+    width/**/:/**/ 150px;
+    list-style-type: none;
+}
+.leftnav ul ul li {
+    width: 150px;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #0864a5;
+    }
+.leftnav ul ul li a {
+    font-size: 90%;
+    display: block;
+    padding: 5px 0 5px 0;
+    line-height: 13px;
+    font-weight: normal;
+    color: #0864a5;
+    background: url(/newcss/mysource_files/dottedline-lightgrey.gif) repeat-x 0 100%;
+    text-decoration: none;
+}
+.leftnav ul ul li a:hover {
+    text-decoration: underline;
+}
+.leftnav ul ul li a.pageon {
+    color: #746114;
+    font-weight: bold;
+    background: url(/newcss/mysource_files/dottedline-lightgrey.gif) repeat-x 0 100%;
+}
+
+/* Third Level */
+.leftnav ul ul ul {
+    padding: 0 0 5px 0;
+    margin: 0;
+    width: 172px;
+    width/**/:/**/ 148px;
+    list-style-type: none;
+    background: url(/newcss/mysource_files/dottedline-lightgrey.gif) repeat-x 0 100%;
+}
+.leftnav ul ul ul li {
+    width: 148px;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #0864a5;
+    }
+.leftnav ul ul ul li a {
+    display: block;
+    padding: 3px 0 3px 10px;
+    line-height: 13px;
+    font-weight: normal;
+    font-size: 90%;
+    color: #0864a5;
+    background: url(/newcss/mysource_files/subnav-lvl3-linkarrow.gif) no-repeat 0 5px;
+    text-decoration: none;
+}
+.leftnav ul ul ul li a:hover {
+    text-decoration: underline;
+}
+.leftnav ul ul ul li a.pageon {
+    color: #746114;
+    background: url(/newcss/mysource_files/subnav-lvl3-linkarrow.gif) no-repeat 0 5px;
+}
+
+/* Fourth Level */
+.leftnav ul ul ul ul {
+    padding: 3px 0 3px 0;
+    margin: 0 0 0 9px;
+    width: 166px;
+    width/**/:/**/ 142px;
+    list-style-type: none;
+    background: none;
+}
+.leftnav ul ul ul ul li {
+    display: block;
+    width: 142px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #05436f;
+}
+.leftnav ul ul ul ul li a {
+    display: block;
+    padding: 2px 0 2px 10px;
+    font-weight: normal;
+    font-size: 90%;
+    color: #0864a5;
+    background: url(/newcss/mysource_files/subnav-lvl3-linkarrow.gif) no-repeat 0 5px;
+    text-decoration: none;
+}
+.leftnav ul ul ul ul li a:hover {
+    text-decoration: underline;
+}
+.leftnav ul ul ul ul li a.pageon {
+    color: #746114;
+}
+
+
+
+
+
+
+
+
+/* Navigation Styles */ 
+
+/* First Level */
+.leftnav div.nav_level {
+    padding: 0;
+    margin: 0 0 0 8px;
+    width: 194px;
+    width/**/:/**/ 170px;
+}
+.leftnav div.nav_level div.nav_item {
+    display: block;
+    width: 170px;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #d7d7d7;
+    color: #0864a5;
+}
+.leftnav div.nav_level div.nav_item a {
+    display: block;
+    padding: 4px 0 4px 18px;
+    margin: 0;
+    font-weight: bold;
+    color: #0864a5;
+    background: url(/newcss/mysource_files/subnav-lvl1-linkarrow.gif) no-repeat 0 6px;
+    text-decoration: none;
+}
+.leftnav div.nav_level div.nav_item a:hover {
+    text-decoration: underline;
+}
+.leftnav div.nav_level div.nav_item a.pageon {
+    color: #746114;
+    background: url(/newcss/mysource_files/subnav-lvl1-linkarrow-ac.gif) no-repeat 0 6px;
+}
+
+/* Second Level */
+.leftnav div.nav_level div.nav_level {
+    padding: 0 0 9px 0;
+    margin: 0 0 15px 17px;
+    width: 172px;
+    width/**/:/**/ 150px;
+    list-style-type: none;
+}
+.leftnav div.nav_level div.nav_level div.nav_item {
+    width: 150px;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #0864a5;
+    }
+.leftnav div.nav_level div.nav_level div.nav_item a {
+    font-size: 90%;
+    display: block;
+    padding: 5px 0 5px 0;
+    line-height: 13px;
+    font-weight: normal;
+    color: #0864a5;
+    background: url(/newcss/mysource_files/dottedline-lightgrey.gif) repeat-x 0 100%;
+    text-decoration: none;
+}
+.leftnav div.nav_level div.nav_level div.nav_item a:hover {
+    text-decoration: underline;
+}
+.leftnav div.nav_level div.nav_level div.nav_item a.pageon {
+    color: #746114;
+    font-weight: bold;
+    background: url(/newcss/mysource_files/dottedline-lightgrey.gif) repeat-x 0 100%;
+}
+
+/* Third Level */
+.leftnav div.nav_level div.nav_level div.nav_level {
+    padding: 0 0 5px 0;
+    margin: 0;
+    width: 172px;
+    width/**/:/**/ 148px;
+    list-style-type: none;
+    background: url(/newcss/mysource_files/dottedline-lightgrey.gif) repeat-x 0 100%;
+}
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_item {
+    width: 148px;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #0864a5;
+    }
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_item a, .stalk_table a {
+    display: block;
+    padding: 3px 0 3px 10px;
+    line-height: 13px;
+    font-weight: normal;
+    font-size: 90%;
+    color: #0864a5;
+    background: url(/newcss/mysource_files/subnav-lvl3-linkarrow.gif) no-repeat 0 5px;
+    text-decoration: none;
+}
+.leftnav .stalk_container {
+    margin: 0.3em 0 0.6em;
+}
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_item a:hover, .stalk_table a:hover {
+    text-decoration: underline;
+}
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_item a.pageon {
+    color: #746114;
+    background: url(/newcss/mysource_files/subnav-lvl3-linkarrow.gif) no-repeat 0 5px;
+}
+
+/* Fourth Level */
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_level {
+    padding: 3px 0 3px 0;
+    margin: 0 0 0 9px;
+    width: 166px;
+    width/**/:/**/ 142px;
+    list-style-type: none;
+    background: none;
+}
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_level div.nav_item {
+    display: block;
+    width: 142px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #05436f;
+}
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_level div.nav_item a {
+    display: block;
+    padding: 2px 0 2px 10px;
+    font-weight: normal;
+    font-size: 90%;
+    color: #0864a5;
+    background: url(/newcss/mysource_files/subnav-lvl3-linkarrow.gif) no-repeat 0 5px;
+    text-decoration: none;
+}
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_level div.nav_item a:hover {
+    text-decoration: underline;
+}
+.leftnav div.nav_level div.nav_level div.nav_level div.nav_level div.nav_item a.pageon {
+    color: #746114;
+}
+
+
+
+/* Breadcrumb */
+#bodycontainer ol#breadcrumbs {
+    font-size: 0.916666em; /* 11/12 */
+    padding: 11px 0 13px;
+    margin: 0;
+}
+#centrecontainer ol#breadcrumbs { padding-left: 26px; /* == left padding on #pagecontentbox */ }
+
+#bodycontainer ol#breadcrumbs li {
+    display: inline;
+    margin: 0;
+    padding-right: 0.818181em; /* 9/11 */
+    background: url('/newcss/graphics/bullet-discrete.gif') no-repeat 100% 50%;
+    white-space: normal;
+} #ie7 ol#breadcrumbs li, 
+  #ie6down ol#breadcrumbs li {
+    margin-right: 0.272727em; /* 3/11 */
+    padding-right: 0.545454em; /* 6/11 */
+}
+
+
+#bodycontainer ol#breadcrumbs li a { white-space: nowrap; }
+
+#bodycontainer ol#breadcrumbs li.currentpage { padding-right: 0;
+    background-image: none;
+    white-space: nowrap; }
+
+/* Legacy support - can be removed when nobody's caching
+   the old HTML anymore. */
+#bodycontainer div#breadcrumbs {
+    min-height: 33px;
+    min-height/**/:/**/ 16px;
+    height: auto !important;
+    height: 33px;
+    height/**/:/**/ 16px;
+    padding: 11px 20px 11px 0;
+    color: #0864a5;
+    font-size: 90%;
+}
+
+/* Main Content Area */
+.bodycontents {
+    padding: 0;
+    margin-top: 25px;
+    border-left: 1px solid #d7d7d7;
+    }
+* html .contentcontainer#landing .bodycontents {
+    padding: 0;
+    margin-top: 38px;
+    border-left: 1px solid #d7d7d7;
+}
+.upcomingevents .eventitem {
+    padding-bottom: 15px;
+}
+.upcomingevents .eventitem .eventtitle {
+    font-weight: bold;
+}
+.facultyschools .facultytitle {
+    border-top: 6px solid #7ac4d9;
+}
+.facultyschools .listedschools {
+    width: 222px;
+    width/**/:/**/ 196px;
+    padding: 5px 15px 5px 11px;
+    background-color: #fbf9f3;
+    border-right: 14px solid #f5f3ea;
+}
+.facultyschools .listedschools ul {
+    padding: 0 0 0 4px;
+    margin: 0;
+    list-style: none;
+}
+.facultyschools .listedschools ul li {
+    width: 196px;
+    width/**/:/**/ 186px;
+    padding: 5px 0 5px 10px;
+    background: url(/newcss/mysource_files/faculty-schoolslist-arrow.gif) no-repeat top left;
+}
+.facultyschools .listedschools a {
+    text-decoration: none;
+}
+.facultyschools .listedschools a:hover {
+    text-decoration: underline;
+}
+.mainrhs ul.fsnewslist {
+    padding: 0 15px 5px 0;
+    margin: 0;
+    list-style-type: none;
+}
+.mainrhs ul.fsnewslist li {
+    background: url(/newcss/mysource_files/studentstaffnet-list-arrow.gif) no-repeat 0 10px;
+    padding: 5px 20px 0 10px;
+}
+.bodycontents ul.fsnewslist {
+    padding: 5px 15px 5px 0px;
+    margin: 0;
+    list-style-type: none;
+}
+.bodycontents ul.fsnewslist li {
+    background: url(/newcss/mysource_files/studentstaffnet-list-arrow.gif) no-repeat 0 10px;
+    padding: 5px 20px 0 10px;
+}
+.mainrhs ul.fslinklist {
+    margin: 0 0 1em 0;
+    padding: 0;
+    list-style-type: none;
+}
+*html .mainrhs ul.fslinklist {
+    margin: 0 0 0.5em 0;
+    list-style-type: none;
+}
+.bodycontents .mainrhs ul.fslinklist li {
+    background: url(/newcss/mysource_files/rightcol-linkarrow.gif) no-repeat 0 3px;
+    padding: 0 0 0 15px;
+}
+.mainrhs ul.fslinklist a {
+    text-decoration: none;
+}
+.mainrhs ul.fsnewslist a {
+    text-decoration: underline;
+}
+.bodycontents ul.fsnewslist a {
+    text-decoration: underline;
+}
+.mainrhs ul.fslinklist a:hover {
+    text-decoration: underline;
+} 
+.mainrhs ul.fsnewslist a:hover {
+    text-decoration: none;
+}
+.bodycontents ul.fsnewslist a:hover {
+    text-decoration: none;
+}
+.bodycontents .mainrhs h2.fstitle { 
+   font-family: Georgia, "Times New Roman", Times, serif; 
+   text-transform: uppercase; 
+   margin: 0 0 10px 0; 
+   padding: 0 0 10px 0; 
+   border-bottom: 1px solid #d9d9d9;
+   font-size: 140%; 
+   font-weight: normal; 
+   letter-spacing: .2em; 
+   color: #757575; 
+}
+.bodycontents .leftcol h2.eventstitle { 
+   font-family: Georgia, "Times New Roman", Times, serif; 
+   text-transform: uppercase; 
+   margin: 0 0 5px 0; 
+   padding: 0 0 5px 0; 
+   border-bottom: none;
+   font-size: 140%; 
+   font-weight: normal; 
+   letter-spacing: .2em; 
+   color: #757575; 
+}
+
+
+/* Main Copy */
+.bodycontents .maincopy {
+    padding: 0 30px 0 30px;
+    min-height: 260px;
+    height: auto !important;
+    height: 260px;
+    font-size: 100%;
+    overflow: visible;
+}
+.leftcol, .leftcolnoborder {
+    margin-right: 188px !important;
+    background-image: url(/newcss/mysource_files/righhcol-dots-bground-rpt.gif);
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    /* Increases box width to match margins */ background-repeat: repeat-y;
+    padding-right: 2em;
+    background-position: right;
+}
+
+/* Luke: I have added a leftcolnoborder class so that the postgraduate profiles are formatted correctly */
+.leftcolnoborder {
+    background-image: none;
+}
+
+/* Page Introduction Styles */
+.bodycontents .maincopy .introduction {
+    font-weight: bold;
+    color: #666;
+    font-size: 120%;
+    line-height: 150%;
+    margin: 0 0 20px 0;
+}
+.bodycontents .maincopy .goldintroduction {
+    color: #765916;
+    font-size: 145%;
+    line-height: 24px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* list styles */
+
+/* General unordered list styles */
+.bodycontents ul {
+    margin: 0 0 30px 0;
+    padding: 0;
+    list-style-type: none;
+}
+.bodycontents ul li, 
+.bodycontents ol li ul li {
+    display: block;
+    padding: 0 0 0 15px;
+    margin: 0 0 .4em 0;
+    background: url(/newcss/mysource_files/list-bullet.gif) no-repeat 0 4px;
+}
+.bodycontents ul ul, 
+.bodycontents ol ul {
+    margin: 10px 0 10px 15px;
+    padding: 0;
+    list-style-type: none;
+}
+*html .bodycontents ul ul {
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+.bodycontents ul ul li {
+    display: block;
+    padding: 0 0 0 15px;
+    margin: 0 0 .4em 0;
+    background: url(/newcss/mysource_files/list-bullet-nested.gif) no-repeat 0 4px;
+}
+/* edit 2009.04.30
+   Guan Ming Teo
+
+   Removed the height: 1% from the regular .bodycontents ul ul li rule, 
+   adding it to the already existing * html .bodycontents ul li hack. */
+* html .bodycontents ul li, 
+* html .bodycontents ul ul li {
+    height: 1%;
+}
+/* end edit 2009.04.30 */
+
+/*  Styles for unordered lists containing links */
+.bodycontents ul.linklist, 
+.bodycontents ul li ul.linklist {
+    list-style-type: none;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+/* edit 2008.12.10
+   Guan Ming Teo
+
+   Set up proper specificity for child list inheritance */
+
+.bodycontents ul.linklist li ul li, 
+.bodycontents ul li.linklist ul li { margin: 0 0 0.4em 0;
+    padding-left: 15px;
+    background-image: url(/newcss/mysource_files/list-bullet.gif);
+    background-position: 0 4px; }
+
+.bodycontents p.linklist, 
+.bodycontents ul.linklist li, 
+.bodycontents ul li.linklist, 
+.bodycontents ul li ul.linklist li, 
+.bodycontents ul li ul li.linklist, 
+#bodycontainer dl.linklist dt {
+    background: none;
+    padding: 0 0 0 20px;
+    background: url(/newcss/mysource_files/linkarrow.gif) no-repeat 0 3px;
+}
+
+#bodycontainer dl.linklist dt { margin: 1.25em 0 0.333333em 0; /* 15/12, 4/12 */ }
+#bodycontainer dl.linklist dd { margin: 0 0 0.333333em 20px; /* 4/12 */; }
+/* end edit 2008.12.10 */
+
+/* edit 2009.04.24
+   Guan Ming Teo
+
+   Definition lists, converted from new core. */
+#bodycontainer dl.list { font-size: 0.989010em; /* shift 12.13333 to 12 */
+    line-height: 1.25; /* remove if body-wide line-height is introduced. */ }
+#bodycontainer dl.list dt { display: list-item;
+    margin: 1.25em 0 0.333333em 15px; /* 15/12, 4/12 */
+    list-style-image: url('/newcss/graphics/bullet-default.gif');
+    font-weight: 800; }
+    #ieAny dl.list dt { margin-left: 17px;
+        list-style-image: url('/newcss/graphics/bullet-default-ie.gif'); }
+
+#bodycontainer dl.list dd { margin: 0 0 0.333333em 15px; /* 4/12 */ }
+    #ieAny dl.list dd { margin-left: 17px; }
+/* end edit 2009.04.24 */
+
+/* edit 2010.04.12
+   Guan Ming Teo
+
+   Adding list-inline style */
+#bodycontainer ul.list-inline li, 
+#bodycontainer ol.list-inline li { display: inline; }
+/* end edit 2010.04.12 */
+
+/* General ordered list styles */
+.bodycontents ol, 
+.bodycontents ul li ol {
+    margin: 0 0 1em 25px;
+    padding: 0;
+    list-style-type: decimal;
+}
+.bodycontents ul li ol { margin-top: 25px; }
+.bodycontents ol li, 
+.bodycontents ul li ol li {
+    display: list-item;
+    height: auto;
+    margin: 0 0 .4em 0;
+    padding-left: 0;
+    background-image: none;
+}
+.bodycontents ol.list-lower-alpha { list-style-type: lower-alpha; }
+
+.bodycontents ol.toc {
+   list-style-position: inside;
+   margin-left: 0;
+   margin-bottom: 2em;
+}
+.bodycontents ol.toc li { 
+    border-bottom: 1px solid #dbdbdb;
+    padding: 0.4em 0;
+}
+.bodycontents ol.toc li a {
+    color: #0864a5;
+    text-decoration: none;
+}
+.bodycontents ol.toc li a:visited {
+    color: #746114;
+    text-decoration: none;
+}
+.bodycontents ol.toc li a:hover {
+    text-decoration: underline;
+}
+.bodycontents ol.toc li a:active {
+    color: #0864a5;
+    text-decoration: none;
+}
+/* edit 2009.11.17
+   Guan Ming Teo
+
+   Adding 2nd level of Table of Contents lists */
+.bodycontents ol.toc ol, 
+.bodycontents ol.toc ul { margin-top: 1.25em; /* 15/12 */ }
+.bodycontents ol.toc ol { list-style-type: lower-alpha; }
+.bodycontents ol.toc ol li, 
+.bodycontents ol.toc ul li { padding: 0.25em 0;
+    border-bottom-width: 0; }
+/* end edit 2009.11.17 */
+
+/*  Style for adding extra padding to a list - can be added to both a links, non links and ordered list */
+.bodycontents ul.listpadding li, .bodycontents ol.listpadding li {
+    margin: 0 0 0.8em 0;
+}
+
+.bodycontents ul.listpadding-extra li, 
+.bodycontents ol.listpadding-extra li { margin: 1.25em 0; }
+
+/*  Style for lists without bullets */
+.bodycontents ul.nobullet, 
+.bodycontents .rightcol ul.nobullet {
+    margin: 0 0 30px 0;
+    padding: 0;
+    list-style-type: none;
+}
+.bodycontents ul.nobullet li, 
+.bodycontents .rightcol ul.nobullet li {
+    padding: 0;
+    margin: 0 0 .4em 0;
+    background: none;
+}
+.bodycontents .maincopy form li {
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+.bodycontents .maincopy blockquote {
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+/* edit 2008.08.20
+   Luke Grimes
+   Style for adding extra LEFT padding to a nobullet list - can be added to unordered  
+   no bullet list. Enables the same left indentation as bulleted lists*/
+.bodycontents ul.nobullet.listpadleft li{
+    margin-left: 20px;
+}
+
+
+/* Style for adding a title or heading to a list */
+.bodycontents .maincopy .listtitle {
+    font-weight: bold;
+    color: #000;
+    font-size: 100%;
+    line-height: 130%;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Old list styles - not sure if these are redundent */
+.bodycontents ul.liststyle2 li {
+    margin: 0 0 0.5em 0;
+}
+
+/* Used for formatting File information text on Asset Listing */
+.bodycontents .maincopy .titletype {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0864a5;
+}
+.bodycontents .maincopy .datetype {
+    font-style: italic;
+    color: #746114;
+}
+
+/* Content Image Styles */
+.bodycontents .maincopy .imgright {
+    float: right;
+    padding-left: 17px;
+    padding-bottom: 17px;
+    padding-top: 3px;
+}
+.bodycontents .maincopy .imgright img {
+    float: left;
+    border: 1px solid #dbdada;
+    padding: 3px;
+}
+.bodycontents .maincopy img.imgright {
+    padding: 3px;
+    margin-bottom:15px;
+    margin-left:15px;
+}
+
+.bodycontents .maincopy .imgleft {
+    float: left;
+    padding-right: 17px;
+    padding-bottom: 17px;
+    padding-top: 3px;
+}
+.bodycontents .maincopy .imgleft img {
+    float: left;
+    border: 1px solid #dbdada;
+    padding: 3px;
+}
+
+.bodycontents .maincopy img.imgleft {
+    padding: 3px;
+    margin-bottom:15px;
+    margin-right:15px;
+}
+
+.bodycontents .maincopy .imgnofloat {
+    padding-bottom: 17px;
+    padding-top: 3px;
+}
+.bodycontents .maincopy .imgnofloat img {
+    border: 1px solid #dbdada;
+    padding: 3px;
+}
+.bodycontents .maincopy img.imgnofloat {
+    padding: 3px;
+    margin-bottom:15px;
+}
+
+/* Header Styles */  /* Replace with these styles */
+.bodycontents .maincopy h3 {
+    margin: 0 0 5px 0;
+    line-height: 25px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 150%;
+    color: #0864a5;
+    font-weight: bold;
+}
+.bodycontents .maincopy h3.gold {
+    color: #765916;
+    font-size: 160%;
+    line-height: 28px;
+}
+.bodycontents .maincopy h3.cullitygold {
+    color: #765916;
+    font-size: 145%;
+    line-height: 24px;
+}
+.maincopy h3.fshome {
+    border-bottom: 1px solid #b2b2b2;
+    color: #0066a8;
+    margin-bottom: .7em;
+    padding-bottom: 3px;
+}
+.maincopy h3.overline {
+    border-top: 1px solid #d8d8d8;
+    padding-top: 7px;
+}
+.maincopy h3.underline {
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 7px;
+    margin-bottom: 1em;
+}
+.maincopy h3.fsunderline {
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 3px;
+    margin-bottom: .7em;
+    margin-top: 1.5em;
+}
+.maincopy h3.psunderline {
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 3px;
+    margin-bottom: .7em;
+    /*margin-top: 1.5em;*/
+}
+.maincopy h3.epic { 
+   font-family: Georgia, "Times New Roman", Times, serif; 
+   text-transform: uppercase; 
+   margin: 0 0 5px 0; 
+   padding: 0 0 5px 0; 
+   border-bottom: none;
+   font-size: 140%; 
+   font-weight: normal; 
+   color: #444444; 
+}
+.bodycontents .maincopy h4 {
+    margin: 0 0 5px 0;
+    line-height: 20px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 120%;
+    color: #00497b;
+    font-weight: bold;
+}
+.bodycontents .maincopy h5 {
+    margin: 0 0 5px 0;
+    font-size: 110%;
+    color: #343434;
+    font-weight: bold;
+}
+.bodycontents .maincopy h6 {
+    margin: 0 0 2px 0;
+    font-size: 110%;
+    font-weight: bold;
+    color: #025894;
+}
+.bodycontents .maincopy .gold {
+    color: #765916;
+}
+.bodycontents .maincopy .black {
+    color: #000000;
+}
+.bodycontents .maincopy .step {
+    color: #00a7d9;
+}
+.bodycontents .maincopy .rightcol .step {
+    color: #00497b;
+}
+/* Right Column Styles */
+.bodycontents .rightcol {
+    background-color: white;
+    font-size: 90%;
+    color: #656565;
+    overflow: hidden;
+}
+.bodycontents .maincopy .rightcol {
+    float: right;
+    width: 173px;
+    padding: 0 0 1em 14px;
+    clear: right;
+}
+.bodycontents .maincopy .rightcol .rightcol {
+    padding: 0;
+}
+.bodycontents .rightcol p {
+    margin: 5px 0 10px 0;
+}
+.bodycontents .rightcol ul {
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+*html .bodycontents .rightcol ul {
+    margin: 0 0 0.5em 0;
+}
+.bodycontents .rightcol ul li {
+    background: url(/newcss/mysource_files/rightcol-list-bullet.gif) no-repeat 0 4px;
+}
+.bodycontents .rightcol ul ul {
+    margin: 0 0 0 0.8em;
+}
+.bodycontents .rightcol ul ul li {
+    background: url(/newcss/mysource_files/rightcol-list-bullet-nested.gif) no-repeat 0 4px;
+    height: 1%;
+}
+.bodycontents .rightcol ul.linklist {
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+*html .bodycontents .rightcol ul.linklist {
+    margin: 0 0 0.5em 0;
+}
+.bodycontents .rightcol ul.linklist li,
+.bodycontents .rightcol ul li.linklist {
+    background: url(/newcss/mysource_files/rightcol-linkarrow.gif) no-repeat 0 1px;
+}
+.bodycontents .rightcol hr {
+    color: #e7e7e7;
+    background-color: #e7e7e7;
+    margin: 5px 0 15px 0;
+}
+.bodycontents .rightcol form {
+    margin: 0;
+    padding: 0;
+}
+.bodycontents .rightcol form input, .bodycontents .rightcol form select {
+    font-size: 1em;
+}
+.bodycontents .rightcol form input.button {
+    cursor: pointer;
+}
+
+/* Right Column Header Styles */
+.bodycontents .rightcol h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 140%;
+
+    font-weight: normal;
+    letter-spacing: .2em;
+    color: #757575;
+}
+.bodycontents .rightcol h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 100%;
+    color: #343434;
+    font-weight: bold;
+    border: none;
+    line-height: 1.18;
+    text-transform: uppercase;
+}
+.bodycontents .rightcol h4 {
+    margin: 0 0 5px 0;
+    font-size: 110%;
+    color: #585858;
+    font-weight: bold;
+    }
+
+/* Table Styles */
+
+.eventablehalves td {
+    width: 50%;
+}
+
+/* 1px separator lines */
+.bodycontents .maincopy table.ruled {
+    margin: 10px 0 30px 0;
+    border-top: 1px solid #d6d6d6;
+    border-collapse: collapse;
+}
+.bodycontents .maincopy table.ruled th {
+    text-transform: uppercase;
+    font-size: 90%;
+    padding: 7px 10px 7px 10px;
+    vertical-align: top;
+    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+}
+.bodycontents .maincopy table.ruled td {
+    border-bottom: 1px solid #d6d6d6;
+    padding: 4px 10px;
+    vertical-align: top;
+}
+
+
+/* Alternate row colour */
+.bodycontents .maincopy table.altrow {
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid #d6d6d6;
+    border-collapse: collapse;
+}
+.bodycontents .maincopy table.altrow th {
+    text-transform: uppercase;
+    font-size: 90%;
+    padding: 7px 10px 7px 10px;
+    vertical-align: top;
+    background: #ececec;
+}
+.bodycontents .maincopy table.altrow tr.dark, 
+.bodycontents .maincopy table.altrow tr.dark td, 
+.bodycontents .maincopy table.altrow tr.dark th, 
+.bodycontents .maincopy table.altrow th.dark, 
+.bodycontents .maincopy table.altrow td.dark {
+    background: #f4f4f4;
+}
+.bodycontents .maincopy table.altrow td {
+    padding: 4px 10px;
+    vertical-align: top;
+}
+
+
+
+/* Alternate GENERIC UWA BLUE row colour */
+.bodycontents .maincopy table.altrow-uwablue {
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid #d6d6d6;
+    border-collapse: collapse;
+}
+.bodycontents .maincopy table.altrow-uwablue th {
+    text-transform: uppercase;
+    font-size: 90%;
+    padding: 7px 10px 7px 10px;
+    vertical-align: top;
+    background: #69c4d9;
+}
+.bodycontents .maincopy table.altrow-uwablue tr.dark {
+    background: #f1f9fc;
+}
+.bodycontents .maincopy table.altrow-uwablue td {
+    padding: 4px 10px;
+    vertical-align: top;
+}
+
+
+
+/* Plain - no lines or row colour */
+.bodycontents .maincopy table.plain {
+    margin: 10px 0 30px 0;
+    border-collapse: collapse;
+}
+.bodycontents .maincopy table.plain th {
+    font-size: 100%;
+    padding: 2px 10px 5px 0;
+    vertical-align: top;
+}
+.bodycontents .maincopy table.plain td {
+    padding: 1px 10px 1px 0;
+    vertical-align: top;
+}
+
+/* Contact Us Table - no lines or row colour - Same as plain except it has a text-align left. I have made a separate class so that if the contact format changes in the future each contact us page will not have to be updated.*/
+.bodycontents .maincopy table.contact {
+    margin: 10px 0 30px 0;
+    border-collapse: collapse;
+    text-align: left;
+}
+.bodycontents .maincopy table.contact th {
+    font-size: 100%;
+    padding: 2px 10px 5px 0;
+    vertical-align: top;
+}
+.bodycontents .maincopy table.contact td {
+    padding: 1px 10px 1px 0;
+    vertical-align: top;
+}
+
+
+/* Left column aligned right */
+
+/*
+.bodycontents .maincopy .style3 {
+    margin: 10px 0 30px 0;
+    border-collapse: collapse;
+    border-top: 1px solid #d6d6d6;
+}
+.bodycontents .maincopy .style3 th {
+    font-size: 110%;
+    text-align: left;
+    padding: 7px 10px 7px 10px;
+    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+}
+.bodycontents .maincopy .style3 td {
+    border-bottom: 1px solid #d6d6d6;
+    padding: 7px 10px 7px 10px;
+    vertical-align: top;
+}
+.bodycontents .maincopy .style3 .ralign {
+    text-align: right;
+}
+*/
+
+/* Indented block */
+.bodycontents .maincopy .indented {
+    margin: 0 0 20px 15px;
+} 
+
+/*
+.bodycontents .maincopy .style4 {
+    margin: 10px 0 30px 0;
+    border-collapse: collapse;
+    width: 100%;
+} 
+.bodycontents .maincopy .style4 th {
+    text-align: left;
+    padding: 0 0 10px 0;
+} 
+.bodycontents .maincopy .style4 td {
+    padding: 2px 3px;
+    vertical-align: top;
+    text-align: left;
+} 
+.bodycontents .maincopy .style4 td.left {
+    color: #757575;
+    padding-left: 10px;
+}
+*/
+.bodycontents .maincopy .version1 {
+    width: 50%;
+}
+.bodycontents .maincopy .version2 {
+    width: 25%;
+}
+.bodycontents .maincopy .version3 {
+    width: 75%;
+}
+.bodycontents .maincopy .version4 {
+    width: 30%;
+}
+.bodycontents .maincopy .version5 {
+    width: 40%;
+}
+
+/* Positioning table */
+.bodycontents .maincopy .positioning td {
+    vertical-align: top;
+}
+
+/* Table Width Styles */
+.bodycontents .maincopy .width10 {
+    width: 10%;
+}
+.bodycontents .maincopy .width20 {
+    width: 20%;
+}
+.bodycontents .maincopy .width25 {
+    width: 25%;
+}
+.bodycontents .maincopy .width30 {
+    width: 30%;
+}
+.bodycontents .maincopy .width40 {
+    width: 40%;
+}
+.bodycontents .maincopy .width50 {
+    width: 50%;
+}
+.bodycontents .maincopy .width60 {
+    width: 60%;
+}
+.bodycontents .maincopy .width70 {
+    width: 70%;
+}
+.bodycontents .maincopy .width75 {
+    width: 75%;
+}
+.bodycontents .maincopy .width80 {
+    width: 80%;
+}
+.bodycontents .maincopy .width90 {
+    width: 90%;
+}
+.bodycontents .maincopy .width100 {
+    width: 100%;
+}
+.maincopy .titletype a {
+    font-weight: bold;
+    text-decoration: none;
+}
+.maincopy .titletype a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.bodycontents .maincopy .promotionsfooter {
+    margin-top: 20px;
+    border-top: 1px solid #d7d7d7;
+    padding-top: 20px;
+    width: 100%;
+}
+.maincopy .promotionsfooter .promoitem {
+    color: #6f6f6f;
+    font-size: 100%;
+}
+.promoitem .leftcopy {
+    margin-right: 146px;
+}
+.promoitem .rightimgcont {
+    float: right;
+}
+.promoitem .rightimgcont .rightimg {
+    border: 1px solid #dbdada;
+    width: 118px;
+    width/**/:/**/ 112px;
+    height: 115px;
+    height/**/:/**/ 109px;
+    padding: 3px;
+
+}
+.promoitem .rightimgcont .rightimg img {
+    border: 1px solid #d5d4d4;
+}
+.promoitem a {
+    color: #117ec3;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.promoitem a:hover {
+    text-decoration: underline;
+}
+.promoitem .promodate {
+    font-style: italic;
+    color: #000;
+    line-height: 200%;
+}
+
+/* Added by Rebecca Turner - template pages */
+
+/* Main Contents - for 1 column page */
+#pagecontainer#onecol {
+    margin-left: 16px !important;
+}
+.bodycontents#noleftcol {
+    border-left: none !important;
+}
+.contentcontainer#internal .bodycontents .maincopy#onecolpage {
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Course Information page */
+.bodycontents .maincopy .graduate {
+    margin: 0 0 0 20px;
+}
+.bodycontents .maincopy .graduate .quote {
+    font-style: italic;
+}
+
+/* Faculties and Schools page */
+
+/*#pagecontainer h1 {
+    margin: 20px 0 0 0;
+}*/
+.bodycontents .maincopy .threeColumn td {
+    width: 33.3%;
+    border-right: 1px solid #d2d2d2;
+    padding: 0 20px;
+    vertical-align: top;
+}
+.bodycontents .maincopy .threeColumn td.nopadding {
+    padding-left: 0;
+}
+.bodycontents .maincopy .threeColumn td.noborder {
+    border: none;
+}
+.bodycontents .maincopy .threeColumn .facultyarea {
+    margin: 10px 0 0 0;
+}
+.bodycontents .maincopy .threeColumn .facultyarea a {
+    text-decoration: none;
+    line-height: 1.2em;
+    display: block;
+    margin: 0.7em 0;
+}
+.bodycontents .maincopy .threeColumn .facultyarea a:hover {
+    text-decoration: underline;
+}
+.bodycontents .maincopy .threeColumn .facultyarea .hdr {
+    font: bold 160% arial, Helvetica, sans-serif;
+    margin: 0 0 20px 0;
+}
+.bodycontents .maincopy .threeColumn .facultyarea .grey {
+    color: #606060;
+}
+.bodycontents .maincopy .threeColumn .margin {
+    margin: 0 0 40px 0;
+}
+.bodycontents .maincopy .threeColumn .alva {
+    border-top: 2px solid #d99319;
+}
+.bodycontents .maincopy .threeColumn .education {
+    border-top: 2px solid #4f9d88;
+}
+.bodycontents .maincopy .threeColumn .ecm {
+    border-top: 2px solid #eece67;
+}
+.bodycontents .maincopy .threeColumn .nas {
+    border-top: 2px solid #acbc7c;
+}
+.bodycontents .maincopy .threeColumn .ahss {
+    border-top: 2px solid #925999;
+}
+.bodycontents .maincopy .threeColumn .law {
+    border-top: 2px solid #60538B;
+}
+.bodycontents .maincopy .threeColumn .lps {
+    border-top: 2px solid #eace6b;
+}
+.bodycontents .maincopy .threeColumn .bs {
+    border-top: 2px solid #4865b7;
+}
+.bodycontents .maincopy .threeColumn .mdhs {
+    border-top: 2px solid #ae4732;
+}
+
+/* StudentNet page */
+.bodycontents .maincopy .alvastudentnet {
+    border-bottom: 2px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+.bodycontents .maincopy .alvastudentnet h3 {
+    font-size: 180%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+}
+.bodycontents .maincopy .degrees {
+    padding: 5px 0 0 30px;
+    width: 200px;
+    padding-bottom: 20px;
+}
+.bodycontents ul.studentnetlist {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.bodycontents ul.studentnetlist li {
+    display: inline;
+    background: none;
+    padding: 0;
+}
+.bodycontents ul.studentnetlist li a {
+    text-decoration: none;
+    padding: 3px 20px 3px 15px;
+    display: block;
+    font-weight: bold;
+    border-bottom: 1px solid #dbdbdb;
+    background: url(/newcss/mysource_files/studentstaffnet-list-arrow.gif) no-repeat 0 10px;
+}
+.bodycontents .rightcol ul.studentnetlist li a {
+    border-bottom: none;
+    background: url(/newcss/mysource_files/studentstaffnet-list-arrow.gif) no-repeat 0 6px;
+    padding: 3px 20px 3px 10px;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.bodycontents ul.studentnetlist li a:hover {
+    text-decoration: none;
+}
+
+/* StaffNet page */
+.bodycontents .maincopy .alvastaffnet {
+    border-bottom: 2px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+.bodycontents .maincopy .alvastaffnet h3 {
+    font-size: 180%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+}
+.bodycontents .maincopy .resources {
+    padding: 5px 0 0 30px;
+    width: 200px;
+    padding-bottom: 20px;
+}
+.bodycontents .maincopy .resources ul.staffnetlist {
+    margin: 0;
+}
+.bodycontents ul.staffnetlist {
+    padding: 0;
+    margin: 0 0 20px 0;
+    list-style-type: none;
+    height: 1%;
+}
+.bodycontents ul.staffnetlist li {
+    display: inline;
+    background: none;
+    padding: 0;
+}
+.bodycontents ul.staffnetlist li a {
+    text-decoration: none;
+    display: block;
+    padding: 3px 20px 3px 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #dbdbdb;
+    background: url(/newcss/mysource_files/studentstaffnet-list-arrow.gif) no-repeat 0 10px;
+}
+.bodycontents ul.staffnetlist li a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Directory */  /* Please add  */
+
+/* tabs */
+.bodycontents .maincopy p.disclaimer {
+    font-size: 90%;
+    color: #5e5e5e;
+}
+.bodycontents ul.directoryTab {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 26px;
+}
+*html .bodycontents ul.directoryTab {
+    height: 25px;
+}
+.bodycontents ul.directoryTab li {
+    display: inline;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+.bodycontents ul.directoryTab li a {
+    display: block;
+    float: left;
+    height: 21px;
+    margin: 0 2px 0 0;
+    padding: 5px 0 0 0;
+    text-align: center;
+    font-family: Georgia, Times New Roman, Times, serif;
+    font-weight: bold;
+    color: #464646;
+    text-decoration: none;
+}
+.bodycontents ul.directoryTab li a.person {
+    width: 79px;
+    background: url(/newcss/mysource_files/contact-dir-person-tab.gif) no-repeat 0 0;
+}
+.bodycontents ul.directoryTab li a.section {
+    width: 82px;
+    background: url(/newcss/mysource_files/contact-dir-section-tab.gif) no-repeat 0 0;
+}
+.bodycontents ul.directoryTab li a.research {
+    width: 156px;
+    background: url(/newcss/mysource_files/contact-dir-research-tab.gif) no-repeat 0 0;
+    margin: 0;
+}
+.bodycontents ul.directoryTab li a:hover, .bodycontents ul.directoryTab li a.active {
+    background-position: 0 2px;
+    height: 19px;
+    padding: 7px 0 0 0;
+    color: #0864a5;
+}
+
+/* search box */
+.bodycontents .maincopy .directoryoptions {
+    border: 1px solid #d7d7d7;
+    padding: 20px 10px 10px 20px;
+    margin: 0 0 30px 0;
+    display: block;
+}
+.bodycontents .maincopy .directoryoptions form#search {
+    margin: 0;
+    padding: 0;
+}
+.bodycontents .maincopy .directoryoptions form#search label {
+    color: #0864a5;
+    font-size: 100%;
+    font-weight: bold;
+    display: block;
+    margin: 0 0 3px 0;
+}
+.bodycontents .maincopy .directoryoptions form#search .formhdr {
+    color: #0864a5;
+    font-size: 100%;
+    font-weight: bold;
+    display: block;
+    margin: 0 0 10px 0;
+}
+.bodycontents .maincopy .directoryoptions form#search .formelements {
+    height: 20px;
+    margin: 0 0 20px 0;
+}
+.bodycontents .maincopy .directoryoptions form#search .nopadding {
+    height: 20px;
+    margin: 0;
+}
+.bodycontents .maincopy .directoryoptions form#search input.text {
+    float: left;
+    margin: 0 5px 0 0;
+    padding-left: 3px;
+    font-size: 100%;
+    color: #464646;
+}
+.bodycontents .maincopy .directoryoptions form#search select {
+    float: left;
+    margin: 0 5px 0 0;
+    font-size: 100%;
+    color: #464646;
+}
+.bodycontents .maincopy .directoryoptions form#search input.search {
+    float: left;
+    font-size: 100%;
+    color: #464646;
+    cursor: pointer;
+}
+
+/* Alphabetical List page */
+.bodycontents ul.index {
+    margin: 1em 0 0 0;
+    padding: 0.5em 0;
+    list-style-type: none;
+    display: inline;
+    line-height: 4em;
+}
+.bodycontents ul.index li {
+    display: inline;
+}
+.bodycontents ul.index li a {
+    font-family: Georgia, Times New Roman, Times, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 0.6em;
+    text-decoration: none;
+    border-right: 1px solid #8cbcde;
+}
+.bodycontents ul.index li.start a {
+    padding-left: 0;
+}
+.bodycontents ul.index li.end a {
+    border-right: none;
+}
+.bodycontents ul.index li a:hover {
+    text-decoration: underline;
+}
+.bodycontents .maincopy .alphalist h3 {
+    float: left;
+    font-size: 300%;
+}
+.bodycontents .maincopy .alphalist ul {
+    margin: 0 0 0 50px;
+    height: 1%;
+}
+
+/* Intranet Search page */
+
+/* tabs */
+.bodycontents ul.searchTab {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 26px;
+}
+*html .bodycontents ul.searchTab {
+    height: 25px;
+}
+.bodycontents ul.searchTab li {
+    display: inline;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+.bodycontents ul.searchTab li a {
+    display: block;
+    float: left;
+    height: 21px;
+    margin: 0 2px 0 0;
+    padding: 5px 0 0 0;
+    text-align: center;
+    font-family: Georgia, Times New Roman, Times, serif;
+    font-weight: bold;
+    color: #464646;
+    text-decoration: none;
+}
+.bodycontents ul.searchTab li a.simple {
+    width: 77px;
+    background: url(/newcss/mysource_files/search-simple-tab.gif) no-repeat 0 0;
+}
+.bodycontents ul.searchTab li a.advanced {
+    width: 95px;
+    background: url(/newcss/mysource_files/search-advnced-tab.gif) no-repeat 0 0;
+}
+.bodycontents ul.searchTab li a.help {
+    width: 62px;
+    background: url(/newcss/mysource_files/search-help-tab.gif) no-repeat 0 0;
+    margin: 0;
+}
+.bodycontents ul.searchTab li a:hover, .bodycontents ul.searchTab li a.active {
+    background-position: 0 2px;
+    height: 19px;
+    padding: 7px 0 0 0;
+    color: #0864a5;
+}
+
+/* search box */
+.bodycontents .maincopy .searchBox {
+    border: 1px solid #d7d7d7;
+    padding: 10px;
+    margin: 0;
+    display: block;
+    height: 65px;
+}
+.bodycontents .maincopy .searchBox form#search {
+    margin: 0;
+    padding: 0;
+    height: 22px;
+}
+.bodycontents .maincopy .searchBox form#search label {
+    float: left;
+    font-family: Georgia, Times New Roman, Times, serif;
+    color: #0864a5;
+    font-size: 120%;
+}
+.bodycontents .maincopy .searchBox form#search input.text {
+    float: left;
+    margin: 0 5px 0 10px;
+    padding-left: 3px;
+    font-size: 100%;
+    color: #464646;
+}
+.bodycontents .maincopy .searchBox form#search input.search {
+    float: left;
+    font-size: 100%;
+    color: #464646;
+    cursor: pointer;
+}
+.bodycontents .maincopy .searchBox p.disclaimer {
+    color: #898989;
+    line-height: 14px;
+    margin: 10px 0 0 0;
+    font-size: 90%;
+}
+
+/* search results */
+.bodycontents .maincopy .searchResults {
+    width: 100%;
+}
+.bodycontents .maincopy .searchResults .summary {
+    border-bottom: 1px solid #d7d7d7;
+    margin: 15px 0 0 0;
+    padding: 0 0 5px 0;
+}
+.bodycontents .maincopy .searchResults .header {
+    font-family: Georgia, Times New Roman, Times, serif;
+    color: #0864a5;
+    font-size: 120%;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+.bodycontents .maincopy .searchResults .searchTerm, .bodycontents .maincopy .searchResults .results, .bodycontents .maincopy .searchResults .pages, .bodycontents .maincopy .searchResults .time {
+    font-weight: bold;
+    margin: 0 10px 0 0;
+}
+.bodycontents .maincopy .searchResults .result {
+    margin: 1.8em 0;
+    padding: 0 0 2em 0;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+/* edit 2008.11.25
+   Guan Ming Teo
+
+   Generic Multiversion, taken and edited from Future Students (studyat)
+   Changed parent class to "multiversion-generic" to not interfere with any existing classes
+   Including a new multiversion rows, for horizontal info display with choice of three colours */
+div.maincopy div.multiversion-generic, 
+div.maincopy div.multiversion-rows { zoom: 1.0; /* triggering hasLayout for IE */
+    margin: 40px 0 10px;
+    background-color: transparent; }
+div.maincopy div.multiversion-generic:after { display: block;
+    clear: left;
+    visibility: hidden;
+    height: 0;
+    content: ' '; }
+div.maincopy div.multiversion-rows { * margin-top: -1.5em;
+    * margin-bottom: -1em; /* spacing discrepancy */ }
+div.maincopy div.multiversion-generic div.multiversion_inner { margin: 0;
+    padding: 0;
+    background-color: transparent;
+    background-image: none;
+    border-width: 0; }
+div.maincopy div.multiversion-generic div.multiversion_inner div.leftside, 
+div.maincopy div.multiversion-rows div.row-blue { float: left;
+    display: inline;
+    width: 48%;
+    background-color: #e9fafe;
+    border: 2px solid #7ac4d9; }
+
+div.maincopy div.multiversion-generic div.multiversion_inner div.rightside, 
+div.maincopy div.multiversion-rows div.row-yellow { float: right;
+    display: inline;
+    width: 48%;
+    background-color: #fffbd3;
+    border: 2px solid #f8e206; }
+
+div.maincopy div.multiversion-rows div.row-blue, 
+div.maincopy div.multiversion-rows div.row-yellow, 
+div.maincopy div.multiversion-rows div.row-white { float: none;
+    display: block;
+    width: auto;
+    margin: 4em 0 1em; }
+
+div.maincopy div.multiversion-rows div.row-white { background-color: #f5f5f5;
+    border: 2px solid #bbb; }
+
+div.maincopy div.multiversion-generic div.multiversion_inner h3, 
+div.bodycontents div.maincopy div.multiversion-rows h3, 
+div.maincopy div.multiversion-generic div.multiversion_inner h4, 
+div.bodycontents div.maincopy div.multiversion-rows h4, 
+div.maincopy div.multiversion-generic div.multiversion_inner h5, 
+div.bodycontents div.maincopy div.multiversion-rows h5 { position: absolute;
+    width: 216px;
+    overflow: hidden;
+    margin-top: -28px;
+    margin-left: -2px;
+    padding: 0;
+    font-size: 1.166667em; /* 14px */
+    color: #222;
+    line-height: 18px;
+    text-indent: -10000px; }
+
+div.maincopy div.multiversion-generic div.multiversion_inner div.leftside h3, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.rightside h3, 
+div.bodycontents div.maincopy div.multiversion-rows h3, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.leftside h4, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.rightside h4, 
+div.bodycontents div.maincopy div.multiversion-rows h4, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.leftside h5, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.rightside h5, 
+div.bodycontents div.maincopy div.multiversion-rows h5 { width: auto;
+    margin-left: -2px;
+    * margin-left: -22px;
+    padding: 3px 22px 5px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 800;
+    text-indent: 0; }
+div.bodycontents div.maincopy div.multiversion-rows h3, 
+div.bodycontents div.maincopy div.multiversion-rows h4, 
+div.bodycontents div.maincopy div.multiversion-rows h5 { * margin-left: -2px; }
+
+div.maincopy div.multiversion-generic div.multiversion_inner div.leftside div.content, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.rightside div.content, 
+div.maincopy div.multiversion-rows div.content { margin: 20px; }
+
+div.maincopy div.multiversion-generic div.multiversion_inner div.leftside div.content h4, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.rightside div.content h4, 
+div.maincopy div.multiversion-rows div.content h4, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.leftside div.content h5, 
+div.maincopy div.multiversion-generic div.multiversion_inner div.rightside div.content h5, 
+div.maincopy div.multiversion-rows div.content h5 { position: static;
+    margin: 1em 0;
+    padding: 0;
+    background-color: transparent;
+    color: #464646;
+    line-height: normal; }
+/* end edit 2008.11.25 */
+
+/* Multi-Version vertical (Australian and International Students) page */
+.bodycontents .maincopy .alert {
+    color: #af0000;
+    font-weight: bold;
+}
+.bodycontents .maincopy .multiversion1 h2 {
+    padding: 0.9em 0 0.8em 20px;
+    margin: 0 0 0 0;
+    color: #000;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 120%;
+    font-weight: bold;
+}
+.bodycontents .maincopy .multiversion1 .colcontents {
+    margin: 25px 14px 0 25px;
+    border-bottom: 2px solid #d1d1d1;
+}
+.bodycontents .maincopy .multiversion1 .lefthalf {
+    width: 46%;
+    float: left;
+    margin-right: 16px;
+}
+.bodycontents .maincopy .multiversion1 .righthalf {
+    width: 46%;
+    position: relative;
+    float: left;
+}
+.bodycontents .maincopy .multiversion1 .lefthalf3col {
+    width: 45%;
+    float: left;
+    margin-right: 16px;
+}
+.bodycontents .maincopy .multiversion1 .righthalf3col {
+    width: 45%;
+    position: relative;
+    float: left;
+}
+.bodycontents .maincopy .multiversion1 .leftthird {
+    width: 31%;
+    float: left;
+    margin-right: 11px;
+}
+.bodycontents .maincopy .multiversion1 .centrethird {
+    width: 31%;
+    position: relative;
+    float: left;
+    margin-right: 11px;
+}
+.bodycontents .maincopy .multiversion1 .rightthird {
+    width: 31%;
+    position: relative;
+    float: left;
+    margin-right: 11px;
+}
+
+/* Australian */
+.bodycontents .maincopy .multiversion1 .ausstudent {
+    margin-right: 16px;
+    border-left: 7px solid #53bbd9;
+}
+.bodycontents .maincopy .multiversion1 .lefthalf h2, .bodycontents .maincopy .multiversion1 .righthalf h2, .bodycontents .maincopy .multiversion1 .lefthalf3col h2, .bodycontents .maincopy .multiversion1 .righthalf3col h2 {
+    background: #f5f1e1;
+}
+.bodycontents .maincopy .multiversion1 .leftthird h2, .bodycontents .maincopy .multiversion1 .centrethird h2, .bodycontents .maincopy .multiversion1 .rightthird h2 {
+    background: #f5f1e1;
+}
+.bodycontents .maincopy .multiversion1 .ausstudent h2 {
+    background: #f5f1e1 url(/newcss/mysource_files/aus-students-hdr-bground.gif) no-repeat 100% 50%;
+}
+
+/* International */
+.bodycontents .maincopy .multiversion1 .intstudent {
+    margin-left: 16px;
+    border-left: 7px solid #065994;
+}
+.bodycontents .maincopy .multiversion1 .intstudent h2 {
+    background: #f5f1e1 url(/newcss/mysource_files/int-students-hdr-bground.gif) no-repeat 100% 50%;
+}
+
+/* Multi-Version horizontal (Australian and International Students) page */
+.bodycontents .maincopy .multiversion2 .colcontents {
+    margin: 25px 20px 0 20px;
+    border-bottom: 2px solid #d1d1d1;
+}
+.bodycontents .maincopy .multiversion2 h2 {
+    padding: 0.9em 0 0.8em 20px;
+    margin: 0 0 0 0;
+    color: #000;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+/* Australian */
+.bodycontents .maincopy .multiversion2 .ausstudent {
+    border-left: 7px solid #53bbd9;
+    margin-bottom: 40px;
+}
+*html .bodycontents .maincopy .multiversion2 .ausstudent {
+    height: 1%;
+}
+.bodycontents .maincopy .multiversion2 .ausstudent h2 {
+    background: #f5f1e1 url(/newcss/mysource_files/aus-students-hdr-bground.gif) no-repeat 100% 50%;
+}
+
+/* International */
+.bodycontents .maincopy .multiversion2 .intstudent {
+    border-left: 7px solid #065994;
+    margin-bottom: 40px;
+}
+*html .bodycontents .maincopy .multiversion2 .intstudent {
+    height: 1%;
+}
+.bodycontents .maincopy .multiversion2 .intstudent h2 {
+    background: #f5f1e1 url(/newcss/mysource_files/int-students-hdr-bground.gif) no-repeat 100% 50%;
+}
+
+/* Multiversion Div 16 Jan 
+.maincopy .multiversion {
+
+    background-color:#F8F6EC;
+    border: 2px solid #C6C5BD;
+    margin-bottom: 1.5em;
+}*/
+
+/* html .bodycontents .maincopy .multiversion {
+    height: 1%;
+}*/
+
+/* .maincopy .multiversion div .contents {
+    padding: 0 5px 10px 25px;
+}
+
+.maincopy .multiversion .australian, .maincopy .multiversion .leftside {
+    float: left;
+    border-right: 2px solid #C6C5BD;
+    position:relative;
+    left:1px;
+    width: 49%;
+    padding-right: 1%;
+}
+.maincopy .multiversion .international, .maincopy .multiversion .rightside {
+    float: left;
+    border-left: 2px solid #C6C5BD;
+    position:relative;
+    left:-1px;
+    width: 49%;
+}
+.maincopy .multiversion h3 {
+    color:#FFF;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 110%;
+    padding:5px 0 5px 10px;
+    margin: 10px 0 10px -20px;
+    text-align:left;
+    position: relative;
+    line-height: 1.2em;
+}
+.maincopy .multiversion .australian h3 {
+    background-color: #51bdd7;
+    
+}
+.maincopy .multiversion .international h3 {
+    background-color: #075995;
+}
+.maincopy .multiversion .expander {
+    clear: left;
+}
+.maincopy .multiversion .leftside h3 {
+    background-color: #0075a0;
+}
+.maincopy .multiversion .rightside h3 {
+    background-color: #5c8630;
+}
+html .bodycontents .maincopy .multiversion .expander {
+    position: relative;
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: -6px;
+    border-top: 2px solid #C6C5BD;
+    background: white;
+    top: -4px;
+} */
+
+/*NEW*/
+/* Multiversion Div 6 Feb */
+.maincopy .multiversion { 
+    background-color:#F8F6EC;
+    /*padding: 5px;*/
+    width: 99%;
+    margin-bottom: 1em;
+}
+.maincopy .multiversion_inner {
+    margin: 5px;
+    border: 1px solid #C6C5BD;
+    background: #f5f1e1 url(/newcss/mysource_files/dot_darktan1x1.gif) repeat-y top center;
+    padding: 12px 12px 7px 12px;
+    *width: auto;
+    *height: 1%;
+}
+.maincopy .multiversion .multiversion_inner .australian, 
+.maincopy .multiversion .multiversion_inner .leftside {
+    float: left;
+    width: 50%;
+}
+.maincopy .multiversion .multiversion_inner .international, 
+.maincopy .multiversion .multiversion_inner .rightside {
+    float: left;
+    width: 50%;
+    position: relative;
+}
+.maincopy .multiversion .multiversion_inner h3 {
+    color:#FFF;
+    padding: 0;
+    margin: 0;
+    font-family: arial,helvetica,sans-serif;
+    font-weight: bold;
+    font-size: 110%;
+    padding: 4px 0 4px 8px;
+}
+.maincopy .multiversion .multiversion_inner .australian h3 {
+    background-color: #51bdd7;
+    margin-right: 13px;
+}
+.maincopy .multiversion .multiversion_inner .international h3 {
+    background-color: #075995;
+    margin-left: 13px;
+}
+.maincopy .multiversion .multiversion_inner .australian .content, .maincopy .multiversion .multiversion_inner .leftside .content {
+    margin: 22px 20px -10px 8px;
+}
+.maincopy .multiversion .multiversion_inner .international .content, .maincopy .multiversion .multiversion_inner .rightside .content {
+    margin: 22px 8px -10px 20px;
+}
+.maincopy .multiversion .multiversion_inner .leftside h3 {
+    background-color: #0075a0;
+    margin-right: 11px;
+}
+.maincopy .multiversion .multiversion_inner .rightside h3 {
+    background-color: #5c8630;
+    margin-left: 12px;
+}
+
+.article{
+    padding: 15px 0 0px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.country {
+    background: #f3f3f3 url(/newcss/mysource_files/highlight3.gif) no-repeat top left;
+    padding: 20px 0 15px 70px;
+    border: 1px solid #dbdbdb;
+}
+.highlightbox {
+    background: #f3f3f3 url(/newcss/mysource_files/highlight3.gif) no-repeat center left;
+    padding: 20px 1.7em 17px 70px;
+    border: 1px solid #dbdbdb;
+    height: 1%;
+
+}
+
+.highlightboxright {
+    background: #f3f3f3 url(/newcss/mysource_files/highlight3.gif) no-repeat top left;
+    padding: 20px 0 15px 65px;
+    border: 1px solid #dbdbdb;
+}
+.ichomebox {
+    background: url(/newcss/mysource_files/ic-homebox2.gif) repeat-y top left;
+    padding: 10px 20px;
+    border: 1px solid #dbdbdb;
+}
+.landinghighlightbox {
+    background: #f3f3f3;
+    padding: 10px 20px;
+    border: 1px solid #dbdbdb;
+}
+* .landinghighlightbox {
+    height: 1%;
+}
+.landinghighlightboxright {
+    background: url(/newcss/mysource_files/ic-homebox2.gif) repeat-y top left;
+    width: 45%;
+    float: right;
+    margin: 0 0 15px 15px;
+    padding: 10px 20px;
+    border: 2px solid #dbdbdb;
+}
+/* Gallery page (this is the styling for pages that have a sub header area containing a spanning banner */
+.gallery {
+    margin: 12px 0 0 0;
+    background: #000;
+}
+.gallery .areaphoto {
+    position: relative;
+    width: 419px;
+    height: 249px;
+    float: left;
+}
+.gallery img#imageoverlay {
+    position: absolute;
+    top: 0;
+    left: 340px;
+    width: 79px;
+    height: 249px;
+}
+.gallery .galleryopentimes {
+    background: url(/newcss/mysource_files/cullity-gallery-opentimes.gif) no-repeat 0 0;
+    height: 0;
+    padding: 100px 0 0 0;
+    width: 145px;
+    margin: 0 0 0 0;
+    overflow: hidden;
+}
+.titlegraphic {
+    background-color: black;
+    margin-top: 13px;
+}
+.titlegraphic div {
+    background-color: black;
+}
+.titlegraphic img {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.titlegraphic .replaced_img {
+    height: 0px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Event Styles */
+.bodycontents .maincopy .event {
+    border-bottom: 1px solid #d5d5d5;
+    margin: 0 0 15px 0;
+}
+.bodycontents .maincopy .eventhdr a {
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+.bodycontents .maincopy .eventhdr a:hover {
+    text-decoration: none;
+}
+.bodycontents .maincopy .date {
+    color: #746114;
+    font-style: italic }
+
+/* Event Styles */
+.bodycontents .maincopy .event {
+    border-bottom: 1px solid #d5d5d5;
+    margin: 0 0 15px 0;
+}
+.bodycontents .maincopy .eventhdr a {
+    margin-bottom: 3px;
+
+    font-weight: bold;
+
+}
+.bodycontents .maincopy .eventhdr a:hover {
+    text-decoration: none;
+}
+.bodycontents .maincopy .date {
+    color: #746114;
+    font-style: italic;
+}
+
+/* Hero image */
+.bodycontents .maincopy .hero {
+    margin: 0 0 20px 0;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+.bodycontents .maincopy .hero img {
+    margin: 5px 0;
+    padding: 0;
+    border: none;
+}
+
+/* Specific image styles */
+.img_borders img, .border, .cd_profile img, .cdl_profile img {
+    border: 1px solid #dbdada !important;
+    padding: 3px;
+}
+
+/* General content image */
+.bodycontents .maincopy img {
+    border: 1px solid #dbdada;
+    padding: 3px;
+    margin: 0.4em 1.2em 0.4em 0;
+}
+.bodycontents .maincopy img[align="right"] {
+    margin: 0.4em 0 0.4em 1.2em;
+}
+img.borderless, .borderless img, #sq_backend_sections img, .bodycontents .maincopy table img {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+}
+.bodycontents .maincopy .rightcol img {
+    margin: 0.4em 0.3em 0 0em;
+}
+
+.bodycontents .maincopy div.campusmap img {
+    margin-right: 0;
+}
+
+/* Asset Listing styles */
+#bodycontainer #pagecontent ul.list-assets { margin: 0 0 1.25em; /* 15/12 */
+    list-style-image: none; }
+#bodycontainer #pagecontent ul.list-assets li { display: inline-block; /* This doesn't work in < FF 3.
+    We know that it doesn't work. The invalid, proprietary CSS property value:
+    display: -moz-inline-box;
+    ... is not a good idea to have invalidating every page of every site.
+    Works in everything else though, even IE 6, by exploiting a bug. */
+    width: 47%;
+    margin: 0.333333em 2% 0.75em 0; /* 4/12, 9/12 */
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: 0 0.25em; /* 3/12 */
+    vertical-align: top; }
+    #bodycontainer #ie7 ul.list-assets li, 
+    #bodycontainer #ie6down ul.list-assets li { display: inline;
+        width: 46%; }
+
+#bodycontainer #pagecontent ul.list-assets li a, 
+#bodycontainer #pagecontent ul.list-assets li span { display: block;
+    padding-left: 40px; }
+    #bodycontainer #ie6down ul.list-assets li a { height: 1%; }
+
+#bodycontainer #pagecontent ul.list-assets li span { font-style: italic; }
+
+.bodycontents .maincopy .listed_file img {
+    float: left;
+    margin: 5px 7px 4px 0;
+    padding: 0;
+    border: 0;
+}
+.bodycontents .maincopy .listed_file div {
+    margin-left: 32px;
+    padding-right: 1.4em;
+}
+.bodycontents .maincopy .listed_file .filetype {
+    color: #838383;
+}
+.bodycontents .maincopy .listed_file .filedate {
+    font-style: italic;
+}
+
+/* .listed_file img {
+    float:left;
+    margin: 5px 7px 4px 0;
+}
+.listed_file div {
+    margin-left: 32px;
+} */
+
+/* Campus Map Page */
+.bodycontents .maincopy .campusmap #mainnavtabbed span {
+    display: none;
+}
+.bodycontents .maincopy .mapselectors {
+    background: #000;
+    height: 40px;
+}
+.bodycontents .maincopy .mapselectors dd {
+    float: left;
+    margin: 10px 0 0 15px;
+    padding: 0;
+    list-style-type: none;
+}
+*html .bodycontents .maincopy .mapselectors ul {
+    display: inline;
+}
+.bodycontents .maincopy .mapselectors dd dt {
+    display: inline;
+}
+.bodycontents .maincopy .mapselectors dd dt a {
+    display: block;
+    float: left;
+    height: 20px;
+    width: 89px;
+    margin: 0 4px 0 0;
+}
+.bodycontents .maincopy .mapselectors dd dt a#nomap {
+    background: url(/newcss/mysource_files/campus-map-nomap-btn.gif) no-repeat 0 0;
+}
+.bodycontents .maincopy .mapselectors dd dt a#nomap:hover, .bodycontents .maincopy .mapselectors ul li a#nomap.active {
+    background-position: 0 -20px;
+}
+.bodycontents .maincopy .mapselectors dd dt a#overlay {
+    background: url(/newcss/mysource_files/campus-map-overlay-btn.gif) no-repeat 0 0;
+}
+.bodycontents .maincopy .mapselectors dd dt a#overlay:hover, .bodycontents .maincopy .mapselectors ul li a#overlay.active {
+    background-position: 0 -20px;
+}
+.bodycontents .maincopy .mapselectors dd dt a#solid {
+    background: url(/newcss/mysource_files/campus-map-solid-btn.gif) no-repeat 0 0;
+}
+.bodycontents .maincopy .mapselectors dd dt a#solid:hover, .bodycontents .maincopy .mapselectors ul li a#solid.active {
+    background-position: 0 -20px;
+}
+.bodycontents .maincopy .mapselectors .virtualtour {
+    float: right;
+    display: inline;
+    margin: 5px 15px 0 0;
+    background: url(/newcss/mysource_files/campus-map-vt-btn.gif) no-repeat 0 0;
+    width: 117px;
+    height: 27px;
+}
+.bodycontents .maincopy .maptabs {
+    width: 300px;
+    border: 1px solid #e4e4e4;
+    height: 39px;
+}
+.bodycontents .maincopy .maptabs ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.bodycontents .maincopy .maptabs ul li {
+    display: inline;
+}
+.bodycontents .maincopy .maptabs ul li a {
+    display: block;
+    float: left;
+    height: 39px;
+}
+.bodycontents .maincopy .maptabs ul li a:hover {
+    background-position: 0 -39px;
+    }
+.bodycontents .maincopy .maptabs ul li a#legend {
+    background: url(/newcss/mysource_files/campus-map-legend-tab.jpg) no-repeat 0 0;
+    width: 102px;
+}
+.bodycontents .maincopy .maptabs ul li a#legend:hover, .bodycontents .maincopy .maptabs ul li a#legend.active {
+    background-position: 0 -39px;
+    }
+
+.bodycontents .maincopy .maptabs ul li a#mapsearchlink {
+    background: url(/newcss/mysource_files/campus-map-search-tab.jpg) no-repeat 0 0;
+    width: 101px;
+}
+.bodycontents .maincopy .maptabs ul li a#mapsearchlink:hover, .bodycontents .maincopy .maptabs ul li a#search.active {
+    background-position: 0 -39px;
+    }
+
+
+.bodycontents .maincopy .maptabs ul li a#index {
+    background: url(/newcss/mysource_files/campus-map-index-tab.jpg) no-repeat 0 0;
+    width: 97px;
+}
+.bodycontents .maincopy .maptabs ul li a#index:hover, .bodycontents .maincopy .maptabs ul li a#index.active {
+    background-position: 0 -39px;
+    }
+.bodycontents .maincopy .maptabscontent {
+    min-height: 473px;
+    height: auto;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;
+    background: #fafafa;
+    padding: 20px 10px;
+}
+*html .bodycontents .maincopy .maptabscontent {
+    height: 473px;
+}
+.bodycontents .maincopy .maptabscontent .search .button {
+    cursor: pointer;
+}
+.bodycontents .maincopy .maptabscontent .index ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.bodycontents .maincopy .maptabscontent .index ul li {
+    display: inline;
+    }
+.bodycontents .maincopy .maptabscontent .index ul li a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+.bodycontents .maincopy .maptabscontent .index ul li a:hover{
+    color: #972d17;
+}
+.bodycontents .maincopy .maptabscontent .index ul li a.active {
+    color: #972d17;
+    border-bottom: none;
+}
+.bodycontents .maincopy .maptabscontent .index ul ul {
+    margin: 1px 0 0 0;
+    padding: 0 0 5px 10px;
+    list-style-type: none;
+    border-bottom: 1px solid #c1c1c1;
+}
+.bodycontents .maincopy .maptabscontent .index ul ul li a {
+    display: block;
+    text-decoration: none;
+    font-weight: normal;
+    border-bottom: none;
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+.bodycontents .maincopy .maptabscontent .index ul ul li a:hover, .bodycontents .maincopy .maptabscontent .index ul ul li a.active {
+    text-decoration: underline;
+}
+
+/* Error Message Styles */
+.bodycontents .maincopy .errormsg {
+    min-height: 50px;
+    background: url(/newcss/mysource_files/errormsgimg-lge.gif) no-repeat 100% 0;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    border: 1px dotted black;
+}
+.bodycontents .maincopy .errormsg p {
+    background: url(/newcss/mysource_files/errormsgimg.gif) no-repeat 2px 1px;
+    color: black;
+    padding: 0 0 0 22px;
+    margin: 0 0 10px 0;
+    width: 75%;
+}
+*html .bodycontents .maincopy .errormsg {
+    height: 50px;
+}
+.bodycontents .maincopy .errormsg ul {
+    font-size: 90%;
+    margin: 5px 0 0 5px;
+}
+.bodycontents .maincopy .errormsg ul li {
+    background-image: url(/newcss/mysource_files/error-list-bullet.gif);
+    color: black;
+}
+
+/* Style for floating things (like files) into two columns */
+.floathalf {
+    width: 49%;
+    float: left;
+}
+* html .floathalf p {
+    padding-right: 1.7em;
+}
+* html .floathalf table {
+    margin-right: 1.5em;
+}
+.floathalf > p {
+    padding-right: 1.7em;
+}
+.floathalf > table {
+    margin-right: 1.5em;
+}
+.floatthird {
+    width: 32%;
+    float: left;
+}
+.floattwothird, 
+.floattwothirds {
+    width: 64%;
+    float: left;
+}
+.fsfloatthird {
+    width: 32%;
+    float: left;
+}
+*html .fsfloatthird {
+    width: 49%;
+    float: left;
+}
+
+/*Future Students Postgraduate Courses*/
+.bodycontents .maincopy .postgradleft {
+    float: left;
+    width: 73%;
+}
+.bodycontents .maincopy .postgradright {
+    float: right;
+    width: 173px;
+}
+.bodycontents .maincopy .black {
+    color: #343434;
+}
+.bodycontents ul.pglist {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.bodycontents ul.pglist li {
+    background: url(/newcss/mysource_files/studentstaffnet-list-arrow.gif) no-repeat 0 10px;
+    padding: 5px 20px 0 10px;
+    font-size: 95%;
+}
+.bodycontents .maincopy h6.pg {
+    margin: 0 0 5px 0;
+    font-size: 105%;
+    color: #343434;
+    font-weight: bold;
+}
+
+/* CDLoader */
+.UWATable {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    margin-top: 1ex;
+}
+.UWALinkTable {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    background-color: #eeeedc;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #888888;
+    padding: 1px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.UWALinkTableHighLight {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    background-color: #ffffcc;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #888888;
+    padding: 1px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+a.UWALink:link, a.UWALink:visited, a.UWALink:hover, a.UWALink:active {
+    text-decoration: none;
+    letter-spacing: 0px;
+}
+
+/* Print Header */
+#printheader {
+    display: none;
+}
+.maincopy .rightcol .testimonial {
+    border: 1px solid #cacaca;
+    padding: 4px;
+    width: 150px;
+}
+.maincopy .rightcol .testimonial h3 {
+    font-family: "Trajan Pro", Georgia, "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    margin: 0px;
+    background: #000;
+    padding: 16px 0 18px 10px;
+    font-size: 120%;
+    font-weight: normal;
+    letter-spacing: .1em;
+    color: #FFF;
+    border-bottom: none;
+    line-height: 0;
+}
+.maincopy .rightcol .testimonial h4 {
+    line-height: 10px;
+    font-weight: bold;
+    color: #000;
+}
+.maincopy .rightcol .testimonial img {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+.maincopy .rightcol .testimonial .content {
+    margin: 15px 0 8px 5px;
+}
+
+/* A to Z */
+div.maincopy div.atoz ul { margin: 20px 0;
+    list-style-type: none;
+    color: #0864a5;
+    font-size: 120%;
+    line-height: 20px; }
+div.maincopy div.atoz li { display: inline;
+    margin: 0;
+    padding: 0;
+    background-image: none; }
+div.maincopy div.atoz li a, 
+div.maincopy div.atoz li span { padding: .25em;
+    font-weight: bold;
+    border: 1px solid white; }
+div.maincopy div.atoz li a { text-decoration: none !important; }
+div.maincopy div.atoz li a:hover, 
+div.maincopy div.atoz li a.current { color: #8f7b29;
+    border: 1px solid #D7D7D7; }
+div.maincopy div.atoz li a:link {text-decoration: none; }
+div.maincopy div.atoz li a:visited {text-decoration: none; }
+
+
+.notvisible {
+    visibility: hidden;
+}
+.donotdisplay {
+    display: none;
+}
+
+
+.bordertop {
+    padding: 20px 0 0 0;
+    margin-top: 20px;
+    border-top: 1px solid #bfbfbf;
+}
+
+.bodycontents .rightcol table {
+   overflow: hidden;
+}
+.bodycontents .rightcol td, .bodycontents .maincopy .rightcol th {
+   overflow: hidden;
+}
+
+/* News styles */
+.news h3 a:link {
+    text-decoration: none;
+}
+
+.news h3 a:visited {
+    text-decoration: none;
+}
+
+.news h3 a:hover {
+    text-decoration: underline;
+}
+
+.news h4 a:link {
+    text-decoration: none;
+}
+
+.news h4 a:visited {
+    text-decoration: none;
+}
+
+.news h4 a:hover {
+    text-decoration: underline;
+}
+
+.newsarticle, 
+.separator-above {
+    background: url(/newcss/mysource_files/horiz-dots-bground-rpt.gif) repeat-x top left;
+    padding-top: 15px;
+}
+
+
+#footercontainer .wrapper {
+    background: url(/newcss/mysource_files/footer-hp-watermarkbg.gif) no-repeat top left;
+}
+
+
+.floatright {
+    float: right;
+    margin: 0 0 0 30px;
+}
+
+
+.floatcontactmap { 
+    float: right; 
+    margin: 0 0 0 0px;
+    width: 306px;
+}
+
+.floatcontactmap img { 
+    margin-left: 0px; 
+}
+
+.caption {
+    font-size: 90%;
+    color: #656565;
+}
+
+.hideoverflow {
+    overflow: hidden;
+}
+
+.clearleft { clear: left; }
+.clearright { clear: right; }
+.clearboth { display: block;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+    height: 1px;
+    content: ' '; }
+
+
+/* Contact directory loader */
+.bodycontents .cd_profile h3 {
+    margin-bottom: 0.2em !important;
+}
+.bodycontents .cd_profile .position,
+.bodycontents .cd_profile .area {
+    font-weight: bold;
+    margin-left: 1.5em;
+}
+.bodycontents .cd_profile h4 {
+    margin-top: 1.5em;
+}
+.bodycontents .cd_profile ul {
+    margin-bottom: 1em;
+}
+.bodycontents .cd_profile img {
+    margin-left: 3em !important;
+}
+
+
+
+.cdl_profile td,
+.cdl_profile th {
+  vertical-align: top;
+  text-align: left;
+}
+.cdl_profile th,
+.cdl_profile td.attrib {
+    font-weight: bold;
+    padding-right: 1.4em;
+}
+.bodycontents .maincopy .cdl_profile .contact_field,
+.bodycontents .maincopy .cdl_profile h4.field {
+    margin-top: 2em;
+}
+.cdl_profile img {
+    float: right;
+    margin: 0 0 2em 3em !important;
+}
+.cdl_profile .person_info {
+    font-weight: bold;
+}
+
+
+
+
+
+/*** The following override earlier declarations, which need to be removed ***/
+
+
+/*
+in uwa_grail.css
+.bodycontents .rightcol h3 
+    is what the landing page sees
+
+
+in pre-flps_fixes.css
+.bodycontents .maincopy .rightcol h3
+    is what the inside pages see
+*/
+
+
+/* Right Column Header Styles */
+.bodycontents .maincopy .rightcol h1, .mainrhs .rightcol h1 { font-family: Georgia, "Times New Roman", Times, serif; text-transform: uppercase; margin: 0 0 20px 0; padding: 0 0 10px 0; border-bottom: 1px solid #d9d9d9; font-size: 140%; font-weight: normal; letter-spacing: .2em; color: pink; }
+.bodycontents .maincopy .rightcol h2, .mainrhs .rightcol h2 { font-family: Georgia, "Times New Roman", Times, serif; text-transform: uppercase; margin: 0 0 20px 0; padding: 0 0 10px 0; border-bottom: 1px solid #d9d9d9; font-size: 140%; font-weight: normal; letter-spacing: .2em; color: pink; }
+.bodycontents .maincopy .rightcol h3, .mainrhs .rightcol h3 { font-family: Georgia, "Times New Roman", Times, serif; text-transform: uppercase; margin: 0 0 20px 0; padding: 0 0 10px 0; border-bottom: 1px solid #d9d9d9; font-size: 140%; font-weight: normal; letter-spacing: .2em; color: #757575; }
+.bodycontents .maincopy .rightcol h4, .mainrhs .rightcol h4 { margin: 0 0 10px 0; padding: 0; font-size: 100%; color: #343434; font-weight: bold; border: none; line-height: 14px; text-transform: uppercase; }
+.bodycontents .maincopy .rightcol h5, .mainrhs .rightcol h5 { margin: 0 0 5px 0; font-size: 110%; color: #585858; font-weight: bold;  }
+
+/* Content Image Styles */
+.bodycontents .maincopy .imgright { float: right; padding-left: 17px; padding-bottom: 17px; padding-top: 3px; }
+.bodycontents .maincopy .imgright img { float: left; border: 0px; padding: 3px; }
+.bodycontents .maincopy .imgleft { float: left; padding-right: 17px; padding-bottom: 17px; padding-top: 3px; }
+.bodycontents .maincopy .imgleft img { float: left; border: 0px; padding: 3px; }
+.bodycontents .maincopy .imgnofloat { padding-bottom: 17px; padding-top: 3px; }
+.bodycontents .maincopy .imgnofloat img { border: 0px; padding: 3px; }
+
+.bodycontents .maincopy img { border: 0px; padding: 3px; margin: 0.4em 1.2em 0.4em 0; }
+
+/*** end pre-flps fixes ***/
+
+/* Navigation skip */
+div#nav-skip { position: absolute;
+    z-index: 1; 
+    right: 1em; /* 12/12 */
+    padding: 2px 15px 2px 5px;
+    background: #363636 url('/newcss/graphics/ql_rightbottom.gif') no-repeat 100% 100%; }
+    #ie7 div#nav-skip, 
+    #ie6down div#nav-skip { padding-top: 1px; }
+div#nav-skip a { font-size: 0.906593em; /* 11/12.133333 */
+    color: #e2e2e2;
+    text-decoration: none; }
+div#nav-skip a:focus, 
+div#nav-skip a:hover, 
+div#nav-skip a:active { text-decoration: underline; }
+
+#quicklinksOuter {
+background: #363636 url(/newcss/mysource_files/ql_leftbottom.gif) no-repeat left bottom;
+position: absolute;
+right: 10.302198em; /* 125/12.133333 */
+padding: 0 0 0 5px;
+color: white;
+}
+
+#quicklinksInner {
+background: url(/newcss/mysource_files/ql_rightbottom.gif) no-repeat right bottom;
+font-size: 0.906593em; /* 11/12.133333 */
+padding: 2px 0;
+}
+
+#quicklinksInner a {
+text-decoration: none;
+padding: 0 0 0 5px;
+margin: 0 12px 0 4px;
+background: url(/newcss/mysource_files/ql_linkarrow.gif) no-repeat left center;
+color: #e2e2e2;
+}
+#quicklinksInner a:hover {
+text-decoration: underline;
+}
+a#quicklinksButton {
+padding: 0 11px 0 0;
+margin: 0 5px 0 4px;
+background: url(/newcss/mysource_files/ql_reticule.gif) no-repeat right center;
+text-decoration: none;
+}
+.quicklinksButton a:hover {
+text-decoration: underline;
+}
+#quicklinksList {
+display: none;
+}
+#quicklinksExtra {
+display:none;
+padding: 0 15px 0 5px;
+}
+
+
+
+
+.wholepagecontainer .centreexpander {
+    margin: 15px -269px 30px -451px;
+}
+
+
+
+#bodycontainer.onebox {
+    padding-left: 0px;
+    min-width: 0px;
+}
+
+#bodycontainer.onebox #headercontainer,
+#bodycontainer.onebox #footercontainer,
+#bodycontainer.onebox #pagecontainer {
+    margin-left: 0px;
+    min-width: 780px;
+}
+
+#bodycontainer.onebox .centreouterwrapper {
+    padding: 0 390px 0 390px;
+    margin: 0;
+}
+
+#bodycontainer.onebox .centreexpander {
+    margin: 0 -390px;
+    min-width: 780px;
+    position: relative;
+}
+
+#bodycontainer.onebox .centrewrapper {
+    padding: 15px 30px 0;
+}
+
+.bodycontents .mainrhs .rightcolsand {
+    background: #F2EDD9;
+}
+
+.bodycontents .maincopy h1 img { margin-left: 0; }
+#bodycontainer.standalone .maincopy { padding-left: 0 !important; }
+
+
+
+/* Fix for SESA */
+* html #footercontainer .outerwrapper {
+    height: 1%;
+}
+
+/* Styles developed for portal error page */
+h1.tealerror {
+    color: #009cae;
+    margin-top: 70px !important;
+    font-size: 160%;
+    display: block;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+/* edit 2009.11.19
+   Guan Ming Teo
+
+   Updated so it has a better class name to match new core.
+   Added more specificity.
+   Works on the table element itself also, so you don't need a wrapper to do ALL tables. */
+#bodycontainer #pagecontent div.table-size-99 table, 
+#bodycontainer #pagecontent table.table-size-99, 
+#bodycontainer #pagecontent div.tables99 table, 
+#bodycontainer #pagecontent table.tables99 { width: 99%; }
+
+#bodycontainer #pagecontent div.tables99important table, 
+#bodycontainer #pagecontent table.tables99important { width: 99% !important; }
+/* end edit 2009.11.19 */
+
+.bodycontents form table { margin-bottom: 2em; }
+.bodycontents form table ul { margin-bottom: 0; }
+
+
+.bodycontents .maincopy .salepageouter h3 {
+    background-repeat:no-repeat;
+    color:black;
+    font-family:Arial,Helvetica,sans-serif;
+    margin: 0.5em 0 0.5em 13px;
+    font-size: 110%;
+}
+
+/* Styles for Course Information Pages */
+.bodycontents .maincopy .rightcol .coursesouter {
+    border-top: 3px solid #dbdbdb;
+    border-left: 3px solid #dbdbdb;
+    border-right: 3px solid #dbdbdb;
+    font-size: 1.004566em; /* 11/10.95 */
+}
+.bodycontents .maincopy .rightcol .coursesinner {
+    padding: 10px 15px;
+    border-bottom: 3px solid #dbdbdb; 
+}
+.bodycontents .maincopy .rightcol .coursesouter .coursesinner h4 {
+    margin: 0 0 5px 0;
+    line-height: 20px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 120%;
+    color: #00497b;
+    font-weight: bold;
+    text-transform: none;
+}
+
+.bodycontents .maincopy .rightcol .coursesouter .coursesinner dl dt { margin: 0.5em 0 0; }
+.bodycontents .maincopy .rightcol .coursesouter .coursesinner dl dd { margin: 0 0 0.25em; }
+
+.bodycontents .floathalf ul {
+    margin-right: 1.3em;
+}
+
+
+
+.floatleft {
+    float: left;
+}
+
+/* edit 2008.07.09
+   Guan Ming Teo
+
+   Adding styling for new set of buttons */
+    div.maincopy div.button {
+        position: relative;
+        margin: 0.75em 0;
+    }
+    div.maincopy div.button:after, 
+    div.maincopy div.button a:after {
+        display: block;
+        clear: left;
+        visibility: hidden;
+        height: 0;
+        content: ' ';
+    }
+
+    div.maincopy div.button, 
+    div.maincopy div.button a, 
+    div.maincopy div.button div.border-top, 
+    div.maincopy div.button div.border-right, 
+    div.maincopy div.button div.border-bottom, 
+    div.maincopy div.button div.border-left { zoom: 1.0; /* triggering hasLayout */ }
+
+    div.maincopy div.button img.frame {
+        float: left;
+        margin: 0 1px;
+        border-width: 0;
+        vertical-align: bottom;
+    }
+
+    div.maincopy div.button a, 
+    div.maincopy div.button a:visited {
+        display: block;
+        padding: 1px 0;
+        background: #f4f4f4 url('/newcss/mysource_files/button-flow.gif') repeat-x 0 0;
+        outline-width: 0;
+        color: #222;
+        text-decoration: none;
+    }
+    div.maincopy div.button a:focus, 
+    div.maincopy div.button a:hover, 
+
+    div.maincopy div.button a:active {
+        background-color: #eaf4fb;
+        background-image: none;
+        color: #222;
+        text-decoration: none;
+    }
+    
+    div.maincopy div.button a span {
+        display: block;
+        margin-left: 195px;
+        padding: 2px 50px 2px 5px;
+        background: url('/newcss/mysource_files/button-arrow.gif') no-repeat 100% 1.7em;
+    }
+    div.maincopy div.button a span span {
+        margin: 4px 0;
+        padding: 0;
+        background-image: none;
+    }
+    div.maincopy div.button a span strong, 
+    div.maincopy div.button a:link span strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #0864a5;
+    }
+    div.maincopy div.button a:visited span strong {
+        color: #746114;
+    }
+    div.maincopy div.button a:focus span strong, 
+    div.maincopy div.button a:hover span strong, 
+    div.maincopy div.button a:active span strong { color: #0864a5; }
+
+    div.maincopy div.button div.border-top, 
+    div.maincopy div.button div.border-right, 
+    div.maincopy div.button div.border-bottom, 
+    div.maincopy div.button div.border-left {
+        background: url('/newcss/mysource_files/button-top-flow.gif') repeat-x 0 0;
+    }
+    div.maincopy div.button div.border-right {
+        background-image: url('/newcss/mysource_files/button-right-flow.gif');
+        background-repeat: repeat-y;
+        background-position: 100% 0;
+    }
+    div.maincopy div.button div.border-bottom {
+        background-image: url('/newcss/mysource_files/button-bottom-flow.gif');
+        background-position: 0 100%;
+    }
+    div.maincopy div.button div.border-left {
+        padding: 3px;
+        background-image: url('/newcss/mysource_files/button-left-flow.gif');
+        background-repeat: repeat-y;
+    }
+
+
+    div.maincopy div.button div.top-left, 
+    div.maincopy div.button div.top-right, 
+    div.maincopy div.button div.bottom-left, 
+    div.maincopy div.button div.bottom-right {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6px;
+        height: 6px;
+        background-image: url('/newcss/mysource_files/button-corners.gif');
+        overflow: hidden;
+    }
+    div.maincopy div.button div.top-right {
+        left: auto;
+        right: 0;
+        background-position: 100% 0;
+    }
+    div.maincopy div.button div.bottom-left {
+        top: auto;
+        bottom: 0;
+        background-position: 0 -6px; /* IE 6 */
+    }
+    div.maincopy div.button div.bottom-right {
+        left: auto;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        background-position: -6px -6px; /* IE 6 */
+    }
+/* eo.edit 2008.07.09 */
+
+/* edit 2008.12.01
+   Guan Ming Teo
+
+   New black button styling */
+div.maincopy div.button-curved-black { margin: 1em 0;
+    background-color: #000; }
+div.maincopy div.button-curved-black, 
+div.maincopy div.button-curved-black div.button-curved-black-right-top, 
+div.maincopy div.button-curved-black div.button-curved-black-right-top div.button-curved-black-right-bottom, 
+div.maincopy div.button-curved-black div.button-curved-black-right-top div.button-curved-black-right-bottom div.button-curved-black-left-bottom { float: left;
+    display: inline;
+    overflow: visible;
+    background-image: url('/newcss/mysource_files/button-black-corners.gif');
+    background-repeat: no-repeat;
+    background-position: 0 0; }
+div.maincopy div.button-curved-black div.button-curved-black-right-top { background-position: 100% 0; }
+div.maincopy div.button-curved-black div.button-curved-black-right-top div.button-curved-black-right-bottom { background-position: 100% 100%; }
+div.maincopy div.button-curved-black div.button-curved-black-right-top div.button-curved-black-right-bottom div.button-curved-black-left-bottom { background-position: 0 100%; }
+
+div.maincopy div.button-curved-black div.button-curved-black-right-top div.button-curved-black-right-bottom div.button-curved-black-left-bottom a { float: left;
+    display: inline;
+    width: 150px;
+    padding: 4px 48px 5px 16px;
+    background: url('/newcss/mysource_files/button-black-arrow.gif') no-repeat 100% 50%;
+    color: #fff;
+    font-size: 1.333333em; /* 16px */
+    text-decoration: none; }
+div.maincopy div.button-curved-black div.button-curved-black-right-top div.button-curved-black-right-bottom div.button-curved-black-left-bottom a span { display: block;
+    font-size: 0.875em; /* 14px */ }
+
+div.maincopy div.button-curved-black-one div.button-curved-black-right-top div.button-curved-black-right-bottom div.button-curved-black-left-bottom a { padding-top: 12px;
+    padding-bottom: 13px; }
+/* end edit 2008.12.01 */
+
+/* edit 2008.07.28
+   Guan Ming Teo
+
+   Adding styling for filled-out printable form */
+div#form-print table { background: 
+    border-collapse: collapse; }
+div#form-print table td { padding: 4px 6px; }
+div#form-print table td strong { display: block;
+    padding: 7px 0;
+    border-bottom: 1px solid #d8d8d8;
+    color: #0864a5;
+    font: 800 150% Arial, Helvetica, sans-serif;
+    line-height: 25px; }
+div#form-print table td ul { width: 150px;
+    text-align: right; }
+div#form-print table td ul li { font-weight: 800; }
+
+@media print {
+#print-page { display: none; }
+}
+/* eo.edit 2008.07.28 */
+
+
+/* edit 14.08.2008
+   Luke Grimes  
+   Transfering Ming's Expo-testimonial code into core as "testimonial-quote" 
+   Transferring my expo-box code into core as testimonial-box */
+
+/* TESTIMONIALS */
+    .bodycontents .testimonial-quote {
+        border: 1px solid #b2b2b2;
+        font-size: 1.10429em;
+        text-align: center;
+        zoom: 1.0;
+    }
+    .bodycontents .testimonial-quote-margined { margin: 1em 0; }
+
+    .bodycontents .testimonial-quote img {
+        float: right;
+        display: inline;
+        margin: 3px;
+        padding: 0;
+        vertical-align: bottom;
+    }
+
+    .bodycontents .testimonial-quote dl {
+        clear: right;
+        margin: 0px;
+        text-align: left;
+    }
+    .bodycontents .testimonial-quote dl dt, 
+    .bodycontents .testimonial-quote dl dd, 
+    .bodycontents .testimonial-quote p.byline {
+        margin: 5px 0;
+        padding: 0 5px;
+    }
+    .bodycontents .testimonial-quote dl dt, 
+    .bodycontents .testimonial-quote p.byline {
+        margin-top: 0;
+        padding-top: 5px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    .bodycontents .testimonial-quote p.byline { margin-bottom: 0;
+        padding-bottom: 5px;
+        text-align: right; }
+    .bodycontents .testimonial-quote dl dd blockquote {
+        margin: 0;
+        padding-bottom: 15px;
+        background: url(/newcss/mysource_files/testimonial-quote-bottom.gif) no-repeat 100% 100%;
+        border: 1px solid #fff;
+        color: #0a65a6;
+    }
+    .bodycontents .testimonial-quote dl dd blockquote p.first-para {
+        padding-top: 20px;
+        background: url(/newcss/mysource_files/testimonial-quote-top.gif) no-repeat 0 0;
+    }
+    .bodycontents .testimonial-quote dl dd blockquote p {
+        margin: 5px 0;
+    }
+
+    .bodycontents .testimonial-quote .linklist { margin: 0 5px;
+        text-align: left; }
+    /* end TESTIMONIALS */
+
+/* blockquote.testimonial
+   edit 2009.06.02
+   Guan Ming Teo
+
+   Adding the regular (non-rightcol) style of blockquotes */
+#bodycontainer #pagecontent blockquote.testimonial { width: auto; /* overriding legacy */
+    margin-bottom: 1.25em; /* 15/12 */
+    padding: 0; /* overriding legacy */
+    background: url('/newcss/graphics/devices/testimonial-quote/testimonial-quote-bottom.gif') no-repeat 100% 100%;
+    border-width: 0; /* overriding legacy */
+    color: #0a65a6;
+    text-align: left; /* overriding legacy */ }
+#bodycontainer #pagecontent blockquote.testimonial p { padding: 0 25px; }
+#bodycontainer #pagecontent blockquote.testimonial p.first-para { padding-top: 1px;
+    background: url('/newcss/graphics/devices/testimonial-quote/testimonial-quote-top.gif') no-repeat 0 0; }
+#bodycontainer #pagecontent blockquote.testimonial p.byline { position: static;
+    margin-bottom: 0;
+    font-weight: 800;
+    color: #464646;
+    text-transform: uppercase;
+    text-align: right; }
+/* end edit 2009.06.02 */
+
+    /* TESTIMONIAL Box */
+    .bodycontents .maincopy .testimonial-box {
+        border: 1px solid #b2b2b2;
+        margin: 5px 1px 20px;
+        padding: 10px 5px;
+    }
+    /* end TESTIMONIAL Box */
+
+/* eo.edit Luke Grimes 14.08.2008 */
+
+/* edit 28.10.2008
+   Luke Grimes  
+   Transferring my sanstone class for testimonial-quote into core */
+/** SANDSTONE LANDING TESTIMONIAL BOX  ***/
+.bodycontents .testimonial-box.sandstone {
+    border: 1px solid #b2b2b2;
+    margin: 10px;
+    padding: 5px !important; 
+} 
+
+.bodycontents .testimonial-box.sandstone .testimonial-quote {
+    border: none;
+    padding: 3px;
+    background-color: #f8f6ec;
+}
+
+.bodycontents .testimonial-box.sandstone .testimonial-quote blockquote {
+        margin: 0px;
+        border: none;
+        padding: 25px 0px 25px 0px;
+}
+/*** end TESTIMONIAL Box ***/
+
+
+
+
+
+
+/* Columned Definition Lists
+   Guan Ming Teo */
+#ie7 #pagecontent dl.columned, 
+#ie7 #pagecontent dl.columned dd { min-height: 1%; }
+#ie6down #pagecontent dl.columned, 
+#ie6down #pagecontent dl.columned dd { height: 1%; }
+#bodycontainer #pagecontent dl.columned:after, 
+#bodycontainer #pagecontent dl.columned dd:after {
+    display: block;
+    clear: left;
+    visibility: hidden;
+    height: 0;
+    content: ' ';
+}
+
+#bodycontainer #pagecontent dl.columned dt { float: left;
+    clear: left;
+    display: inline;
+    width: 14em;
+    margin-right: 0.5em;
+    padding-top: 0.25em; }
+#bodycontainer #pagecontent dl.columned dd { margin-left: 14.5em;
+    padding-top: 0.25em; }
+    #ie7 #pagecontent dl.columned dd, 
+    #ie6down #pagecontent dl.columned dd { margin-left: 0; }
+
+#bodycontainer #pagecontent dl.list-columned:after, 
+#bodycontainer #pagecontent dl.list-columned dd:after { clear: left;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: ' '; }
+    #ie7 #pagecontent dl.list-columned { min-height: 1%; }
+    #ie6down #pagecontent dl.list-columned { height: 1%; }
+#bodycontainer #pagecontent dl.list-columned dt { float: left;
+    clear: left;
+    width: 12em; /* 144/12 */
+    margin-right: 0.5em; /* 6/12 */
+    padding-bottom: 0.5em; /* 6/12 */
+    font-weight: 800; }
+    #ie6down #pagecontent dl.list-columned dt { display: inline; }
+#bodycontainer #pagecontent dl.list-columned-size-7 dt { width: 7em; /* 84/12 */ }
+#bodycontainer #pagecontent dl.list-columned-size-17 dt { width: 17em; /* 204/12 */ }
+
+
+#bodycontainer #pagecontent dl.list-columned dt.padding-top, 
+#bodycontainer #pagecontent dl.list-columned dd.padding-top { padding-top: 1.25em; /* 15/12 */ }
+#bodycontainer #pagecontent dl.list-columned dt.padding-bottom, 
+#bodycontainer #pagecontent dl.list-columned dd.padding-bottom { padding-bottom: 1.25em; /* 15/12 */ }
+
+#bodycontainer #pagecontent dl.list-columned dd { margin-left: 12.083333em; /* 145/12 */
+    padding: 0 0.5em 0.5em; /* 6/12 */ }
+#bodycontainer #pagecontent dl.list-columned-size-7 dd { margin-left: 7.083333em; /* 85/12 */ }
+#bodycontainer #pagecontent dl.list-columned-size-17 dd { margin-left: 17.083333em; /* 205/12 */ }
+
+    #ie6down #pagecontent dl.list-columned dd { height: 1%;
+        margin-left: 0; }
+#bodycontainer #pagecontent dl.list-columned dd ul, 
+#bodycontainer #pagecontent dl.list-columned dd ol { margin: 0;
+    padding-bottom: 0.5em; /* 6/12 */ }
+#bodycontainer #pagecontent dl.list-columned dd p { margin: 0; }
+#bodycontainer #pagecontent dl.list-columned dd address { font-style: normal; }
+#bodycontainer #pagecontent dl.list-columned dd address span { display: block; }
+
+/* list-columned-separator IS IN BETA. */
+#bodycontainer #pagecontent dl.list-columned-separator dt, 
+#bodycontainer #pagecontent dl.list-columned-separator dd { padding-top: 0.75em; /* 9/12 */
+    background: url('/newcss/graphics/dots-lightgrey.gif') repeat-x 0 -1px; }
+    #ie7 #pagecontent dl.list-columned-separator dt, 
+    #ie6down #pagecontent dl.list-columned-separator dd { padding-top: 0.5em; /* 6/12 */ }
+    #ie6down #pagecontent dl.list-columned-separator dd { position: relative;
+        left: -8px; }
+/* end list-columned-separator IS IN BETA. */
+
+/* Forms
+   Guan Ming Teo */
+
+#bodycontainer #pagecontent form { margin: 1em 0; }
+
+/* Resetting images on <li>s
+#bodycontainer #pagecontent form ul li { padding-left: 15px;
+    margin-bottom: 0.4em;
+    background: url('/newcss/mysource_files/list-bullet.gif') no-repeat 0 4px; } */
+/* Until all forms check out, add bullets to <li>s manually */
+#bodycontainer #pagecontent form ul.list li { padding-left: 15px;
+    margin-bottom: 0.4em;
+    background: url('/newcss/mysource_files/list-bullet.gif') no-repeat 0 4px; }
+
+#bodycontainer #pagecontent form div.form-errors { padding-left: 1em;
+    color: #800;
+    font-size: 1.483516em; /* consistent 18px */ }
+#bodycontainer #pagecontent form div.form-errors ul { margin: 1em 0 1.5em;
+    color: #464646;
+    font-size: 0.777778em; /* consistent 12px */ }
+#bodycontainer #pagecontent form div.form-errors ul li { margin: 1em 1em 1em 0;
+    padding-left: 3em;
+    background: url('/newcss/mysource_files/bullet-red.gif') no-repeat 1em 0.35em; }
+
+#bodycontainer #pagecontent form div.form { font-size: 0.989011em; /* consistent 12px */ }
+#bodycontainer #pagecontent form div.form h3, 
+#bodycontainer #pagecontent form div.form h4 { margin: 0 0.5% 0 0; /* IE 6 float drop down workaround */
+    padding: 1em;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.166667em;
+    line-height: normal; }
+#bodycontainer #pagecontent form div.form h4 { background-color: #7ac4d9;
+    border-top: 1px solid #fff;
+    color: #000;
+    font-size: 1.083334em; }
+
+#bodycontainer #pagecontent form div.form .img_borders img, 
+#bodycontainer #pagecontent form div.form .border, 
+#bodycontainer #pagecontent form div.form .cd_profile img, 
+#bodycontainer #pagecontent form div.form .cdl_profile img { background-color: #fff; }
+
+#bodycontainer #pagecontent form div.form .left { text-align: left; }
+
+#bodycontainer #pagecontent form div.form table { width: 99.5%; /* IE 6 float drop down workaround */
+    margin: 14px 0;
+    background: #e4f3f7 url('/newcss/mysource_files/form-separator.gif') repeat-y 40% 0;
+    border-top: 28px solid #e4f3f7;
+    border-bottom: 28px solid #e4f3f7;
+    border-collapse: collapse; }
+    #ieAny #pagecontent form div.form table { margin: 0; /* This looks like it's actually a Gecko bug -- requiring a 14px margin otherwise elements overlap, when all are positioned static and no floating or negative margins are in play. This part is a switchback for IE 6 + 7 */ }
+#bodycontainer #pagecontent form div.form table td { padding: 0.5em 1em;
+    color: #333;
+    font-weight: 800; }
+
+#bodycontainer #pagecontent form div.form table td span { font-size: 0.916666em; /* 11/12 */
+    color: #555; }
+
+#bodycontainer #pagecontent form dl { margin: 0;
+    padding: 1em;
+    background-color: #e4f3f7; }
+
+#bodycontainer #pagecontent form div.form table td input, 
+#bodycontainer #pagecontent form div.form table td select, 
+#bodycontainer #pagecontent form div.form table td textarea, 
+#bodycontainer #pagecontent form dl dd input, 
+#bodycontainer #pagecontent form dl dd select, 
+#bodycontainer #pagecontent form dl dd textarea { margin: 0.5em 0.25em;
+    padding: 0.083333em;
+    border: 1px solid #7ac4d9;
+    color: #464646;
+    font: 100 1em Arial, Helvetica, sans-serif; }
+#bodycontainer #pagecontent form dl dd input, 
+#bodycontainer #pagecontent form dl dd select, 
+#bodycontainer #pagecontent form dl dd textarea { margin: 0 0.25em; }
+
+#bodycontainer #pagecontent form div.form table td label, 
+#bodycontainer #pagecontent form div.form table td select, 
+#bodycontainer #pagecontent form dl dt label, 
+#bodycontainer #pagecontent form dl dd select { cursor: pointer; }
+
+#bodycontainer #pagecontent form dl dt label { font-weight: 800; }
+
+#bodycontainer #pagecontent form div.form table td ul { margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border-width: 0; }
+#bodycontainer #pagecontent form div.form table td ul li { margin: 0.5em 0;
+    padding: 0;
+    background-image: none; }
+#bodycontainer #pagecontent form div.form table td ul li label, 
+#bodycontainer #pagecontent form div.form table table label { font-weight: 100; }
+#bodycontainer #pagecontent form div.form table td ul li input, 
+#bodycontainer #pagecontent form div.form table table input { margin: 0 0.25em;
+    border-width: 0;
+    cursor: pointer; }
+
+#bodycontainer #pagecontent form div.form table td.form-radio-hori { padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #e4f3f7;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #7ac4d9; }
+#bodycontainer #pagecontent form div.form table td.form-radio-hori ul { width: 100%; }
+#bodycontainer #pagecontent form div.form table td.form-radio-hori ul li { float: left;
+    width: 11.5%;
+    padding: 0 0.5% 0.5em; }
+    #ie6down #pagecontent form div.form table td.form-radio-hori ul li { display: inline;
+        width: 11%; }
+#bodycontainer #pagecontent form div.form table td.form-radio-hori ul li label { margin: 0; }
+#bodycontainer #pagecontent form div.form table td.form-radio-hori ul li input { float: none;
+    clear: none;
+    display: block;
+    width: 1em; /* 12/12 */
+    margin: 0 auto; }
+
+/* Nested tables and tickbox tables in Matrix */
+#bodycontainer #pagecontent form div.form div.form-wrap { margin-right: 0.5%;
+    background-color: #e4f3f7; }
+#bodycontainer #pagecontent form div.form table table, 
+#bodycontainer #pagecontent form div.form table.sq-backend-table { width: auto;
+    margin: 0 0 1.25em 0.25em; /* 15/12, 3/12 */
+    background-color: transparent;
+    background-image: none;
+    border-width: 0; }
+#bodycontainer #pagecontent form div.form table table td, 
+#bodycontainer #pagecontent form div.form table.sq-backend-table td { background-color: #e4f3f7;
+    font-weight: 100; }
+#bodycontainer #pagecontent form div.form table.sq-backend-table th { background-color: #e4f3f7; }
+#bodycontainer #pagecontent form div.form table.sq-backend-table tr.dark td, 
+#bodycontainer #pagecontent form div.form table.sq-backend-table tr.even td { background-color: #cfeaf1; }
+#bodycontainer #pagecontent form div.form table.sq-backend-table td { border-width: 0 0 1px;
+    border-style: solid;
+    border-color: #b7e1ec; }
+#bodycontainer #pagecontent form div.form table.sq-backend-table thead tr th, 
+#bodycontainer #pagecontent form div.form table.sq-backend-table td.sq-backend-table-header { font-size: 0.916666em; /* 11px */
+    font-weight: 800;
+    text-transform: uppercase; }
+
+#bodycontainer #pagecontent form div.form table.sq-backend-table td.sq-backend-table-cell span { display: inline;
+    font-size: 1em !important; /* 12/12 */
+    color: #333; } 
+#bodycontainer #pagecontent form div.form table.sq-backend-table td.sq-backend-table-cell span label { margin-top: -1.25em; /* -15/12 */
+    cursor: text; }
+    #ie7 #pagecontent form div.form table.sq-backend-table td.sq-backend-table-cell span label, 
+    #ie6down #pagecontent form div.form table.sq-backend-table td.sq-backend-table-cell span label { margin-top: -1.5em; /* -18/12 */
+        margin-left: 29px; }
+
+#bodycontainer #pagecontent form div.form p { margin: 0 0.5% 0 0; /* IE 6 float drop down workaround */
+    padding: 0.75em 1em;
+    background-color: #e4f3f7;
+    text-align: center; }
+#bodycontainer #pagecontent form div.form p input, 
+#bodycontainer #pagecontent form p#form-navigation input, 
+#bodycontainer #pagecontent form p.form-navigation input { overflow: visible;
+    margin-left: 16em;
+    padding: 0.25em 0.75em;
+    background-color: #000;
+    border-width: 0;
+    color: #fff;
+    font: 800 1em Arial, Helvetica, sans-serif;
+    cursor: pointer; }
+#bodycontainer #pagecontent form p#form-navigation input.sq-form-field, 
+#bodycontainer #pagecontent form p.form-navigation input.sq-form-field { margin-left: 40%; }
+
+#bodycontainer #pagecontent form div.form p#form-navigation, 
+#bodycontainer #pagecontent form div.form p.form-navigation, 
+#bodycontainer #pagecontent form p#form-navigation, 
+#bodycontainer #pagecontent form p.form-navigation { margin: 0;
+    padding: 0 0 1em;
+    background-color: #e4f3f7;
+    text-align: left; }
+
+#bodycontainer #pagecontent form div.form .text-left { text-align: left; }
+#bodycontainer #pagecontent form div.form .text-center { text-align: left; }
+#bodycontainer #pagecontent form div.form .text-right { text-align: left; }
+
+#bodycontainer #pagecontent form div.form ul, 
+#bodycontainer #pagecontent form div.form ul.list, 
+#bodycontainer #pagecontent form div.form table td ul.list { margin-bottom: 0;
+    padding: 2em 0;
+    background-color: #bce1ec;
+    border-top: 1px solid #fff; }
+#bodycontainer #pagecontent form div.form ul.list { margin-right: 0.5%; }
+#bodycontainer #pagecontent form div.form table td ul.list { margin-right: 0; }
+#bodycontainer #pagecontent form div.form ul li, 
+#bodycontainer #pagecontent form div.form ul.list li, 
+#bodycontainer #pagecontent form div.form table td ul.list li { margin: 1em 1em 1em 0;
+    padding-left: 3.5em;
+    background: url('/newcss/mysource_files/bullet-black.gif') no-repeat 2em 0.35em; }
+
+/* Graduate Profiles
+   Guan Ming Teo */
+div.maincopy div.grad-profile { zoom: 1.0; /* triggering hasLayout for float clearing */
+    padding: 8px;
+    background-color: #ddf2f7;
+    border: 1px solid #7ac4d9;
+    font-size: 0.989011em; /* shifting 12.133333px to 12px */ }
+div.maincopy div.grad-profile:after { display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    content: ' '; }
+
+div.maincopy div.grad-profile div.grad-profile-text { zoom: 1.0; /* triggering hasLayout for 3px text jog fix */
+    margin-right: 195px;
+    padding: 4px 30px 4px 16px;
+    background: #fff url('/newcss/mysource_files/grad-profile-quote-bottom.gif') no-repeat 100% 100%;
+    border: 1px solid #aadbe8; }
+div.maincopy div.grad-profile div.grad-profile-text p { margin: 12px 0; }
+div.maincopy div.grad-profile div.grad-profile-text p.introduction { padding: 0 24px;
+    background-image: url('/newcss/mysource_files/testimonial-quote-top.gif');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    color: #0a65a6;
+    font-size: 1.25em; }
+
+div.maincopy div.grad-profile div.grad-profile-photo { float: right;
+    display: inline;
+    width: 175px;
+    margin: 0;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #aadbe8;
+    text-align: center; }
+div.maincopy div.grad-profile div.grad-profile-photo p { margin: 0;
+    padding: 0.5em 0; }
+
+div.maincopy div.grad-profile div.grad-profile-photo img, 
+div.maincopy div.grad-profile div.grad-profile-photo img.border { margin: 0;
+    padding: 5px 0 0;
+    border-width: 0 !important; }
+
+
+/* New Step class that does not conflict with old step class */
+div.bodycontents div.maincopy span.step-01,
+div.bodycontents div.maincopy span.step-02, 
+div.bodycontents div.maincopy span.step-03, 
+div.bodycontents div.maincopy span.step-04,
+div.bodycontents div.maincopy span.step-05,
+div.bodycontents div.maincopy span.step-06,
+div.bodycontents div.maincopy span.step-07,
+div.bodycontents div.maincopy span.step-08,
+div.bodycontents div.maincopy span.step-09
+ { display: block;
+    margin-bottom: 15px;
+    padding: 17px 0 18px 62px;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    color: #474747;
+    font: 1.098901em Georgia, Garamond, 'Times New Roman', Times, serif; }
+
+div#bodycontainer div.maincopy span.step-01 { background-image: url('/newcss/mysource_files/apply-step-01.gif'); }
+div#bodycontainer div.maincopy span.step-02 { background-image: url('/newcss/mysource_files/apply-step-02.gif'); }
+div#bodycontainer div.maincopy span.step-03 { background-image: url('/newcss/mysource_files/apply-step-03.gif'); }
+div#bodycontainer div.maincopy span.step-04 { background-image: url('/newcss/mysource_files/apply-step-04.gif'); }
+div#bodycontainer div.maincopy span.step-05 { background-image: url('/newcss/mysource_files/apply-step-05.gif'); }
+
+div#bodycontainer div.maincopy span.step-06 { background-image: url('/newcss/mysource_files/apply-step-06.gif'); }
+div#bodycontainer div.maincopy span.step-07 { background-image: url('/newcss/mysource_files/apply-step-07.gif'); }
+div#bodycontainer div.maincopy span.step-08 { background-image: url('/newcss/mysource_files/apply-step-08.gif'); }
+div#bodycontainer div.maincopy span.step-09 { background-image: url('/newcss/mysource_files/apply-step-09.gif'); }
+
+/* edit 2008.12.02
+   Guan Ming Teo
+
+   Styling for a stamp lookalike */
+div.faux-stamp { width: 165px;
+    margin: 1em auto; }
+
+div.rightcol div.faux-stamp { margin-right: auto;
+    margin-left: auto; }
+
+div.faux-stamp a, 
+div.faux-stamp a:link, 
+div.faux-stamp a:visited, 
+div.faux-stamp a:active { display: block;
+    height: auto !important;
+    height: 1%;
+    padding-top: 65px;
+    background: url('/newcss/mysource_files/faux-stamp-arches.jpg') no-repeat 50% 0;
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase; }
+
+div.faux-stamp a span, 
+div.faux-stamp a:link span, 
+div.faux-stamp a:visited span, 
+div.faux-stamp a:active span { display: block;
+    padding: 12px 35px 9px 12px;
+    background: #000 url(/newcss/mysource_files/bullet-linkarrow-reversed.jpg) no-repeat 93% 50%; }
+
+div.faux-stamp a:hover { color: #fff;
+    text-decoration: underline; }
+
+/* end edit 2008.12.02 */
+
+/* edit unknown date
+   Unknown author
+
+   Black button styles seem to only be used on newsroom,
+   but to be safe Guan Ming Teo has created a new set of styles, faux-stamp */
+.button-black {
+    background-color: black;
+    background-image: url(/newcss/mysource_files/bullet-linkarrow-reversed.jpg);
+    background-repeat: no-repeat;
+    background-position: 93% 50%;
+    padding:12px 35px 9px 12px;
+    position: relative;
+}
+.bodycontents .button-black a,
+.bodycontents .button-black a:link,
+.bodycontents .button-black a:visited,
+.bodycontents .button-black a:active {
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+.bodycontents .button-black a:hover {
+    text-decoration: underline;
+}
+/* end unknown edit */
+
+
+
+
+
+* html .dibox { width: 98%; }
+* html .dibox .left { width: 49%; }
+.dibox {
+    background: url(/newcss/mysource_files/dibox-centre2.gif) repeat-y 50% 0%;
+    border-left: 2px solid #22cadb;
+    border-right: 2px solid #ffdc00;
+    border-top: 1px solid white;
+}
+.dibox .head {
+    float: left;
+    background-color: white;
+}
+.dibox .left .head {
+    position: relative;
+    right: 2px;
+    width: 100%;
+}
+.dibox .right .head {
+    position: relative;
+    left: 2px;
+    width: 100%;
+}
+.dibox .right .head h3 {
+    position: relative;
+    left: 12px;
+}
+.bodycontents .maincopy .dibox h3 {
+    float: left;
+    margin: 0;
+    padding: 2px 12% 2px 34px;
+
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 108.3333%;
+    font-weight: normal;
+
+    background: black url(/newcss/mysource_files/dibox-bullet.gif) no-repeat 0% 50%;
+}
+.dibox .left .content {
+    border-top: 2px solid #22cadb;
+    clear: left;
+}
+.dibox .right .content {
+    border-top: 2px solid #ffdc00;
+    clear: left;
+}
+.dibox-body {
+    background: url(/newcss/mysource_files/dibox-base.gif) no-repeat 50% 100%;
+}
+.dibox .left {
+    float: left;
+    width: 50%;
+    margin-bottom: 2px;
+}
+.dibox .right {
+    float: right;
+    width: 50%;
+}
+.dibox .left .content {
+    margin-right: 17px;
+}
+.dibox .right .content {
+    margin-left: 16px;
+}
+.dibox .content {
+    padding: 1.2em 14px 0 14px;
+}
+.bodycontents .maincopy .dibox h3.australian {
+    background-image: url(/newcss/mysource_files/dibox-australia.gif);
+}
+.bodycontents .maincopy .dibox h3.international {
+    background-image: url(/newcss/mysource_files/dibox-plane.gif);
+}
+
+
+
+
+.sandytablet {
+    background-color: #faf8f0;
+    border: 1px solid #69c4d9;
+}
+.sandytablet .head {
+    background-color: #69c4d9;
+}
+.bodycontents .maincopy .sandytablet .head img {
+    margin: 0;
+    padding: 0;
+    float: left;
+    position: relative;
+    right: 1px;
+    bottom: 1px;
+}
+* html .bodycontents .maincopy .sandytablet .head img {
+    zoom: 1;
+}
+.sandytablet .head h3 {
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-size: 108.3333%;
+    padding: 0.7em 0.7em 0.5em;
+    margin: 0;
+}
+.sandytablet .thumbnailed {
+    height: 71px;
+    position: relative;
+}
+.sandytablet .thumbnailed h3 {
+    position: absolute;
+    left: 75px;
+    bottom: 0px;
+}
+.sandytablet .body {
+    padding: 15px;
+}
+
+.sandytablet .body img {
+    margin: 0 14px 8px 0;
+}
+
+.sandytablet.fac-law { border: 1px solid #485dc6; }
+.sandytablet.fac-law .head { background-color: #485dc6; }
+.sandytablet.fac-law .head h3 { color: white; }
+
+/* edit 2009.01.07
+   Guan Ming Teo
+
+   Adding universal printer friendly link style */
+div.bodycontents div.maincopy #print-page { zoom: 1.0; /* triggering hasLayout */
+    margin: 1em 0; /* 14px */
+    padding: 5px 0 6px 35px;
+    background: url('/newcss/mysource_files/icon-print.gif') no-repeat 0 0;
+    font-size: 1.166667em; /* 14px */ }
+div.bodycontents div.maincopy #print-page a { zoom: 1.0; /* triggering hasLayout */
+    display: block;
+    margin: -5px 0 -6px -35px;
+    padding: 5px 0 6px 35px; }
+/* edit 2009.01.07 */
+
+
+/* edit 2009.03.03
+   Adam Wright
+
+   Generic negative margin classes */
+.up1line { margin-top: -1.25em !important; }
+.up1point5lines { margin-top: -2em !important; }
+/* edit 2009.03.03 */
+
+
+
+
+/* edit 2009.02.03 
+   Luke Grimes
+   STUDENT LIST - DEPRECATED by studentnet-list 
+   This is deprecated and will be removed once it is confirmed that no studentnet pages are using this style instead of the
+   revised version */
+
+.bodycontents .maincopy .studentlist dl {
+    text-align: left;
+    margin:  0 0 1.2em;
+    _position: relative;
+     }
+
+.bodycontents .maincopy .studentlist dl dt {
+       font-size: 120%;
+       font-weight: 800;
+       padding: 0px 10px 20px 45px;
+       margin-left: 0px;
+       background-position: 0 5px;
+       background-repeat: no-repeat;
+       }
+
+.bodycontents .maincopy .studentlist dl dt.icon-calendar { background-image:url('/newcss/mysource_files/icon-calendar.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-checklist{ background-image:url('/newcss/mysource_files/icon-checklist.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-computer { background-image:url('/newcss/mysource_files/icon-computer.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-cup{ background-image:url('/newcss/mysource_files/icon-cup.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-folder { background-image:url('/newcss/mysource_files/icon-folder.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-graduation { background-image:url('/newcss/mysource_files/icon-graduation.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-hand { background-image:url('/newcss/mysource_files/icon-hand.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-music { background-image:url('/newcss/mysource_files/icon-music.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-page { background-image:url('/newcss/mysource_files/icon-page.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-pause { background-image:url('/newcss/mysource_files/icon-pause.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-pen { background-image:url('/newcss/mysource_files/icon-pen.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-person { background-image:url('/newcss/mysource_files/icon-person.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-pillars { background-image:url('/newcss/mysource_files/icon-pillars.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-star { background-image:url('/newcss/mysource_files/icon-star.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-time { background-image:url('/newcss/mysource_files/icon-time.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-transport { background-image:url('/newcss/mysource_files/icon-transport.gif'); }
+.bodycontents .maincopy .studentlist dl dt.icon-world { background-image:url('/newcss/mysource_files/icon-world.gif'); }
+
+.bodycontents .maincopy .studentlist dl dd p { margin: 5px; }
+
+.bodycontents .maincopy .studentlist dl dd { position: relative;
+    margin: -20px 5px 10px 5px;
+    padding: 0 0 10px 35px;
+/*  border-bottom: #D7D7D7 1px solid; */
+    background: url('/newcss/mysource_files/horiz-dots-bground-rpt.gif') repeat-x bottom left; 
+    }
+/* END DEF LIST TEST 
+   eo.edit Luke Grimes */
+
+
+
+/* edit 2009.04.08 
+   Luke Grimes
+   STUDENTNET-LIST - Revised studentnet-list to replace the above deprecated list */
+
+.bodycontents .maincopy dl.studentnet-list {
+    text-align: left;
+    margin:  0 0 1.2em;
+    _position: relative;
+     }
+
+.bodycontents .maincopy dl.studentnet-list dt {
+       font-size: 120%;
+       font-weight: 800;
+       padding: 0px 10px 20px 45px;
+       margin-left: 0px;
+       background-position: 0 5px;
+       background-repeat: no-repeat;
+       }
+
+.bodycontents .maincopy dl.studentnet-list dt.icon-calendar { background-image:url('/newcss/mysource_files/icon-calendar.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-checklist{ background-image:url('/newcss/mysource_files/icon-checklist.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-computer { background-image:url('/newcss/mysource_files/icon-computer.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-cup{ background-image:url('/newcss/mysource_files/icon-cup.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-folder { background-image:url('/newcss/mysource_files/icon-folder.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-graduation { background-image:url('/newcss/mysource_files/icon-graduation.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-hand { background-image:url('/newcss/mysource_files/icon-hand.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-music { background-image:url('/newcss/mysource_files/icon-music.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-page { background-image:url('/newcss/mysource_files/icon-page.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-pause { background-image:url('/newcss/mysource_files/icon-pause.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-pen { background-image:url('/newcss/mysource_files/icon-pen.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-person { background-image:url('/newcss/mysource_files/icon-person.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-pillars { background-image:url('/newcss/mysource_files/icon-pillars.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-star { background-image:url('/newcss/mysource_files/icon-star.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-time { background-image:url('/newcss/mysource_files/icon-time.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-transport { background-image:url('/newcss/mysource_files/icon-transport.gif'); }
+.bodycontents .maincopy dl.studentnet-list dt.icon-world { background-image:url('/newcss/mysource_files/icon-world.gif'); }
+
+.bodycontents .maincopy dl.studentnet-list dd p { margin: 5px; }
+
+.bodycontents .maincopy dl.studentnet-list dd { position: relative;
+    margin: -20px 5px 10px 5px;
+    padding: 0 0 10px 35px;
+/*  border-bottom: #D7D7D7 1px solid; */
+    background: url('/newcss/mysource_files/horiz-dots-bground-rpt.gif') repeat-x bottom left; 
+    }
+
+/* END Studentnet-list
+   eo.edit Luke Grimes */
+
+
+
+
+/* edit 2009.04.01
+   Guan Ming Teo
+
+   Because of extra image margin in old core (new core isn't affected by this,)
+   it means the .margin-right-185 and .margin-left-185 classes need to be
+   increased.
+
+   edit 2009.12.08
+   Guan Ming Teo
+
+   Adding margin-top-0 and margin-bottom-0 classes. */
+.bodycontents .maincopy .margin-0 { margin: 0; }
+.bodycontents .maincopy .margin-top-0 { margin-top: 0; }
+.bodycontents .maincopy .margin-right-185 { margin-right: 200px; }
+.bodycontents .maincopy .margin-right-215 { margin-right: 230px; }
+.bodycontents .maincopy .margin-bottom-0 { margin-bottom: 0; }
+.bodycontents .maincopy .margin-left-185 { margin-left: 200px; }
+.bodycontents .maincopy .margin-left-215 { margin-left: 230px; }
+.bodycontents .maincopy .padding-0 { padding: 0; }
+/* end edit 2009.12.08
+
+   end edit 2009.04.01 */
+
+
+/* edit 2009.04.022
+   Luke Grimes
+   
+   This is a device from new core, It is currently used in new core development but this version needs to  
+   be placed in the devices as it has been modified to allow differing left margins for the varying image 
+   sizes.  */
+
+/* edit 2009.06.24
+   Guan Ming Teo
+
+   Fixed it so it works properly. */
+#bodycontainer #pagecontent dl.list-profiles:after { display: block;
+    clear: left;
+    visibility: hidden;
+    height: 0;
+    content: ' '; }
+    #ie7 #pagecontent dl.list-profiles { min-height: 1%; }
+    #ie6down  #pagecontent dl.list-profiles { height: 1%; }
+#bodycontainer #pagecontent dl.list-profiles dt { 
+    clear: left;
+    margin: 1em 0 0.266666em; /* 15/15, 4/15 */
+    padding: 0.8em 0 0 100px; /* 12/15 */
+    background: url('/newcss/mysource_files/horiz-dots-bground-rpt.gif') repeat-x 0 0;
+    font-size: 1.25em; /* 15px; */
+    font-weight: 800;
+    color: #00497b; }
+
+    #ie6down #pagecontent  dl.list-profiles dt { margin-top: 0.4em;
+        padding-left: 103px; }
+
+#bodycontainer #pagecontent dl.list-profiles dd.imgleft { 
+    margin-top: -1.666666em; /* 20/12 */
+    margin-left: 0;}
+
+#bodycontainer #pagecontent dl.list-profiles dd.imgleft img { margin: 0 0 4px 0; }
+    #ie6down #pagecontent dl.list-profiles dd.imgleft img { margin: 0; }
+
+#bodycontainer #pagecontent dl.list-profiles dd { margin-bottom: 0.333333em; /* 4/12 */ margin-left: 100px; }
+    #ie6down #pagecontent dl.list-profiles dt, 
+    #ie6down #pagecontent dl.list-profiles dd { height: 1%; }
+
+#bodycontainer #pagecontent dl.list-profiles dd p { margin-bottom: 0.5em; }
+
+#bodycontainer #pagecontent dl.margin-left-125 dt { padding-left: 125px; }
+    #ie6down #pagecontent dl.margin-left-125 dt { padding-left: 128px; }
+
+#bodycontainer #pagecontent dl.margin-left-125 dd { margin-left: 125px; }
+/* end edit 2009.06.24 */
+/* end edit 2009.04.22 */
+
+
+/* 3-2: Float clearing without source markup by Tony Aslett
+ * http://www.positioniseverything.net/easyclearing.html
+ * Updated May 4 2009
+ */
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+* html .clearfix {
+    height: 1%;
+}
+
+
+/* edit 2009.08.26
+   Luke Grimes
+
+   Added the list-alpha classes. */
+
+#bodycontainer #pagecontent ol.list-lower-alpha { list-style-type: lower-alpha; }
+#bodycontainer #pagecontent ol.list-upper-alpha { list-style-type: upper-alpha; }
+
+/* edit 2009.09.21
+   Guan Ming Teo
+
+   PGRS profile (Postgraduate research student profile) */
+/* Search form: new functionality */
+#bodycontainer #pagecontent div.pgrs-search { margin: 0 0 1.25em; /* 15/12 */ 
+    padding: 1em; /* 12/12 */
+    background: #e4f3f7 url('/newcss/graphics/devices/form/line-skyblue.gif') repeat-y 23em 0; /* 276/12 */
+    border-width: 14px 0;
+    border-style: solid;
+    border-color: #e4f3f7; }
+
+#bodycontainer #pagecontent div.pgrs-search dl { display: inline;
+    margin: 0;
+    padding: 0;
+    background-color: transparent; }
+#bodycontainer #pagecontent div.pgrs-search dl dt { position: absolute;
+    left: -10000px;
+    top: -10000px;
+    text-decoration: none; }
+#bodycontainer #pagecontent div.pgrs-search dl dd { display: inline;
+    margin: 0; }
+
+#bodycontainer #pagecontent div.pgrs-search dl dd input#search_string { width: 20em; /* 240/12 */
+    vertical-align: middle; }
+
+#bodycontainer #pagecontent div.pgrs-search p#form-navigation, 
+#bodycontainer #pagecontent div.pgrs-search p.form-navigation { display: inline;
+    margin: 0;
+    padding: 0;
+    background-color: transparent; }
+
+#bodycontainer #pagecontent div.pgrs-search p#form-navigation input,
+#bodycontainer #pagecontent div.pgrs-search p.form-navigation input { overflow: visible; /* Fixes button size in IE, but resets hasLayout too */
+    margin-left: 2.5em; /* 30/12 */
+    padding: 0.166666em 0.666666em; /* 2/12, 7/12 */
+    background-color: #000;
+    border: 1px solid #000; /* Fixes hasLayout (from overflow: visible;) */
+    outline-width: 0;
+    color: #fff;
+    font: 800 1em Arial, Helvetica, sans-serif; /* 12/12 */
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer; }
+#bodycontainer #pagecontent div.pgrs-search p#form-navigation input:focus,
+#bodycontainer #pagecontent div.pgrs-search p#form-navigation input:active,
+#bodycontainer #pagecontent div.pgrs-search p.form-navigation input:focus,
+#bodycontainer #pagecontent div.pgrs-search p.form-navigation input:active { border-style: dotted;
+    border-color: #fff;
+    outline: 1px solid #000; }
+
+#pagecontent div.pgrs-profile div.leftcol { background-image: none; }
+#pagecontent div.pgrs-profile div.rightcol { width: 161px;
+    min-width: 161px;
+    padding: 12px;
+    background-color: #f9f6ed; }
+
+#pagecontent div.pgrs-profile div.rightcol div.innerright { background-color: #fff;
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-color: #d8d7d5; }
+#pagecontent div.pgrs-profile div.rightcol div.innerright h3 { margin: 0;
+    padding: 0.5em;
+    background-color: #ececec;
+    border-top: 1px solid #d7d7d7; }
+    #ie6down div.pgrs-profile div.rightcol div.innerright h3 { height: 1%; }
+#pagecontent div.pgrs-profile div.rightcol div.innerright address, 
+#pagecontent div.pgrs-profile div.rightcol div.innerright p, 
+#pagecontent div.pgrs-profile div.rightcol div.innerright ul, 
+#pagecontent div.pgrs-profile div.rightcol div.innerright div.listed_file { margin: 1.25em; }
+#pagecontent div.pgrs-profile div.rightcol div.innerright address { font-style: normal; }
+#pagecontent div.pgrs-profile div.research_image { padding: 0.25em;
+    background-color: #f2edd9;
+    border: 1px solid #dbdada;
+    text-align: center; }
+#pagecontent div.pgrs-profile div.research_image img { margin: 0;
+    padding: 0.25em; }
+/* end edit 2009.09.21 */
+
+
+/* edit 2010.02.12
+   Guan Ming Teo
+
+   Adding the contact directory loader styling */
+#bodycontainer #pagecontent .cdl-profile { margin-bottom: 1.25em; /* 15/12 */ }
+
+#bodycontainer #pagecontent .cdl-profile h3 { margin: 1.2211em 0 0.6105em;
+    font-size: 1.583333em; /* 19/12 */
+    color: #0864a5; }
+
+#bodycontainer #pagecontent .cdl-profile .cdl-profile-position { font-weight: 800; }
+
+#bodycontainer #pagecontent .cdl-profile dl dt { margin-top: 1.12em; /* 16.8/15 */
+    margin-bottom: 0.56em; /* 8.4/15 */
+    font-weight: 800;
+    font-size: 1.25em; /* 15/12 */
+    color: #00497b; }
+
+#bodycontainer #pagecontent .cdl-profile dl dd { margin-top: 0.333333em; /* 4/12 */
+    margin-bottom: 0.333333em; /* 4/12 */
+    margin-left: 0; }
+
+#bodycontainer #pagecontent .cdl-profile dl dd dl.list-columned { margin-bottom: 0; }
+#bodycontainer #pagecontent .cdl-profile dl dd dl.list-columned dt { margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1em; /* 12/12 */
+    color: #464646; }
+#bodycontainer #pagecontent .cdl-profile dl dd dl.list-columned dd { margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 12.5em; /* 150/12 */ }
+    #ie6down #pagecontent .cdl-profile dl dd dl.list-columned dd { margin-left: 0; }
+
+#bodycontainer #pagecontent .cdl-profile dl dd.list { display: list-item;
+    margin: 0.333333em 0 0.333333em 15px;
+    list-style-image: url('/newcss/graphics/bullet-default.gif'); }
+    #ieAny #pagecontent .cdl-profile dl dd.list { margin-left: 17px;
+        list-style-image: url('/newcss/graphics/bullet-default-ie.gif'); }
+
+#bodycontainer #pagecontent .cdl-profile .separator { clear: right;
+    margin-top: 23px; }
+/* end edit 2010.02.12 */
+
+
+#ql_outer, #ql_inner, #ql_inner a, #ql_inner a:hover {
+    background-repeat: no-repeat;
+}
+#ql_outer {
+    color: #ffffff;
+    position: absolute;
+    right: 10.416666em;
+    padding-left: 5px;
+    background: #363636 url(/newcss/graphics/ql_leftbottom.gif) left bottom;
+}
+#ql_inner {
+    font-size: 0.916666em;
+    padding: 2px 0;
+    background: url(/newcss/graphics/ql_rightbottom.gif) right bottom;
+}
+#ql_inner a {
+    color: #e2e2e2;
+    text-decoration: none;
+    margin: 0 12px 0 4px;
+    padding-left: 5px;
+    background: url(/newcss/graphics/ql_linkarrow.gif) left center;
+}
+#ql_inner a:focus,
+#ql_inner a:hover {
+    text-decoration: underline;
+}
+a#ql_button {
+    text-decoration: none;
+    margin: 1px 5px 0 4px;
+    padding-right: 11px;
+    background: url(/newcss/graphics/ql_reticle.gif) right center;
+}
+#ql_extra { padding: 2px 15px 0 5px; }
+#ql_list li { display: inline; }
+#ql_list, #ql_extra { display:none; }
+#ql_outer, #ql_inner, #ql_inner a, #ql_inner a:hover { background-repeat: no-repeat; }
+
+.emergencybox {
+    padding: 10px !important;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}

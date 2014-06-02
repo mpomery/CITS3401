@@ -1,0 +1,344 @@
+/*  Maintained by: Chris.McDonald@uwa.edu.au  */
+
+.csm-inforow {
+    padding:		4px;
+    white-space: 	nowrap;
+    text-align:		left;
+    vertical-align:	middle;
+    color:		#ce7019;
+    font-size:		1.2em;
+    font-weight:	bold;
+}
+
+.csm-optionrow {
+    padding:		4px;
+    white-space: 	nowrap;
+    text-align:		left;
+    vertical-align:	middle;
+}
+
+table.csm-pagebanner {
+    width:		100%;
+    background-color:	#ede7d3;
+    color:		black;
+    border-left:	15px solid #ce7019;
+    margin:		4px 0 4px 0;
+}
+
+td.csm-pagebannerleft {
+    padding:		0.8em 0 0.8em 15px;
+}
+
+td.csm-pagebannerright {
+    background:		#ede7d3
+	url(/newcss/graphics/page-banner-dotoverlay.gif) repeat-y top right;
+}
+
+.csm-pagebannerdesc {
+    color:		#564c23; font: normal 1.25em Georgia, serif;
+}
+
+h2.csm-pagebanner {
+    margin:		0;
+    font:		800 2.0em Arial, Helvetica, sans-serif;
+    line-height:	0.85;
+    letter-spacing:	-1px;
+}
+
+h3.csm-pagebanner {
+    margin:		0;
+    font:		800 1.2em Arial, Helvetica, sans-serif;
+    line-height:	1.4;
+}
+
+ul#csm-list {
+    list-style-image:	url(/newcss/graphics/bullet-link.gif);
+    margin-left:	0px;
+}
+
+li {
+    padding-bottom:	2px;
+}
+
+.boxedtable {
+    border-style:	solid;
+    border-width:	1px;
+    border-collapse:	separate; 
+}
+
+.csm-photocell {
+    padding:		4px;
+    vertical-align:	top;
+}
+
+.csmarks-errorblock {
+    border-width:	3px;
+    border-style:	solid;
+    border-color:	red;
+    border-collapse:	collapse; 
+    background-color:	#ff9999;
+    padding:		8px;
+}
+
+.cshelp-announceblock {
+    border-width:	2px;
+    border-style:	solid;
+    border-color:	#ffdc00;
+    background-color:	#fffbb0;
+    padding:		2px;
+}
+
+.cshelp-whiteblock {
+    background-color:	white;
+    padding:		2px;
+}
+
+.cshelp-greyblock {
+    border-width:	1px;
+    border-style:	solid;
+    border-color:	#aaaaaa;
+    background-color:	#e4e4e4;
+    padding:		2px;
+}
+
+td.cshelp-articleheader {
+    padding:		2px;
+    white-space:	nowrap;
+    vertical-align:	top;
+}
+
+td.cshelp-postarticle {
+    padding:		4px;
+    white-space:	nowrap;
+    text-align:		left;
+}
+
+td.cshelp-flagbox {
+    border-width:	1px;
+    border-style:	solid;
+    border-color:	gray;
+    text-align:		center;
+    white-space:	nowrap;
+    width:		15px;
+    height:		15px;
+}
+
+.fixed-font {
+    font-family:	Monaco, mono;
+}
+
+table.cshelp-prefchoices {
+    width:		100%;
+    text-align:		center;
+    padding:		8px;
+}
+
+table.thin {
+    border-width:	1px 1px 1px 1px;
+    border-color:	gray;
+    border-style:	solid;
+    border-collapse:	collapse;
+}
+
+th.thin {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    padding:		2px;
+    text-align:		center;
+    vertical-align:	middle;
+    background-color:	#e4e4e4;
+    white-space:	nowrap;
+}
+
+td.thin {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    padding:		2px;
+    text-align:	left;
+    white-space:	nowrap;
+}
+
+td.thinwrap {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    padding:		2px;
+    text-align:	left;
+}
+
+td.thinw {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    padding:		2px;
+    text-align:	left;
+    background-color:	#ffffff;
+    white-space:	nowrap;
+}
+
+td.thing {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    padding:		2px;
+    text-align:	left;
+    background-color:	#e4e4e4;
+    white-space:	nowrap;
+}
+
+td.thinf {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    padding:		2px;
+    text-align:	left;
+    background-color:	#ede7d3;
+    white-space:	nowrap;
+}
+
+td.thinfwrap {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    padding:		2px;
+    text-align:	left;
+    background-color:	#ede7d3;
+}
+
+.thinc {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    padding:		2px;
+    text-align:		center;
+    white-space:	nowrap;
+}
+
+td.flagbox {
+    border-width:	1px 1px 1px 1px;
+    border-style:	solid;
+    border-color:	gray;
+    text-align:		left;
+    vertical-align:	middle;
+    white-space:	nowrap;
+}
+
+#marqueecontainer{
+    position:		relative;
+    width:		510px; /*marquee width */
+    height:		100px; /*marquee height */
+    background-color:	white;
+    color:		gray;
+    line-height:	1.2em;
+    overflow:		hidden;
+    border:		1px solid gray;
+    padding:		2px;
+    padding-left:	4px;
+}
+
+td.csmarks-markcell {
+    border:		1px solid gray;
+    padding:		2px;
+    font-family:	Monaco, mono;
+    vertical-align:	middle;
+    white-space:	nowrap;
+}
+
+.span0 {
+    font-size:		0.8em;
+}
+
+.ds_box {
+	background-color: #FFF;
+	border: 1px solid #000;
+	position: absolute;
+	z-index: 32767;
+}
+
+.ds_tbl {
+	background-color: #FFF;
+	border-collapse:	collapse; 
+}
+
+.ds_head {
+	background-color: #d57019;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.ds_subhead {
+	background-color: #BBB;
+	color: #000;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 24px;
+}
+
+.ds_cell {
+	background-color: #EEE;
+	color: #000;
+	font-size: 11px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 4px;
+	cursor: pointer;
+}
+
+.ds_cell:hover {
+	background-color: #d57019;
+}
+
+.calendar {
+    width: 42px;
+    font-size: 0.8em;
+    -webkit-border-radius:		4px;
+    -moz-border-radius:			4px;
+    border-radius:			4px;
+    box-shadow: 0 0 4px #C08584;
+    -moz-box-shadow: 0 0 4px #C08584;
+    -webkit-box-shadow: 0 0 4px #C08584;
+}
+
+.calendar > span {
+    display: block;
+}
+
+.calendar > .month {
+    text-align: center;
+    padding: 2px 4px 2px 4px;
+    font-size: 0.8em;
+    background: #aa0000;
+    color: #fff;
+    font-weight: bold;
+    -webkit-border-top-left-radius:	4px;
+    -moz-border-radius-topleft:		4px;
+    -webkit-border-top-right-radius:	4px;
+    -moz-border-radius-topright:	4px;
+    text-shadow: 0 1px #000;
+    background: -webkit-gradient(linear, left top, left bottom,
+		from(#C08584), to(#aa0000));
+    background: -moz-linear-gradient(top, #C08584, #aa0000);
+}
+
+.calendar > .day {
+    text-align: center;
+    padding: 2px 2px 0px 2px;
+    font-weight: bold;
+    font-size: 2.0em;
+    background: #fff;
+    -webkit-border-bottom-left-radius:  4px;
+    -moz-border-radius-bottomleft:      4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomright:     4px;
+    background: -webkit-gradient(linear, left top, left bottom,
+		from(#405b72), to(#e6e6e6), color-stop(.08,#f9f9f9));
+    background: -moz-linear-gradient(top, #f9f9f9, #e6e6e6);
+}
