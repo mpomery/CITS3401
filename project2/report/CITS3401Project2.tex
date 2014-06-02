@@ -342,38 +342,40 @@ Real world applications for neural networks include speech and handwriting recog
 \subsubsection*{Dataset 1}
 \begin{wekaconsole}[Red Wine]
 \begin{verbatim}
-Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500
+-V 0 -S 0 -E 20 -H a
 Relation:     ds1red
 Instances:    1599
 Attributes:   12
 Test mode:10-fold cross-validation
 
-Correctly Classified Instances         933               58.349  %
-Incorrectly Classified Instances       666               41.651  %
-Kappa statistic                          0.2905
-Mean absolute error                      0.2349
-Root mean squared error                  0.3301
-Relative absolute error                109.5032 %
-Root relative squared error            100.851  %
+Correctly Classified Instances         967               60.4753 %
+Incorrectly Classified Instances       632               39.5247 %
+Kappa statistic                          0.3585
+Mean absolute error                      0.1657
+Root mean squared error                  0.3021
+Relative absolute error                 77.2334 %
+Root relative squared error             92.3027 %
 Total Number of Instances             1599
 \end{verbatim}
 \end{wekaconsole}
 
 \begin{wekaconsole}[White Wine]
 \begin{verbatim}
-Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500
+-V 0 -S 0 -E 20 -H a
 Relation:     ds1white
 Instances:    4898
 Attributes:   12
 Test mode:10-fold cross-validation
 
-Correctly Classified Instances        2550               52.0621 %
-Incorrectly Classified Instances      2348               47.9379 %
-Kappa statistic                          0.1905
-Mean absolute error                      0.2137
-Root mean squared error                  0.3168
-Relative absolute error                110.7083 %
-Root relative squared error            101.9859 %
+Correctly Classified Instances        2706               55.247  %
+Incorrectly Classified Instances      2192               44.753  %
+Kappa statistic                          0.2839
+Mean absolute error                      0.1601
+Root mean squared error                  0.289 
+Relative absolute error                 82.9327 %
+Root relative squared error             93.0254 %
 Total Number of Instances             4898     
 \end{verbatim}
 \end{wekaconsole}
@@ -381,38 +383,40 @@ Total Number of Instances             4898
 \subsubsection*{Dataset 2}
 \begin{wekaconsole}[Red Wine]
 \begin{verbatim}
-Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500
+-V 0 -S 0 -E 20 -H a
 Relation:     ds2red_clustered-weka.filters.unsupervised.attribute.Remove-R1
 Instances:    1599
 Attributes:   12
 Test mode:10-fold cross-validation
 
-Correctly Classified Instances        1506               94.1839 %
-Incorrectly Classified Instances        93                5.8161 %
-Kappa statistic                          0.9215
-Mean absolute error                      0.2238
-Root mean squared error                  0.3128
-Relative absolute error                 89.7115 %
-Root relative squared error             88.5878 %
-Total Number of Instances             1599     
+Correctly Classified Instances        1531               95.7473 %
+Incorrectly Classified Instances        68                4.2527 %
+Kappa statistic                          0.9432
+Mean absolute error                      0.0183
+Root mean squared error                  0.1047
+Relative absolute error                  7.3361 %
+Root relative squared error             29.6501 %
+Total Number of Instances             1599
 \end{verbatim}
 \end{wekaconsole}
 
 \begin{wekaconsole}[White Wine]
 \begin{verbatim}
-Scheme:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
-Relation:     ds2white_clustered-weka.filters.unsupervised.attribute.Remove-R1
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500
+-V 0 -S 0 -E 20 -H a
+Relation:   ds2white_clustered-weka.filters.unsupervised.attribute.Remove-R1
 Instances:  4898
 Attributes: 12
 Test mode:10-fold cross-validation
 
-Correctly Classified Instances        4711               96.1821 %
-Incorrectly Classified Instances       187                3.8179 %
-Kappa statistic                          0.9545
-Mean absolute error                      0.2047
-Root mean squared error                  0.3021
-Relative absolute error                 85.1906 %
-Root relative squared error             87.1569 %
+Correctly Classified Instances        4657               95.0796 %
+Incorrectly Classified Instances       241                4.9204 %
+Kappa statistic                          0.9415
+Mean absolute error                      0.0195
+Root mean squared error                  0.1053
+Relative absolute error                  8.0972 %
+Root relative squared error             30.3967 %
 Total Number of Instances             4898
 \end{verbatim}
 \end{wekaconsole}
