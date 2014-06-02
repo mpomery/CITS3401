@@ -381,13 +381,41 @@ Total Number of Instances             4898
 
 \section*{Results}
 \paragraph \indent
-The project stated it wanted dataset 1, the unmodified dataset, and dataset 2, the clustered dataset, compared through the use of classifiers.
+The project stated that dataset 1, the unmodified dataset, and dataset 2, the clustered dataset, were to be compared through the use of classifiers.
+Dataset 2 had it's classification clusters generated algorithmically from scientific data, while dataset 1's classifications where assigned depending each wines sensory information.
+For this reason we could assume that the classifications in dataset two will be easier to classify, as they are based off of objective data rather than subjective.
 
-\begin{itemize}
-	\item Red wine dataset is not very spread out
-	\item White wine distribution was. Looks like a bell curve
-	\item only physiochemical inputs, no price, brand, grape type included. Psycology thingiemabobs.
-\end{itemize}
+\paragraph \indent
+The white wine data falls into a bell curve shape, while the majority of red wine classifications fall into two distinct bins.
+This makes classification hard as the majority of our data is 
+This difference can be seen in Figure \ref{fig:redwinedist} and Figure \ref{fig:whitewinedist}.
+
+
+\paragraph \indent
+The information supplied about each wine is incomplete, as it is missing attributes such as grape type, brand and cost that can effect a testers perception\cite{brandloyalty}.
+Wines that sell at a higher price may be percieved as better wines, even though they contain the same physiochemical properties as a cheaper wine.
+The range of wines are limited to varients of the Portuguese "Vinho Verde" wine and the classification of the wines is subjective.
+This means that for someone tasting a wine from a different region may see the same physiochemical properties, but classify the wine completely differently.
+
+
+
+\clearpage
+
+\section*{Figures}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics{images/redwinedistribution}
+	\caption{Red Wine Distribution}
+	\label{fig:redwinedist}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics{images/whitewinedistribution}
+	\caption{White Wine Distribution}
+	\label{fig:whitewinedist}
+\end{figure}
 
 \begin{thebibliography}{10}
 	\bibitem{datasetlocation}UCI Machine Learning Repository: Wine Quality Data Set. 2014. UCI Machine Learning Repository: Wine Quality Data Set. [ONLINE] Available at: \url{http://archive.ics.uci.edu/ml/datasets/Wine+Quality}. [Accessed 01 June 2014].
@@ -400,7 +428,9 @@ The project stated it wanted dataset 1, the unmodified dataset, and dataset 2, t
 
 	\bibitem{naivebayes}Rennie, J.; Shih, L.; Teevan, J.; Karger, D. (2003). "Tackling the poor assumptions of Naive Bayes classifiers". ICML.
 
-\bibitem{asd}Non-Probabilistic Classiﬁcation Methods. 2014. Non-Probabilistic Classiﬁcation Methods. [ONLINE] Available at: \url{http://www.dcs.gla.ac.uk/~girolami/Machine_Learning_Module_2006/week_5/Lectures/wk_5.pdf}. [Accessed 01 June 2014].
+	\bibitem{nonprobcalc}Non-Probabilistic Classiﬁcation Methods. 2014. Non-Probabilistic Classiﬁcation Methods. [ONLINE] Available at: \url{http://www.dcs.gla.ac.uk/~girolami/Machine_Learning_Module_2006/week_5/Lectures/wk_5.pdf}. [Accessed 01 June 2014].
+
+	\bibitem{brandloyalty}Brand Loyalty: The psychology of preference | Bill Nissim | brandchannel.com. 2014. Brand Loyalty: The psychology of preference | Bill Nissim | brandchannel.com. [ONLINE] Available at: \url{http://www.brandchannel.com/papers_review.asp?sp_id=680}. [Accessed 02 June 2014].
 
 \end{thebibliography}
 
