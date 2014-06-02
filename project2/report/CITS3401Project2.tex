@@ -65,13 +65,16 @@ This tool was used to output two datasets, dataset 1 (\texttt{ds1-red.arff} and 
 Dataset 1 contains all the information that was in the original data, and is used to create the classifier.
 The fields in this dataset are numeric, apart from the quality which is nominal, making it is possible to group wines that receive the same rankings in Weka.
 Dataset 2 is contains all the numerical information from the original data and does not contain any information about the rankings from the wine tasters.
-The aim is to cluster these so that the wines fall into groups similar to the quality attribute of dataset 1, and compare .
+The aim is to cluster these so that the wines fall into groups similar to the quality attribute of dataset 1.
 
 \section*{Clustering}
 \paragraph \indent
 Dataset 2 requires clustering before it can be classified as the quality attribute of each data point has been removed.
 Simple K means clustering was used and after experimenting, fixed acidity, volatile acidity, citric acid, and density were ignored for the red wine data.
-This gave a roughly similar distrubution to the qualities found in the red wine dataset prior to .
+This gave a roughly similar distrubution to the qualities found in the red wine dataset.
+In the white wine dataset, ignoring the different attributes has very little effect on the clustering.
+After ignoring different combinations of attributes, it does not seem possible to cluster the data points into a similar distrubution to the initial data.
+Comparing the clustering with the red wines quality information shows a 35\% accuracy in the groupings, while for the clustered white wines there is only 25\% accuracy.
 
 \begin{wekaconsole}[Red Wine]
 \begin{verbatim}
@@ -86,6 +89,22 @@ Clustered Instances
 3        32 (  2%)
 4       339 ( 21%)
 5       272 ( 17%)
+\end{verbatim}
+\end{wekaconsole}
+
+\begin{wekaconsole}[White Wine]
+\begin{verbatim}
+Scheme:weka.clusterers.SimpleKMeans -N 7 -A
+"weka.core.EuclideanDistance -R first-last" -I 500 -S 10
+Clustered Instances
+
+0      1093 ( 22%)
+1       536 ( 11%)
+2       832 ( 17%)
+3       569 ( 12%)
+4       885 ( 18%)
+5       658 ( 13%)
+6       325 (  7%)
 \end{verbatim}
 \end{wekaconsole}
 
@@ -132,6 +151,12 @@ Real world applications for neural networks include speech and handwriting recog
 
 \section*{Results}
 \paragraph \indent
+
+\begin{itemize}
+	\item Red wine dataset is not very spread out
+	\item White wine distribution was. Looks like a bell curve
+
+\end{itemize}
 
 \begin{thebibliography}{10}
 	\bibitem{datasetlocation}UCI Machine Learning Repository: Wine Quality Data Set. 2014. UCI Machine Learning Repository: Wine Quality Data Set. [ONLINE] Available at: \url{http://archive.ics.uci.edu/ml/datasets/Wine+Quality}. [Accessed 01 June 2014].
