@@ -72,12 +72,12 @@ The aim is to cluster these so that the wines fall into groups similar to the qu
 
 \section*{Clustering}
 \paragraph \indent
-Dataset 2 requires clustering before it can be classified as the quality attribute of each data point has been removed.
+Dataset 2 required clustering before it could be classified as the quality attribute of each data point has been removed.
 Simple K means clustering was used and after experimenting, fixed acidity, volatile acidity, citric acid, and density were ignored for the red wine data.
 This gave a roughly similar distrubution to the qualities found in the red wine dataset.
-In the white wine dataset, ignoring the different attributes has very little effect on the clustering.
-After ignoring different combinations of attributes, it does not seem possible to cluster the data points into a similar distrubution to the initial data.
+In the white wine dataset, ignoring different combinations of attributes had very little effect on the clustering and so it did not seem possible to cluster the data points into a similar distrubution to the initial data.
 Comparing the clustering with the red wines quality information shows a 35\% accuracy in the groupings, while for the clustered white wines there is only 25\% accuracy.
+These clusters where then outputted to \texttt{ds1-red-clustered.arff} and \texttt{ds1-white-clustered.arff} for use in classification.
 
 \begin{wekaconsole}[Red Wine]
 \begin{verbatim}
@@ -112,6 +112,11 @@ Clustered Instances
 \end{wekaconsole}
 
 \section*{Classification}
+
+\paragraph \indent
+Both dataset 1 and dataset 2 where processed by three different classifiers, naive bayes, neural networks and support vector machines.
+The aim was to see how correct each classifier was and how efficiently it performed on different size inputs.
+To do this, all variables, suck as test mode were kept constant.
 
 \subsection*{Naive Bayesian}
 \paragraph \indent
@@ -203,7 +208,7 @@ Total Number of Instances             4898
 \paragraph \indent
 Support Vector Machine's are learning models and algorithms that analyze data and find patterns, then use the patterns for classification of data.
 Unlike the Naive Bayesian classifier, the support vector machine is a non-probabilistic classifier, meaning that it will not provide uncertainty for the results.
-This means that each different category is separated by as large a gap as possible.
+This means that each different category needs to be separated by as large a gap as possible.
 
 \subsubsection*{Dataset 1}
 \begin{wekaconsole}[Red Wine]
@@ -294,7 +299,7 @@ Total Number of Instances             4898
 \subsection*{Neural Network}
 \paragraph \indent
 Neural Networks are based off of animal's central nervous systems, by using several input sensors that transform the data before handing it on to another neuron.
-The neurons are connected together in a network and work simultaneously , rather then sequentially, to process the data.
+The neurons are connected together in a network and work simultaneously, rather then sequentially, to process the data.
 Real world applications for neural networks include speech and handwriting recognition.
 
 \subsubsection*{Dataset 1}
@@ -384,12 +389,12 @@ Total Number of Instances             4898
 The project stated that dataset 1, the unmodified dataset, and dataset 2, the clustered dataset, were to be compared through the use of classifiers.
 Dataset 2 had it's classification clusters generated algorithmically from scientific data, while dataset 1's classifications where assigned depending each wines sensory information.
 For this reason we could assume that the classifications in dataset two will be easier to classify, as they are based off of objective data rather than subjective.
+Dataset 2's results were ignored when analysing the performance of the different classifiers.
 
 \paragraph \indent
-The white wine data falls into a bell curve shape, while the majority of red wine classifications fall into two distinct bins.
-This makes classification hard as the majority of our data is 
+For dataset 1, the white wine data falls into a bell curve shape, while the majority of red wine classifications fall into two distinct bins.
+This makes classification hard as there is very little vairance in the data.
 This difference can be seen in Figure \ref{fig:redwinedist} and Figure \ref{fig:whitewinedist}.
-
 
 \paragraph \indent
 The information supplied about each wine is incomplete, as it is missing attributes such as grape type, brand and cost that can effect a testers perception\cite{brandloyalty}.
@@ -397,23 +402,27 @@ Wines that sell at a higher price may be percieved as better wines, even though 
 The range of wines are limited to varients of the Portuguese "Vinho Verde" wine and the classification of the wines is subjective.
 This means that for someone tasting a wine from a different region may see the same physiochemical properties, but classify the wine completely differently.
 
+\paragraph \indent
+The nueral network classifier gives the best classification rate for dataset 1, and a similar classification as the support vector machine classifier for dataset 2.
+It takes a significantly for time than the support vector machine however, so for larger datasets both could be seen as valid options.
+The naive Bayesian classifier gave poor results for dataset 1 as expected from it's relatively simplistic algorithms.
+Across large data sets, the support vector machine is the most efficient method for classifying the data due to it's higher accuracy and low running time.
 
 
 \clearpage
-
 \section*{Figures}
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics{images/redwinedistribution}
-	\caption{Red Wine Distribution}
+	\caption{Dataset 1 Red Wine Distribution}
 	\label{fig:redwinedist}
 \end{figure}
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics{images/whitewinedistribution}
-	\caption{White Wine Distribution}
+	\caption{Dataset 1 White Wine Distribution}
 	\label{fig:whitewinedist}
 \end{figure}
 
