@@ -28,13 +28,16 @@
 }
 
 \newenvironment{wekaconsole}[1][]{
-	\paragraph \noindent
+
+	\par \noindent
+	\begin{samepage}
 	\texttt{#1}
 	\begin{mdframed}
 	\small
 	\ttfamily
 }{
 	\end{mdframed}
+	\end{samepage}
 }
 
 \begin{document}
@@ -115,15 +118,86 @@ Clustered Instances
 Naive Bayes classifiers are simple to implement, fast, and are used in real world situations such as spam filters.
 They work by looking at the traits of an object, and using each individual trait to determine how likely it is that the object falls into a specific classification.
 Their downside is that they assume the presence or absence of particular traits has no affect on the classification.
-
-\paragraph \indent
-In Weka, we used 
+We used cross-validation for Naive Bayes with 10 folds in Weka to calculate classfify all the wines, and compared the classifications with the quality fields.
+Experimentation showed that increasing the number of folds for the red wine only had minimal effect on the accuracy of the classification.
 
 \subsubsection*{Dataset 1}
-\paragraph \indent
+\begin{wekaconsole}[Red Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.bayes.NaiveBayes 
+Relation:     ds1red
+Instances:    1599
+Attributes:   12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances         880               55.0344 %
+Incorrectly Classified Instances       719               44.9656 %
+Kappa statistic                          0.311 
+Mean absolute error                      0.1763
+Root mean squared error                  0.3198
+Relative absolute error                 82.1845 %
+Root relative squared error             97.7154 %
+Total Number of Instances             1599
+\end{verbatim}
+\end{wekaconsole}
+
+\begin{wekaconsole}[White Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.bayes.NaiveBayes 
+Relation:     ds1white
+Instances:    4898
+Attributes:   12
+Test mode:10-fold cross-validation
+
+orrectly Classified Instances        2168               44.263  %
+Incorrectly Classified Instances      2730               55.737  %
+Kappa statistic                          0.2169
+Mean absolute error                      0.1721
+Root mean squared error                  0.3221
+Relative absolute error                 89.1485 %
+Root relative squared error            103.6855 %
+Total Number of Instances             4898
+\end{verbatim}
+\end{wekaconsole}
 
 \subsubsection*{Dataset 2}
-\paragraph \indent
+\begin{wekaconsole}[Red Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.bayes.NaiveBayes 
+Relation:     ds2red_clustered-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1599
+Attributes:   12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances        1424               89.0557 %
+Incorrectly Classified Instances       175               10.9443 %
+Kappa statistic                          0.8548
+Mean absolute error                      0.0534
+Root mean squared error                  0.1698
+Relative absolute error                 21.401  %
+Root relative squared error             48.0797 %
+Total Number of Instances             1599     
+\end{verbatim}
+\end{wekaconsole}
+
+\begin{wekaconsole}[White Wine]
+\begin{verbatim}
+Scheme:weka.classifiers.bayes.NaiveBayes 
+Relation:   ds2white_clustered-weka.filters.unsupervised.attribute.Remove-R1
+Instances:  4898
+Attributes: 12
+Test mode:10-fold cross-validation
+
+Correctly Classified Instances        4267               87.1172 %
+Incorrectly Classified Instances       631               12.8828 %
+Kappa statistic                          0.8467
+Mean absolute error                      0.0594
+Root mean squared error                  0.1667
+Relative absolute error                 24.7449 %
+Root relative squared error             48.0952 %
+Total Number of Instances             4898
+\end{verbatim}
+\end{wekaconsole}
 
 \subsection*{Support Vector Machine}
 \paragraph \indent
@@ -151,11 +225,12 @@ Real world applications for neural networks include speech and handwriting recog
 
 \section*{Results}
 \paragraph \indent
+The project stated it wanted dataset 1, the unmodified dataset, and dataset 2, the clustered dataset, compared through the use of classifiers.
 
 \begin{itemize}
 	\item Red wine dataset is not very spread out
 	\item White wine distribution was. Looks like a bell curve
-
+	\item only physiochemical inputs, no price, brand, grape type included. Psycology thingiemabobs.
 \end{itemize}
 
 \begin{thebibliography}{10}
